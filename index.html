@@ -1362,6 +1362,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 <div style="height:40px;"></div>
 
 <script>
+(function(){
 // 지표별 배점 정의
 const CAT_MAX = {admin:34, env:21, rights:10, service:26, result:9};
 const CAT_NAMES = {admin:'기관운영',env:'환경·안전',rights:'수급자권리',service:'급여제공',result:'결과'};
@@ -1544,6 +1545,11 @@ function loadState() {
 }
 
 window.addEventListener('load', loadState);
+window.toggle = toggle;
+window.filterCat = filterCat;
+window.toggleCat = toggleCat;
+
+})();
 </script>
 
 </div>
@@ -2843,7 +2849,7 @@ function showTab(name) {
 }
 
 /* ════ 체크리스트 JS ════ */
-
+(function(){
 // 지표별 배점 정의
 const CAT_MAX = {admin:34, env:21, rights:10, service:26, result:9};
 const CAT_NAMES = {admin:'기관운영',env:'환경·안전',rights:'수급자권리',service:'급여제공',result:'결과'};
@@ -3042,6 +3048,7 @@ window.addEventListener('load', loadState);
   }, { threshold: 0.25 });
   sections.forEach(s => observer.observe(s));
 
+})();
 </script>
 
 
@@ -3126,6 +3133,7 @@ window.addEventListener('load', loadState);
 
 </div>
 <script>
+(function(){
 const ALL_QUESTIONS = [
   // ── 신설 지표 ──
   {cat:'신설 지표',tag:'new',q:'2026 신설 — 유리문 충돌방지 표시는 바닥으로부터 몇 cm 사이에 부착해야 하나요?',opts:['100cm 이하','130cm 이하','150cm 사이','180cm 이하'],ans:2,desc:'지표 09-1 신설: 유리문 충돌방지 표시는 <strong>바닥으로부터 150cm 사이</strong>에 부착해야 합니다.'},
@@ -3320,6 +3328,17 @@ function goHome(){
   document.getElementById('try-count').textContent=tryCount;
   document.getElementById('best-score').textContent=localStorage.getItem('daeum_best')||'—';
 }
+window.selectMode = selectMode;
+window.getQuestions = getQuestions;
+window.shuffle = shuffle;
+window.startQuiz = startQuiz;
+window.renderQuestion = renderQuestion;
+window.selectAnswer = selectAnswer;
+window.nextQuestion = nextQuestion;
+window.showResult = showResult;
+window.retryQuiz = retryQuiz;
+window.goHome = goHome;
+})();
 </script></div>
   </div>
 </div>
@@ -3640,6 +3659,7 @@ function goHome(){
 </style>
 
 <script>
+(function(){
 // ── 다운로드 콘텐츠 ──
 const DOWNLOAD_FILES = {
   print: {
@@ -3874,6 +3894,19 @@ function goHome(){
   document.getElementById('best-score').textContent=localStorage.getItem('daeum_best')||'—';
 }
 
+window.downloadFile = downloadFile;
+window.closePrintModal = closePrintModal;
+window.selectMode = selectMode;
+window.getQuestions = getQuestions;
+window.shuffle = shuffle;
+window.startQuiz = startQuiz;
+window.renderQuestion = renderQuestion;
+window.selectAnswer = selectAnswer;
+window.nextQuestion = nextQuestion;
+window.showResult = showResult;
+window.retryQuiz = retryQuiz;
+window.goHome = goHome;
+})();
 </script>
 </body>
 </html>
