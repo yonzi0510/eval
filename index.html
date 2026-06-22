@@ -72,7 +72,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 .tab-btn .tb-icon{margin-right:6px;}
 
 /* ════ 탭 패널 ════ */
-.tab-panel{display:none;padding-top:112px;min-height:100vh;}
+.tab-panel{display:none;padding-top:56px;min-height:100vh;}
 .tab-panel.active{display:block;}
 
 /* ════ 데이음 소개 탭 ════ */
@@ -629,6 +629,53 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
   .feature-grid{grid-template-columns:1fr;}
   .intro-hero h1{font-size:26px;}
 }
+
+/* ── 고정 진행현황 바 ── */
+.sticky-progress {
+  position: sticky;
+  top: 56px;
+  z-index: 180;
+  background: #1A1D27;
+  border-bottom: 1px solid #2D3148;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.sp-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7B83B0;
+  white-space: nowrap;
+}
+.sp-track {
+  flex: 1;
+  height: 8px;
+  background: #2D3148;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.sp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3B82F6, #4B9D79);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+.sp-nums {
+  font-size: 13px;
+  font-weight: 700;
+  color: #F0F2FF;
+  white-space: nowrap;
+}
+.sp-nums span { color: #4F8EF7; }
+.sp-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4B9D79;
+  min-width: 36px;
+  text-align: right;
+}
 </style>
 </head>
 <body>
@@ -659,22 +706,41 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
     </svg>
   </a>
   <div class="header-spacer"></div>
-  <a href="https://dayeum.co.kr/promo.html" target="_blank" class="header-link">
+  <a href="https://dayeum.co.kr/demo%20needs%20assessment.html" target="_blank" class="header-link">
     <span class="hl-icon">🚀</span>
-    <span class="hl-label">서비스 바로가기</span>
+    <span class="hl-label">데이음 체험</span>
   </a>
   <a href="https://m.blog.naver.com/daeumcare?tab=1" target="_blank" class="header-link">
     <span class="hl-icon">📝</span>
     <span class="hl-label">블로그</span>
   </a>
+  <a href="https://open.kakao.com/o/sUOZVNzi" target="_blank" class="header-link" style="background:rgba(254,229,0,.12);border-color:rgba(254,229,0,.3);color:#FEE500;">
+    <span class="hl-icon">💬</span>
+    <span class="hl-label">오픈채팅</span>
+  </a>
 </header>
+
+<!-- 페이지 설명 배너 -->
+<div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-bottom:1px solid #2D3148;padding:24px;text-align:center;">
+  <div style="display:inline-block;background:rgba(79,142,247,.15);border:1px solid rgba(79,142,247,.3);color:#4F8EF7;font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:12px;">🆓 무료 공개 · 주야간보호센터 전용</div>
+  <div style="font-size:20px;font-weight:900;margin-bottom:8px;">2026 장기요양 평가 대비 자료</div>
+  <div style="font-size:13px;color:#7B83B0;line-height:1.7;">평가 체크리스트 · 직원 교육자료 · 구술 퀴즈<br>주야간보호센터 담당자를 위해 무료로 제공합니다</div>
+  <div style="margin-top:12px;display:inline-flex;align-items:center;gap:8px;background:#22263A;border:1px solid #2D3148;border-radius:10px;padding:8px 16px;font-size:12.5px;color:#7B83B0;">
+    <span style="color:#4ADE80;font-size:16px;">☑</span>
+    항목을 체크하면 상단에서 <strong style="color:#F0F2FF;">평가 진행현황</strong>을 실시간으로 확인할 수 있어요
+  </div>
+  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px;">
+    <span style="background:#22263A;border:1px solid #2D3148;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">✅ 체크리스트 64항목</span>
+    <span style="background:#22263A;border:1px solid #2D3148;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">📚 직원 교육자료 (인쇄용 포함)</span>
+    <span style="background:#22263A;border:1px solid #2D3148;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🎯 구술 퀴즈 38문항</span>
+    <span style="background:#22263A;border:1px solid #2D3148;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🆕 2026 신설 지표 반영</span>
+  </div>
+</div>
+
 
 <!-- ══ 메인 탭 바 ══ -->
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="showTab('intro')">
-    <span class="tb-icon">💡</span>Day:음 소개
-  </button>
-  <button class="tab-btn" onclick="showTab('checklist')">
+  <button class="tab-btn active" onclick="showTab('checklist')">
     <span class="tb-icon">✅</span>평가 체크리스트
   </button>
   <button class="tab-btn" onclick="showTab('edu')">
@@ -689,8 +755,15 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 <!-- ══════════════════════════════════
      탭 1: 평가 체크리스트
 ══════════════════════════════════ -->
-<div class="tab-panel" id="panel-checklist">
+<div class="tab-panel active" id="panel-checklist">
   <div class="cl-wrap">
+    <!-- 고정 진행현황 바 -->
+    <div class="sticky-progress" id="sticky-progress-bar">
+      <div class="sp-label">📊 평가 진행현황</div>
+      <div class="sp-track"><div class="sp-fill" id="sp-fill"></div></div>
+      <div class="sp-pct" id="sp-pct">0%</div>
+      <div class="sp-nums"><span id="sp-done">0</span> / <span id="sp-total">64</span></div>
+    </div>
     <!-- 체크리스트 헤더(필터/검색) 재현 -->
     <div class="header" style="position:static;background:#1a1a2e;padding:20px 24px 16px;">
       <div style="max-width:900px;margin:0 auto;">
@@ -2167,7 +2240,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 <!-- ══════════════════════════════════
      탭 3: Day:음 소개
 ══════════════════════════════════ -->
-<div class="tab-panel active" id="panel-intro">
+<div class="tab-panel" id="panel-intro">
   <div class="intro-wrap">
 
     <div class="intro-hero">
@@ -2262,7 +2335,7 @@ function showTab(name) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-' + name).classList.add('active');
   const btns = document.querySelectorAll('.tab-btn');
-  const map = {checklist:0, edu:1, intro:2};
+  const map = {checklist:0, edu:1, quiz:2};
   btns[map[name]].classList.add('active');
   window.scrollTo(0, 0);
 }
@@ -2330,6 +2403,15 @@ function showTab(name) {
     const pct = totalAll > 0 ? Math.round(totalDone / totalAll * 100) : 0;
     document.getElementById('pct-label').textContent = pct + '%';
     document.getElementById('progress-fill').style.width = pct + '%';
+    // sticky bar 업데이트
+    const spDone = document.getElementById('sp-done');
+    const spTotal = document.getElementById('sp-total');
+    const spPct = document.getElementById('sp-pct');
+    const spFill = document.getElementById('sp-fill');
+    if (spDone) spDone.textContent = totalDone;
+    if (spTotal) spTotal.textContent = totalAll;
+    if (spPct) spPct.textContent = pct + '%';
+    if (spFill) spFill.style.width = pct + '%';
   }
 
   // ── 필터 ──
