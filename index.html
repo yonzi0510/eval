@@ -9,14 +9,14 @@
 /* ════ 전역 리셋 ════ */
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font-size:15px;line-height:1.7;}
+body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font-size:15px;line-height:1.7;}
 
 /* ════ 최상단 헤더 ════ */
 .site-header{
   position:fixed;top:0;left:0;right:0;z-index:200;
-  background:rgba(15,17,23,0.95);
+  background:rgba(255,255,255,0.97);
   backdrop-filter:blur(12px);
-  border-bottom:1px solid #2D3148;
+  border-bottom:1px solid #D1E8E2;
   padding:0 24px;
   height:56px;
   display:flex;align-items:center;gap:16px;
@@ -26,32 +26,32 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 }
 .site-logo .logo-mark{
   width:32px;height:32px;
-  background:linear-gradient(135deg,#3B82F6,#6366F1);
+  background:linear-gradient(135deg,#1A9B6C,#0E9488);
   border-radius:8px;
   display:flex;align-items:center;justify-content:center;
   font-size:16px;font-weight:900;color:white;
   letter-spacing:-1px;
 }
-.site-logo .logo-text{font-size:15px;font-weight:900;color:#F0F2FF;}
-.site-logo .logo-sub{font-size:10px;color:#7B83B0;margin-left:2px;}
+.site-logo .logo-text{font-size:15px;font-weight:900;color:#1A2332;}
+.site-logo .logo-sub{font-size:10px;color:#5A7A6E;margin-left:2px;}
 .header-spacer{flex:1;}
 .header-link{
   display:inline-flex;align-items:center;gap:5px;
-  font-size:12px;font-weight:600;color:#7B83B0;
+  font-size:12px;font-weight:600;color:#5A7A6E;
   text-decoration:none;
   padding:6px 12px;border-radius:7px;
-  border:1px solid #2D3148;
+  border:1px solid #D1E8E2;
   transition:all .15s;
 }
-.header-link:hover{color:#F0F2FF;border-color:#4F8EF7;background:rgba(79,142,247,.08);}
+.header-link:hover{color:#1A9B6C;border-color:#1A9B6C;background:rgba(26,155,108,.08);}
 .header-link .hl-icon{font-size:13px;}
 
 /* ════ 메인 탭 ════ */
 .tab-bar{
   position:fixed;top:56px;left:0;right:0;z-index:190;
-  background:rgba(26,29,39,0.98);
+  background:rgba(255,255,255,0.98);
   backdrop-filter:blur(8px);
-  border-bottom:1px solid #2D3148;
+  border-bottom:1px solid #D1E8E2;
   display:flex;
   padding:0 24px;
   gap:4px;
@@ -59,7 +59,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 .tab-btn{
   padding:14px 20px;
   font-size:13px;font-weight:600;
-  color:#7B83B0;
+  color:#5A6B7B;
   border:none;background:none;
   cursor:pointer;
   border-bottom:2px solid transparent;
@@ -67,8 +67,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
   white-space:nowrap;
   font-family:'Noto Sans KR',sans-serif;
 }
-.tab-btn:hover{color:#F0F2FF;}
-.tab-btn.active{color:#4F8EF7;border-bottom-color:#4F8EF7;}
+.tab-btn:hover{color:#1A2332;}
+.tab-btn.active{color:#1A9B6C;border-bottom-color:#1A9B6C;}
 .tab-btn .tb-icon{margin-right:6px;}
 
 /* ════ 탭 패널 ════ */
@@ -80,13 +80,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 .intro-hero{text-align:center;padding:60px 24px;}
 .intro-badge{
   display:inline-flex;align-items:center;gap:6px;
-  background:rgba(79,142,247,.15);border:1px solid rgba(79,142,247,.3);
-  color:#4F8EF7;font-size:11px;font-weight:700;
+  background:rgba(26,155,108,.12);border:1px solid rgba(26,155,108,.3);
+  color:#1A9B6C;font-size:11px;font-weight:700;
   padding:5px 14px;border-radius:99px;margin-bottom:24px;
 }
 .intro-hero h1{font-size:36px;font-weight:900;line-height:1.2;margin-bottom:12px;}
 .intro-hero h1 span{color:#4F8EF7;}
-.intro-hero p{font-size:15px;color:#7B83B0;margin-bottom:36px;line-height:1.8;}
+.intro-hero p{font-size:15px;color:#5A7A6E;margin-bottom:36px;line-height:1.8;}
 .intro-cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:60px;}
 .cta-btn{
   display:inline-flex;align-items:center;gap:8px;
@@ -96,17 +96,17 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
   text-decoration:none;transition:opacity .15s;
 }
 .cta-btn:hover{opacity:.88;}
-.cta-btn.primary{background:linear-gradient(135deg,#3B82F6,#6366F1);color:white;border:none;}
-.cta-btn.secondary{background:transparent;color:#F0F2FF;border:1px solid #2D3148;}
+.cta-btn.primary{background:linear-gradient(135deg,#1A9B6C,#0E9488);color:white;border:none;}
+.cta-btn.secondary{background:transparent;color:#F0F2FF;border:1px solid #D1E8E2;}
 
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;}
 .feature-card{
-  background:#1A1D27;border:1px solid #2D3148;
+  background:#FFFFFF;border:1px solid #D1E8E2;
   border-radius:14px;padding:24px 20px;
 }
 .feature-card .fc-icon{font-size:28px;margin-bottom:14px;}
 .feature-card .fc-title{font-size:15px;font-weight:700;margin-bottom:8px;}
-.feature-card .fc-body{font-size:13px;color:#7B83B0;line-height:1.7;}
+.feature-card .fc-body{font-size:13px;color:#5A7A6E;line-height:1.7;}
 .feature-card .fc-new{
   display:inline-block;background:#F87171;color:#450a0a;
   font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;
@@ -114,7 +114,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 }
 
 .quote-box{
-  background:#1A1D27;border:1px solid #2D3148;border-radius:14px;
+  background:#FFFFFF;border:1px solid #D1E8E2;border-radius:14px;
   padding:32px 36px;text-align:center;margin-bottom:36px;
   position:relative;
 }
@@ -124,17 +124,17 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 .quote-box .qtext{
   font-size:18px;font-weight:700;color:#F0F2FF;line-height:1.6;margin-bottom:16px;
 }
-.quote-box .qsub{font-size:13px;color:#7B83B0;}
+.quote-box .qsub{font-size:13px;color:#5A7A6E;}
 
 .pilot-section{margin-bottom:48px;}
 .pilot-title{font-size:18px;font-weight:700;margin-bottom:20px;}
 .pilot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
 .pilot-card{
-  background:#1A1D27;border:1px solid #2D3148;border-radius:12px;
+  background:#FFFFFF;border:1px solid #D1E8E2;border-radius:12px;
   padding:20px;text-align:center;
 }
 .pilot-card .pc-num{font-size:32px;font-weight:900;color:#4F8EF7;line-height:1;}
-.pilot-card .pc-label{font-size:12px;color:#7B83B0;margin-top:6px;}
+.pilot-card .pc-label{font-size:12px;color:#5A7A6E;margin-top:6px;}
 
 .contact-box{
   background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(99,102,241,.15));
@@ -142,7 +142,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
   padding:32px;text-align:center;
 }
 .contact-box h3{font-size:18px;font-weight:700;margin-bottom:8px;}
-.contact-box p{font-size:13px;color:#7B83B0;margin-bottom:20px;}
+.contact-box p{font-size:13px;color:#5A7A6E;margin-bottom:20px;}
 
 /* ════ 체크리스트 탭 ════ */
 .cl-wrap{padding:0;}
@@ -150,12 +150,12 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 /* ════ 체크리스트 CSS ════ */
 
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font-size:14px;line-height:1.6;}
+body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font-size:14px;line-height:1.6;}
 
 /* 고정 진행현황 바 */
 .sticky-bar{
   position:sticky;top:0;z-index:100;
-  background:#1A1D27;border-bottom:1px solid #2D3148;
+  background:#FFFFFF;border-bottom:1px solid #D1E8E2;
   padding:10px 16px;
 }
 .sb-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
@@ -164,22 +164,22 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 .sb-score{font-size:18px;font-weight:900;color:#4F8EF7;}
 .sb-grade{
   padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;
-  background:#2D3148;color:#7B83B0;
+  background:#2D3148;color:#5A7A6E;
   transition:all .3s;
 }
-.sb-pct{font-size:12px;color:#7B83B0;}
+.sb-pct{font-size:12px;color:#5A7A6E;}
 .sb-track{height:8px;background:#2D3148;border-radius:99px;overflow:hidden;}
 .sb-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#3B82F6,#4B9D79);width:0%;transition:width .4s;}
 
 /* 필터 */
 .filter-bar{
   display:flex;gap:6px;flex-wrap:wrap;padding:10px 16px;
-  background:#0F1117;border-bottom:1px solid #1A1D27;
+  background:#FFFFFF;border-bottom:1px solid #D1E8E2;
   position:sticky;top:82px;z-index:99;
 }
 .fb{
   padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;
-  border:1px solid #2D3148;background:none;color:#7B83B0;cursor:pointer;
+  border:1px solid #D1E8E2;background:none;color:#5A7A6E;cursor:pointer;
   font-family:'Noto Sans KR',sans-serif;transition:all .15s;
 }
 .fb.active{background:rgba(79,142,247,.15);border-color:#4F8EF7;color:#4F8EF7;}
@@ -191,14 +191,14 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 .cat-header{
   padding:10px 16px 6px;
   font-size:11px;font-weight:700;letter-spacing:.8px;
-  color:#7B83B0;text-transform:uppercase;
+  color:#5A7A6E;text-transform:uppercase;
   display:flex;align-items:center;gap:8px;cursor:pointer;
 }
 .cat-header .cat-name{flex:1;}
 .cat-progress{font-size:11px;color:#4B9D79;font-weight:700;}
 .cat-score-badge{
-  font-size:10px;color:#7B83B0;
-  background:#1A1D27;padding:2px 6px;border-radius:4px;
+  font-size:10px;color:#5A7A6E;
+  background:#EEF6F2;padding:2px 6px;border-radius:4px;
 }
 
 /* 체크 아이템 */
@@ -208,12 +208,12 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
   cursor:pointer;transition:background .1s;
   align-items:flex-start;
 }
-.check-item:hover{background:#1A1D27;}
-.check-item.checked{background:rgba(75,157,121,.05);}
+.check-item:hover{background:#EEF6F2;}
+.check-item.checked{background:rgba(26,155,108,.06);}
 .check-item.checked .ci-check{
   background:#4B9D79;border-color:#4B9D79;color:white;
 }
-.check-item.checked .ci-text{color:#7B83B0;text-decoration:line-through;}
+.check-item.checked .ci-text{color:#5A7A6E;text-decoration:line-through;}
 .ci-check{
   width:20px;height:20px;min-width:20px;
   border:2px solid #2D3148;border-radius:5px;
@@ -223,37 +223,37 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 }
 .ci-body{flex:1;}
 .ci-text{font-size:13px;font-weight:500;margin-bottom:4px;}
-.ci-detail{font-size:11px;color:#7B83B0;line-height:1.7;}
-.ci-detail strong{color:#A8B0C8;}
+.ci-detail{font-size:11px;color:#5A7A6E;line-height:1.7;}
+.ci-detail strong{color:#374151;}
 .ci-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px;}
 .tag{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:600;}
-.tag-idx{background:#1e2235;color:#7B83B0;border:1px solid #2D3148;}
-.tag-new{background:rgba(248,113,113,.15);color:#F87171;border:1px solid rgba(248,113,113,.3);}
-.tag-freq{background:rgba(79,142,247,.1);color:#4F8EF7;border:1px solid rgba(79,142,247,.2);}
+.tag-idx{background:#EEF6F2;color:#374151;border:1px solid #D1E8E2;}
+.tag-new{background:rgba(229,62,62,.1);color:#C53030;border:1px solid rgba(229,62,62,.25);}
+.tag-freq{background:rgba(26,155,108,.1);color:#1A9B6C;border:1px solid rgba(26,155,108,.2);}
 .ci-pts{
-  font-size:11px;color:#4F8EF7;font-weight:700;
+  font-size:11px;color:#1A9B6C;font-weight:700;
   white-space:nowrap;margin-top:1px;
 }
 
 /* 모의점수 카드 */
 .score-card{
-  margin:16px;background:#1A1D27;border:1px solid #2D3148;
+  margin:16px;background:#FFFFFF;border:1px solid #D1E8E2;
   border-radius:12px;padding:20px;
 }
-.sc-title{font-size:13px;font-weight:700;color:#7B83B0;margin-bottom:14px;}
+.sc-title{font-size:13px;font-weight:700;color:#5A7A6E;margin-bottom:14px;}
 .sc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px;}
-.sc-item{background:#22263A;border-radius:8px;padding:10px 12px;}
-.sc-cat{font-size:10px;color:#7B83B0;margin-bottom:3px;}
-.sc-val{font-size:16px;font-weight:900;color:#F0F2FF;}
-.sc-val span{font-size:11px;font-weight:400;color:#7B83B0;}
+.sc-item{background:#EEF6F2;border-radius:8px;padding:10px 12px;}
+.sc-cat{font-size:10px;color:#5A7A6E;margin-bottom:3px;}
+.sc-val{font-size:16px;font-weight:900;color:#1A2332;}
+.sc-val span{font-size:11px;font-weight:400;color:#5A7A6E;}
 .sc-grade-box{
   border-radius:10px;padding:16px;text-align:center;
   background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(75,157,121,.15));
   border:1px solid rgba(79,142,247,.2);
 }
-.sc-grade-label{font-size:11px;color:#7B83B0;margin-bottom:6px;}
+.sc-grade-label{font-size:11px;color:#5A7A6E;margin-bottom:6px;}
 .sc-grade-val{font-size:28px;font-weight:900;color:#4F8EF7;}
-.sc-grade-sub{font-size:12px;color:#7B83B0;margin-top:4px;}
+.sc-grade-sub{font-size:12px;color:#5A7A6E;margin-top:4px;}
 .sc-warn{
   margin-top:10px;padding:8px 10px;border-radius:6px;
   background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2);
@@ -263,15 +263,15 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 /* ════ 교육자료 탭 ════ */
 /* 다운로드 버튼 바 */
 .edu-download-bar{
-  background:#1A1D27;
-  border-bottom:1px solid #2D3148;
+  background:#FFFFFF;
+  border-bottom:1px solid #D1E8E2;
   padding:12px 24px;
   display:flex;align-items:center;gap:10px;
   flex-wrap:wrap;
   position:sticky;top:112px;z-index:150;
 }
 .edu-download-bar .edb-label{
-  font-size:11px;font-weight:700;color:#7B83B0;
+  font-size:11px;font-weight:700;color:#5A7A6E;
   letter-spacing:.5px;white-space:nowrap;
 }
 .dl-btn{
@@ -280,45 +280,50 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
   font-family:'Noto Sans KR',sans-serif;
   font-size:12px;font-weight:600;
   cursor:pointer;text-decoration:none;
-  border:1px solid #2D3148;
-  background:#22263A;color:#F0F2FF;
+  border:1px solid #D1E8E2;
+  background:#EEF6F2;color:#1A2332;
   transition:all .15s;
 }
-.dl-btn:hover{border-color:#4F8EF7;background:rgba(79,142,247,.1);color:#4F8EF7;}
+.dl-btn:hover{border-color:#1A9B6C;background:rgba(26,155,108,.1);color:#1A9B6C;}
 .dl-btn .dl-icon{font-size:13px;}
 
 /* 교육자료 내부 사이드바 */
 .edu-layout{display:flex;min-height:calc(100vh - 112px);}
 .edu-sidebar{
   width:230px;min-height:calc(100vh - 148px);
-  background:#1A1D27;border-right:1px solid #2D3148;
+  background:#FFFFFF;border-right:1px solid #D1E8E2;
   padding:20px 0;overflow-y:auto;
   position:sticky;top:148px;align-self:flex-start;
   max-height:calc(100vh - 148px);
 }
-.edu-sidebar .lg-main{font-size:13px;font-weight:900;color:#4F8EF7;padding:0 18px 16px;border-bottom:1px solid #2D3148;margin-bottom:12px;}
-.edu-sidebar .lg-sub{font-size:10px;color:#7B83B0;margin-top:2px;}
+.edu-sidebar .lg-main{font-size:13px;font-weight:900;color:#4F8EF7;padding:0 18px 16px;border-bottom:1px solid #D1E8E2;margin-bottom:12px;}
+.edu-sidebar .lg-sub{font-size:10px;color:#5A7A6E;margin-top:2px;}
 .edu-content{flex:1;overflow:hidden;}
 
 /* 교육자료 원본 CSS */
 
   :root {
-    --bg:#0F1117; --surface:#1A1D27; --surface2:#22263A; --border:#2D3148;
-    --text:#F0F2FF; --muted:#7B83B0;
-    --blue:#4F8EF7; --red:#F56565; --green:#48BB78; --purple:#9F7AEA; --orange:#F6AD55; --teal:#2DD4BF;
+    --bg:#F7FAFB; --surface:#FFFFFF; --surface2:#EEF6F2; --border:#D1E8E2;
+    --text:#1A2332; --muted:#5A7A6E;
+    --blue:#1A9B6C; --red:#E53E3E; --green:#1A9B6C; --purple:#805AD5; --orange:#D69E2E; --teal:#0E9488;
     --new:#FC8181; --radius:12px; --radius-sm:8px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.7;}
+  .edu-sidebar{background:#FFFFFF;border-right:1px solid #D1E8E2;}
+  .nav-group{font-size:10px;font-weight:700;color:#5A7A6E;letter-spacing:1.5px;text-transform:uppercase;padding:8px 18px 4px;}
+  .nav-item{display:flex;align-items:center;gap:8px;padding:8px 18px;font-size:13px;font-weight:500;color:#374151;text-decoration:none;border-left:3px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .nav-item:hover,.nav-item.active{color:#1A9B6C;background:#EEF6F2;border-left-color:#1A9B6C;}
+  .ni{font-size:15px;flex-shrink:0;}
 
   /* 사이드바 */
   
 .edu-main{margin-left:230px;}
 
   /* 히어로 */
-  .hero{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);padding:56px 48px;border-bottom:1px solid var(--border);}
-  .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(79,142,247,.15);border:1px solid rgba(79,142,247,.3);color:var(--blue);font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:18px;}
+  .hero{background:linear-gradient(135deg,#E8F8F2,#EDF7FF,#F0FFF8);padding:56px 48px;border-bottom:1px solid var(--border);}
+  .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(26,155,108,.12);border:1px solid rgba(26,155,108,.3);color:var(--blue);font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:18px;}
   .hero h1{font-size:30px;font-weight:900;line-height:1.2;margin-bottom:10px;}
   .hero h1 span{color:var(--blue);}
   .hero-sub{font-size:13px;color:var(--muted);margin-bottom:28px;}
@@ -336,7 +341,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
   .new-chip{display:inline-block;background:var(--new);color:#7F1D1D;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:8px;vertical-align:middle;}
 
   /* 카드 */
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;}
+  .card{background:#FFFFFF;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
   .card-head{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--border);}
   .card-head.blue{background:rgba(79,142,247,.12);} .card-head.red{background:rgba(245,101,101,.12);}
   .card-head.green{background:rgba(72,187,120,.12);} .card-head.purple{background:rgba(159,122,234,.12);}
@@ -350,37 +355,37 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 
   /* 테이블 */
   table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:14px;}
-  th{background:var(--surface2);color:var(--muted);font-size:11px;font-weight:700;padding:9px 13px;text-align:left;letter-spacing:.3px;}
-  td{padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+  th{background:#EEF6F2;color:#374151;font-size:11px;font-weight:700;padding:9px 13px;text-align:left;letter-spacing:.3px;border-bottom:1px solid #D1E8E2;}
+  td{padding:9px 13px;border-bottom:1px solid #E8F2EE;vertical-align:top;line-height:1.6;color:#1A2332;}
   tr:last-child td{border-bottom:none;}
   td strong{font-weight:700;}
   .td-new{color:var(--new);font-weight:700;}
 
   /* 스텝 */
   .step-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
-  .step-list li{display:flex;align-items:flex-start;gap:11px;padding:9px 11px;background:var(--surface2);border-radius:var(--radius-sm);font-size:13px;}
+  .step-list li{display:flex;align-items:flex-start;gap:11px;padding:9px 11px;background:#EEF6F2;border-radius:var(--radius-sm);font-size:13px;}
   .sc{width:22px;height:22px;border-radius:50%;background:var(--blue);color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
 
   /* QA */
   .qa{margin-bottom:14px;}
-  .q-box{background:rgba(79,142,247,.08);border-left:3px solid var(--blue);padding:11px 15px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:7px;}
+  .q-box{background:rgba(26,155,108,.07);border-left:3px solid var(--blue);padding:11px 15px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:7px;}
   .q-label{font-size:10px;font-weight:700;color:var(--blue);margin-bottom:3px;}
   .q-text{font-size:13.5px;font-weight:700;}
   .a-box{background:rgba(72,187,120,.08);border-left:3px solid var(--green);padding:11px 15px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;}
   .a-label{font-size:10px;font-weight:700;color:var(--green);margin-bottom:3px;}
-  .a-text{font-size:13px;color:#C6F6D5;line-height:1.75;}
+  .a-text{font-size:13px;color:#14532d;line-height:1.75;}
   .a-text strong{color:white;}
 
   /* 경고 */
-  .warn{background:rgba(245,101,101,.08);border:1px solid rgba(245,101,101,.25);border-radius:var(--radius-sm);padding:13px 15px;margin-bottom:14px;}
+  .warn{background:#FEF3F2;border:1px solid rgba(229,62,62,.25);border-radius:var(--radius-sm);padding:13px 15px;margin-bottom:14px;}
   .warn-title{font-size:12px;font-weight:700;color:var(--red);margin-bottom:5px;}
-  .warn-text{font-size:12.5px;color:#FED7D7;line-height:1.7;}
+  .warn-text{font-size:12.5px;color:#7F1D1D;line-height:1.7;}
 
   /* 그리드 */
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;}
   .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
-  .g-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px 14px;}
+  .g-card{background:#EEF6F2;border:1px solid var(--border);border-radius:var(--radius-sm);padding:13px 14px;}
   .g-card .g-num{font-size:10px;font-weight:700;color:var(--blue);margin-bottom:3px;}
   .g-card .g-title{font-size:13px;font-weight:700;margin-bottom:5px;}
   .g-card .g-body{font-size:12px;color:var(--muted);line-height:1.6;}
@@ -575,19 +580,19 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 </header>
 
 <!-- 페이지 설명 배너 -->
-<div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-bottom:1px solid #2D3148;padding:24px;text-align:center;">
+<div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-bottom:1px solid #D1E8E2;padding:24px;text-align:center;">
   <div style="display:inline-block;background:rgba(79,142,247,.15);border:1px solid rgba(79,142,247,.3);color:#4F8EF7;font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:12px;">🆓 무료 공개 · 주야간보호센터 전용</div>
   <div style="font-size:20px;font-weight:900;margin-bottom:8px;">2026 장기요양 평가 대비 자료</div>
-  <div style="font-size:13px;color:#7B83B0;line-height:1.7;">평가 체크리스트 · 직원 교육자료 · 구술 퀴즈<br>주야간보호센터 담당자를 위해 무료로 제공합니다</div>
-  <div style="margin-top:12px;display:inline-flex;align-items:center;gap:8px;background:#22263A;border:1px solid #2D3148;border-radius:10px;padding:8px 16px;font-size:12.5px;color:#7B83B0;">
+  <div style="font-size:13px;color:#5A7A6E;line-height:1.7;">평가 체크리스트 · 직원 교육자료 · 구술 퀴즈<br>주야간보호센터 담당자를 위해 무료로 제공합니다</div>
+  <div style="margin-top:12px;display:inline-flex;align-items:center;gap:8px;background:#EEF6F2;border:1px solid #D1E8E2;border-radius:10px;padding:8px 16px;font-size:12.5px;color:#5A7A6E;">
     <span style="color:#4ADE80;font-size:16px;">☑</span>
     항목을 체크하면 상단에서 <strong style="color:#F0F2FF;">평가 진행현황</strong>을 실시간으로 확인할 수 있어요
   </div>
   <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px;">
-    <span style="background:#22263A;border:1px solid #2D3148;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">✅ 체크리스트 64항목</span>
-    <span style="background:#22263A;border:1px solid #2D3148;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">📚 직원 교육자료 (인쇄용 포함)</span>
-    <span style="background:#22263A;border:1px solid #2D3148;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🎯 구술 퀴즈 38문항</span>
-    <span style="background:#22263A;border:1px solid #2D3148;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🆕 2026 신설 지표 반영</span>
+    <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">✅ 체크리스트 64항목</span>
+    <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">📚 직원 교육자료 (인쇄용 포함)</span>
+    <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🎯 구술 퀴즈 38문항</span>
+    <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#F0F2FF;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🆕 2026 신설 지표 반영</span>
   </div>
 </div>
 
@@ -615,31 +620,31 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
 <div class="tab-panel active" id="panel-checklist">
 <style>
 /* 체크리스트 스타일 */
-.cl-sticky{position:sticky;top:48px;z-index:100;background:#1A1D27;border-bottom:1px solid #2D3148;padding:10px 14px;}
+.cl-sticky{position:sticky;top:48px;z-index:100;background:#FFFFFF;border-bottom:1px solid #D1E8E2;padding:10px 14px;}
 .cl-sb-top{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;}
 .cl-score{font-size:16px;font-weight:900;color:#4F8EF7;}
-.cl-grade{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;background:#2D3148;color:#7B83B0;transition:all .3s;}
+.cl-grade{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;background:#2D3148;color:#5A7A6E;transition:all .3s;}
 .cl-track{height:6px;background:#2D3148;border-radius:99px;overflow:hidden;}
 .cl-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#3B82F6,#4B9D79);width:0%;transition:width .4s;}
-.cl-filter{display:flex;gap:5px;flex-wrap:wrap;padding:8px 14px;background:#0F1117;border-bottom:1px solid #1A1D27;position:sticky;top:90px;z-index:99;}
-.cf-btn{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;border:1px solid #2D3148;background:none;color:#7B83B0;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .15s;white-space:nowrap;}
+.cl-filter{display:flex;gap:5px;flex-wrap:wrap;padding:8px 14px;background:#FFFFFF;border-bottom:1px solid #D1E8E2;position:sticky;top:90px;z-index:99;}
+.cf-btn{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;border:1px solid #D1E8E2;background:none;color:#5A7A6E;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .15s;white-space:nowrap;}
 .cf-btn.active{background:rgba(79,142,247,.15);border-color:#4F8EF7;color:#4F8EF7;}
 .cl-wrap{padding:10px 14px 80px;}
-.cl-cat-hd{font-size:11px;font-weight:700;letter-spacing:.6px;color:#7B83B0;padding:12px 0 6px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #2D3148;margin-bottom:4px;}
+.cl-cat-hd{font-size:11px;font-weight:700;letter-spacing:.6px;color:#5A7A6E;padding:12px 0 6px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #D1E8E2;margin-bottom:4px;}
 .cl-cat-hd .cc-n{flex:1;}
 .cl-cat-hd .cc-cnt{font-size:10px;color:#4B9D79;font-weight:700;}
 .cl-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #1A1D27;cursor:pointer;align-items:flex-start;transition:background .1s;}
-.cl-item:active{background:#1A1D27;}
+.cl-item:active{background:#EEF6F2;}
 .cl-item.done .ci-chk{background:#4B9D79;border-color:#4B9D79;color:white;}
-.cl-item.done .ci-txt{color:#7B83B0;text-decoration:line-through;}
+.cl-item.done .ci-txt{color:#5A7A6E;text-decoration:line-through;}
 .ci-chk{width:20px;height:20px;min-width:20px;border:2px solid #2D3148;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent;margin-top:1px;transition:all .15s;}
 .ci-body{flex:1;}
 .ci-txt{font-size:13px;font-weight:500;line-height:1.45;margin-bottom:3px;}
-.ci-sub{font-size:10px;color:#7B83B0;line-height:1.6;}
+.ci-sub{font-size:10px;color:#5A7A6E;line-height:1.6;}
 .ci-sub strong{color:#A8B0C8;}
 .ci-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px;}
 .ctag{font-size:9px;padding:2px 5px;border-radius:3px;font-weight:600;}
-.ctag-idx{background:#1e2235;color:#7B83B0;border:1px solid #2D3148;}
+.ctag-idx{background:#1e2235;color:#5A7A6E;border:1px solid #D1E8E2;}
 .ctag-new{background:rgba(248,113,113,.15);color:#F87171;border:1px solid rgba(248,113,113,.3);}
 .ctag-freq{background:rgba(79,142,247,.1);color:#4F8EF7;border:1px solid rgba(79,142,247,.2);}
 </style>
@@ -650,7 +655,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
     <span style="font-size:12px;font-weight:700;color:#A8B0C8;">✅ 평가 체크리스트</span>
     <span class="cl-score" id="cl-score">0 / 0</span>
     <span class="cl-grade" id="cl-grade">-</span>
-    <span style="font-size:10px;color:#7B83B0;margin-left:auto;" id="cl-pct">0%</span>
+    <span style="font-size:10px;color:#5A7A6E;margin-left:auto;" id="cl-pct">0%</span>
   </div>
   <div class="cl-track"><div class="cl-fill" id="cl-fill"></div></div>
 </div>
@@ -813,6 +818,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">소화기·경보설비 — 매월 점검·피난안내도 부착</div>
     <div class="ci-sub"><strong>확인:</strong> 소화기·소화전·경보설비 매월 점검 / 화재위험 요인 제거 / 피난안내도 각 층별 부착</div>
+    <div class="ci-sub" style="margin-top:4px;"><a href="https://www.nfds.go.kr/bbs/selectBbsList.do?bbs=B13" target="_blank" rel="noopener" style="color:#1A9B6C;font-size:10.5px;font-weight:600;text-decoration:none;">📎 소방청 피난안내도 자료 →</a></div>
     <div class="ci-tags"><span class="ctag ctag-idx">지표 13</span></div></div>
   </div>
 
@@ -841,6 +847,10 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">감염관리 — 비품소독·분기 전문소독·식품위생</div>
     <div class="ci-sub"><strong>확인:</strong> 간호비품 소독 및 청결 관리 / 분기별 1회 이상 전문소독 실시·증명서 보관 / 냉장 5℃↓·냉동 -18℃↓ 유지</div>
+    <div class="ci-sub" style="margin-top:5px;display:flex;gap:8px;flex-wrap:wrap;">
+      <button onclick="downloadFile('infection')" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#EEF6F2;border:1.5px solid #1A9B6C;border-radius:6px;font-family:'Noto Sans KR',sans-serif;font-size:10px;font-weight:700;color:#1A9B6C;cursor:pointer;">📄 기관 자체 매뉴얼 다운로드</button>
+      <a href="https://www.carefor.co.kr/cs/view_pds.php?calmgno=44532" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#EEF6F2;border:1.5px solid #1A9B6C;border-radius:6px;font-size:10px;font-weight:700;color:#1A9B6C;text-decoration:none;">🔗 공단 공식 매뉴얼 (2023)</a>
+    </div>
     <div class="ci-tags"><span class="ctag ctag-idx">지표 16</span><span class="ctag ctag-new">★신설(감염병)</span></div></div>
   </div>
 
@@ -855,6 +865,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">직원인권 포스터 — 직원 휴게실·탈의실 게시</div>
     <div class="ci-sub"><strong>확인:</strong> 직원 인권침해 대응 포스터 게시 / 고충처리함·고충처리지침·고충처리대장 비치</div>
+    <div class="ci-sub" style="margin-top:4px;"><a href="https://www.nhis.or.kr/nhis/policy/wbhada01400m01.do" target="_blank" rel="noopener" style="color:#1A9B6C;font-size:10.5px;font-weight:600;text-decoration:none;">📎 건강보험공단 고충처리 관련 자료 →</a></div>
     <div class="ci-tags"><span class="ctag ctag-idx">지표 7·8</span></div></div>
   </div>
 
@@ -883,6 +894,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#0F1117;color:#F0F2FF;font
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">재난대응 매뉴얼·훈련 — 반기 1회 이상 실시</div>
     <div class="ci-sub"><strong>확인:</strong> 재난상황 대응 매뉴얼 비치 / 반기 1회 이상 재난대응훈련 실시 (수급자·직원 포함) / 훈련 결과 기록</div>
+    <div class="ci-sub" style="margin-top:4px;"><a href="https://www.nfds.go.kr/bbs/selectBbsList.do?bbs=B13" target="_blank" rel="noopener" style="color:#1A9B6C;font-size:10.5px;font-weight:600;text-decoration:none;">📎 소방청 재난대응 매뉴얼 다운로드 →</a></div>
     <div class="ci-tags"><span class="ctag ctag-idx">지표 11</span></div></div>
   </div>
 </div>
@@ -1102,19 +1114,19 @@ setTimeout(clLoad, 150);
 <div class="tab-panel" id="panel-mock">
 <style>
 .mock-wrap{max-width:860px;margin:0 auto;padding:16px 16px 80px;}
-.mock-header{background:#1A1D27;border:1px solid #2D3148;border-radius:12px;padding:16px;margin-bottom:16px;}
+.mock-header{background:#FFFFFF;border:1px solid #D1E8E2;border-radius:12px;padding:16px;margin-bottom:16px;}
 .mock-header-title{font-size:15px;font-weight:900;color:#F0F2FF;margin-bottom:4px;}
-.mock-header-sub{font-size:11px;color:#7B83B0;}
+.mock-header-sub{font-size:11px;color:#5A7A6E;}
 
 /* 모의점수 고정바 */
 .mock-sticky{
   position:sticky;top:0;z-index:100;
-  background:#1A1D27;border-bottom:1px solid #2D3148;
+  background:#FFFFFF;border-bottom:1px solid #D1E8E2;
   padding:10px 16px;
 }
 .ms-top{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
 .ms-score{font-size:20px;font-weight:900;color:#4F8EF7;}
-.ms-grade{padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700;background:#2D3148;color:#7B83B0;transition:all .3s;}
+.ms-grade{padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700;background:#2D3148;color:#5A7A6E;transition:all .3s;}
 .ms-track{height:8px;background:#2D3148;border-radius:99px;overflow:hidden;}
 .ms-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#3B82F6,#4B9D79);width:0%;transition:width .4s;}
 
@@ -1122,20 +1134,20 @@ setTimeout(clLoad, 150);
 .mock-cat{margin-bottom:4px;}
 .mock-cat-hd{
   padding:10px 0 6px;
-  font-size:11px;font-weight:700;letter-spacing:.8px;color:#7B83B0;
-  display:flex;align-items:center;gap:8px;border-bottom:1px solid #2D3148;margin-bottom:4px;
+  font-size:11px;font-weight:700;letter-spacing:.8px;color:#5A7A6E;
+  display:flex;align-items:center;gap:8px;border-bottom:1px solid #D1E8E2;margin-bottom:4px;
 }
 .mock-cat-hd .mcn{flex:1;}
 .mock-cat-score{font-size:11px;color:#4B9D79;font-weight:700;}
-.mock-cat-badge{font-size:10px;color:#7B83B0;background:#22263A;padding:2px 6px;border-radius:4px;}
+.mock-cat-badge{font-size:10px;color:#5A7A6E;background:#EEF6F2;padding:2px 6px;border-radius:4px;}
 
 /* 지표 행 */
 .mock-row{
-  background:#1A1D27;border:1px solid #2D3148;border-radius:8px;
+  background:#EEF6F2;border:1px solid #D1E8E2;border-radius:8px;
   margin-bottom:6px;padding:10px 12px;
 }
 .mock-row-top{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;}
-.mr-num{font-size:10px;color:#7B83B0;min-width:44px;padding-top:1px;}
+.mr-num{font-size:10px;color:#5A7A6E;min-width:44px;padding-top:1px;}
 .mr-name{font-size:13px;font-weight:600;color:#F0F2FF;flex:1;line-height:1.4;}
 .mr-pts{font-size:11px;color:#4F8EF7;font-weight:700;white-space:nowrap;padding-top:1px;}
 .mr-new{font-size:9px;background:rgba(248,113,113,.15);color:#F87171;border:1px solid rgba(248,113,113,.3);padding:1px 5px;border-radius:3px;white-space:nowrap;margin-top:1px;}
@@ -1144,7 +1156,7 @@ setTimeout(clLoad, 150);
 .mock-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
 .mock-btn{
   padding:6px 4px;border-radius:6px;border:1.5px solid #2D3148;
-  background:none;color:#7B83B0;font-size:11px;font-weight:600;
+  background:none;color:#5A7A6E;font-size:11px;font-weight:600;
   cursor:pointer;font-family:'Noto Sans KR',sans-serif;
   transition:all .15s;text-align:center;line-height:1.3;
 }
@@ -1158,14 +1170,14 @@ setTimeout(clLoad, 150);
 
 /* 결과 카드 */
 .mock-result{
-  background:#1A1D27;border:1px solid #2D3148;border-radius:12px;
+  background:#FFFFFF;border:1px solid #D1E8E2;border-radius:12px;
   padding:16px;margin-bottom:16px;
 }
 .mr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;}
-.mr-item{background:#22263A;border-radius:8px;padding:10px 12px;}
-.mr-item-cat{font-size:10px;color:#7B83B0;margin-bottom:2px;}
+.mr-item{background:#EEF6F2;border-radius:8px;padding:10px 12px;}
+.mr-item-cat{font-size:10px;color:#5A7A6E;margin-bottom:2px;}
 .mr-item-val{font-size:15px;font-weight:900;color:#F0F2FF;}
-.mr-item-val span{font-size:11px;font-weight:400;color:#7B83B0;}
+.mr-item-val span{font-size:11px;font-weight:400;color:#5A7A6E;}
 .mr-item-pct{font-size:10px;margin-top:2px;}
 
 .grade-big{
@@ -1175,13 +1187,13 @@ setTimeout(clLoad, 150);
   margin-bottom:10px;
 }
 .grade-big-val{font-size:32px;font-weight:900;}
-.grade-big-name{font-size:14px;color:#7B83B0;margin-top:4px;}
+.grade-big-name{font-size:14px;color:#5A7A6E;margin-top:4px;}
 .grade-big-score{font-size:12px;color:#A8B0C8;margin-top:6px;}
 
 /* 등급 기준표 */
 .grade-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:8px;}
-.grade-table th{background:#22263A;color:#7B83B0;padding:6px 8px;text-align:center;font-weight:700;}
-.grade-table td{padding:6px 8px;text-align:center;border-bottom:1px solid #2D3148;color:#A8B0C8;}
+.grade-table th{background:#EEF6F2;color:#5A7A6E;padding:6px 8px;text-align:center;font-weight:700;}
+.grade-table td{padding:6px 8px;text-align:center;border-bottom:1px solid #D1E8E2;color:#A8B0C8;}
 .grade-table tr:last-child td{border-bottom:none;}
 .gt-a{color:#4B9D79!important;font-weight:700;}
 .gt-b{color:#4F8EF7!important;font-weight:700;}
@@ -1192,15 +1204,15 @@ setTimeout(clLoad, 150);
 /* 초기화 버튼 */
 .mock-reset-btn{
   width:100%;padding:10px;border-radius:8px;
-  background:none;border:1px solid #2D3148;color:#7B83B0;
+  background:none;border:1px solid #D1E8E2;color:#5A7A6E;
   font-size:12px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;
   margin-top:8px;transition:all .15s;
 }
 .mock-reset-btn:hover{border-color:#F87171;color:#F87171;}
 
 .warn-note{
-  padding:8px 10px;border-radius:6px;margin-top:8px;font-size:10px;color:#7B83B0;line-height:1.6;
-  background:#22263A;border:1px solid #2D3148;
+  padding:8px 10px;border-radius:6px;margin-top:8px;font-size:10px;color:#5A7A6E;line-height:1.6;
+  background:#EEF6F2;border:1px solid #D1E8E2;
 }
 </style>
 
@@ -1210,7 +1222,7 @@ setTimeout(clLoad, 150);
     <span style="font-size:12px;font-weight:700;color:#A8B0C8;">📋 모의평가지</span>
     <span class="ms-score" id="ms-score">0 / 100점</span>
     <span class="ms-grade" id="ms-grade">-</span>
-    <span style="font-size:11px;color:#7B83B0;margin-left:auto;" id="ms-cnt">0/36 선택</span>
+    <span style="font-size:11px;color:#5A7A6E;margin-left:auto;" id="ms-cnt">0/36 선택</span>
   </div>
   <div class="ms-track"><div class="ms-fill" id="ms-fill"></div></div>
 </div>
@@ -1219,18 +1231,18 @@ setTimeout(clLoad, 150);
 
 <!-- 결과 카드 -->
 <div class="mock-result">
-  <div style="font-size:12px;font-weight:700;color:#7B83B0;margin-bottom:10px;">📊 영역별 점수</div>
+  <div style="font-size:12px;font-weight:700;color:#5A7A6E;margin-bottom:10px;">📊 영역별 점수</div>
   <div class="mr-grid">
-    <div class="mr-item"><div class="mr-item-cat">기관운영</div><div class="mr-item-val" id="mv-admin">0<span>/34점</span></div><div class="mr-item-pct" id="mp-admin" style="color:#7B83B0;">0%</div></div>
-    <div class="mr-item"><div class="mr-item-cat">환경·안전</div><div class="mr-item-val" id="mv-env">0<span>/21점</span></div><div class="mr-item-pct" id="mp-env" style="color:#7B83B0;">0%</div></div>
-    <div class="mr-item"><div class="mr-item-cat">수급자권리</div><div class="mr-item-val" id="mv-rights">0<span>/10점</span></div><div class="mr-item-pct" id="mp-rights" style="color:#7B83B0;">0%</div></div>
-    <div class="mr-item"><div class="mr-item-cat">급여제공과정</div><div class="mr-item-val" id="mv-service">0<span>/26점</span></div><div class="mr-item-pct" id="mp-service" style="color:#7B83B0;">0%</div></div>
-    <div class="mr-item"><div class="mr-item-cat">급여제공결과</div><div class="mr-item-val" id="mv-result">0<span>/9점</span></div><div class="mr-item-pct" id="mp-result" style="color:#7B83B0;">0%</div></div>
+    <div class="mr-item"><div class="mr-item-cat">기관운영</div><div class="mr-item-val" id="mv-admin">0<span>/34점</span></div><div class="mr-item-pct" id="mp-admin" style="color:#5A7A6E;">0%</div></div>
+    <div class="mr-item"><div class="mr-item-cat">환경·안전</div><div class="mr-item-val" id="mv-env">0<span>/21점</span></div><div class="mr-item-pct" id="mp-env" style="color:#5A7A6E;">0%</div></div>
+    <div class="mr-item"><div class="mr-item-cat">수급자권리</div><div class="mr-item-val" id="mv-rights">0<span>/10점</span></div><div class="mr-item-pct" id="mp-rights" style="color:#5A7A6E;">0%</div></div>
+    <div class="mr-item"><div class="mr-item-cat">급여제공과정</div><div class="mr-item-val" id="mv-service">0<span>/26점</span></div><div class="mr-item-pct" id="mp-service" style="color:#5A7A6E;">0%</div></div>
+    <div class="mr-item"><div class="mr-item-cat">급여제공결과</div><div class="mr-item-val" id="mv-result">0<span>/9점</span></div><div class="mr-item-pct" id="mp-result" style="color:#5A7A6E;">0%</div></div>
     <div class="mr-item"><div class="mr-item-cat">선택 완료</div><div class="mr-item-val" id="mv-done">0<span>/36개</span></div></div>
   </div>
 
   <div class="grade-big">
-    <div class="grade-big-val" id="mg-grade" style="color:#7B83B0;">-</div>
+    <div class="grade-big-val" id="mg-grade" style="color:#5A7A6E;">-</div>
     <div class="grade-big-name" id="mg-name">지표를 선택하면 등급이 계산됩니다</div>
     <div class="grade-big-score" id="mg-score"></div>
     <div id="mg-warn" style="display:none;margin-top:8px;font-size:11px;color:#F87171;"></div>
@@ -1260,10 +1272,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 1</span><span class="mr-name">운영규정</span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         운영규정을 직원이 열람 가능한 장소에 비치하고 내용이 충실하면 우수. 11개 항목(이용정원·계약·이용료·서비스·배상·개정·인력관리·보수·복리후생·안전보건·고충처리) 모두 포함 시 우수.
       </div>
     </details>
@@ -1279,10 +1291,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 2</span><span class="mr-name">사업계획 <span class="mr-new">★신설</span></span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         연도별 사업계획이 수립되어 있으면 우수. 기관운영·서비스제공·직원관리 3개 영역 포함 필수. ★2026 신설.
       </div>
     </details>
@@ -1298,10 +1310,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 3</span><span class="mr-name">인력기준</span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         인력기준을 준수하면 우수. 수급자 수 대비 요양보호사·사회복지사·간호사 배치 기준 충족 여부.
       </div>
     </details>
@@ -1314,13 +1326,13 @@ setTimeout(clLoad, 150);
   </div>
 
   <div class="mock-row" data-cat="admin" data-pts="1">
-    <div class="mock-row-top"><span class="mr-num">지표 4</span><span class="mr-name">경력직 <span style="font-size:10px;color:#7B83B0;">(전산산출)</span></span><span class="mr-pts">1점</span></div>
+    <div class="mock-row-top"><span class="mr-num">지표 4</span><span class="mr-name">경력직 <span style="font-size:10px;color:#5A7A6E;">(전산산출)</span></span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         2년 이상 운영기관: 24개월↑ 근무 직원 비율 50%↑→우수 / 30~50%→양호 / 20~30%→보통. 전산 자동 산출.
       </div>
     </details>
@@ -1336,10 +1348,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 5</span><span class="mr-name">보수교육 <span class="mr-new">★신설</span></span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         요양보호사 보수교육 대상자 전원 이수 시 우수. ★2026 신설.
       </div>
     </details>
@@ -1355,10 +1367,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 6</span><span class="mr-name">직원교육</span><span class="mr-pts">2점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         12개 지침 비치+운영규정 교육 실시+지침 교육 실시 및 직원 내용 숙지 모두 충족 시 우수. 직원 면담으로 확인.
       </div>
     </details>
@@ -1374,10 +1386,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 7</span><span class="mr-name">직원인권보호</span><span class="mr-pts">2점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         인권보호 기관 노력+수급자(보호자) 연 1회 이상 폭언예방 안내+직원 인권침해대응지침 숙지 모두 시 우수.
       </div>
     </details>
@@ -1393,10 +1405,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 8</span><span class="mr-name">직원권익향상</span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         5대 보험 완납+가산금 처우개선 사용+분기별 복지+고충처리 숙지+퇴직금 운영 모두 충족 시 우수.
       </div>
     </details>
@@ -1412,10 +1424,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 15</span><span class="mr-name">건강검진</span><span class="mr-pts">3점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         전 직원 결핵검진 포함 건강검진 매년 실시. 전원 충족 시 우수.
       </div>
     </details>
@@ -1431,10 +1443,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 17</span><span class="mr-name">소통노력</span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         분기별 1회 이상 상담+연 1회 이상 급여 반영+월 1회 이상 정보 제공(온·오프라인) 모두 충족 시 우수.
       </div>
     </details>
@@ -1450,10 +1462,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 18</span><span class="mr-name">정보제공</span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         노인장기요양보험 홈페이지 정보 게시+변경 시 수정 충족 시 우수.
       </div>
     </details>
@@ -1469,10 +1481,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 14</span><span class="mr-name">질향상 노력</span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         인건비 지출비율 준수+제도발전 사업 참여+경영실태조사 자료 제출 모두 충족 시 우수.
       </div>
     </details>
@@ -1488,10 +1500,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 19</span><span class="mr-name">노인인권보호</span><span class="mr-pts">6점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         전 직원 인권교육 반기 1회+직원 내용 숙지+학대예방 활동+수급자(보호자) 8가지 지침 설명+수급자 존중서비스 모두 충족 시 우수.
       </div>
     </details>
@@ -1507,10 +1519,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 25</span><span class="mr-name">수급자상담관리</span><span class="mr-pts">2점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         분기별 상담+결과 반영 확인 모두 충족 시 우수.
       </div>
     </details>
@@ -1526,10 +1538,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 26</span><span class="mr-name">급여제공역량관리</span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         직원 역량 향상 교육·슈퍼비전 등 실시 기록 충족 시 우수.
       </div>
     </details>
@@ -1554,10 +1566,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 9</span><span class="mr-name">안전하고 쾌적한 환경 <span class="mr-new">★신설</span></span><span class="mr-pts">2점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         안전한 실내 환경+환기 수칙 이행·일일 점검표 비치+쾌적한 환경+개인정보 보관함 잠금 모두 충족 시 우수. ★신설(유리문 충돌방지 표시 150cm 이하, 환기 일일 점검표).
       </div>
     </details>
@@ -1573,10 +1585,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 10</span><span class="mr-name">낙상예방 환경 <span class="mr-new">★신설</span></span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         안전손잡이+미끄럼방지·낙상표지+턱 제거+직원 고위험 기준 숙지+수급자 이동도움·보조도구 안내+직원 이동방법 숙지 모두 충족 시 우수. ★신설(직원 숙지, 표지 부착).
       </div>
     </details>
@@ -1592,10 +1604,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 11</span><span class="mr-name">재난상황대응</span><span class="mr-pts">2점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         매뉴얼+반기별 훈련+직원 대응방법·소화기 숙지 모두 충족 시 우수.
       </div>
     </details>
@@ -1611,10 +1623,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 12</span><span class="mr-name">응급상황대응</span><span class="mr-pts">3점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         매뉴얼·비상연락체계+알림장치 정상작동+직원 응급상황 종류 숙지+각 상황별 대처 가능 모두 충족 시 우수.
       </div>
     </details>
@@ -1630,10 +1642,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 13</span><span class="mr-name">시설안전</span><span class="mr-pts">2점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         소화설비·경보설비 매월 점검+화재위험 요인 제거+피난안내도 부착 모두 충족 시 우수.
       </div>
     </details>
@@ -1649,10 +1661,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 16</span><span class="mr-name">감염관리 <span class="mr-new">★신설(감염병)</span></span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         비품소독·청결관리+식품위생관리+분기별 전문소독+감염병 대응체계 모두 충족 시 우수. ★신설(감염병관리).
       </div>
     </details>
@@ -1668,10 +1680,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 12</span><span class="mr-name">개인정보보호</span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         매뉴얼·비상연락체계+알림장치 정상작동+직원 응급상황 종류 숙지+각 상황별 대처 가능 모두 충족 시 우수.
       </div>
     </details>
@@ -1687,10 +1699,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 21</span><span class="mr-name">위험도평가 (낙상·욕창·인지)</span><span class="mr-pts">6점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         전 수급자 낙상·욕창·인지기능 평가 각 반기 1회 이상 모두 충족 시 우수. 50% 미만 충족 시 미흡.
       </div>
     </details>
@@ -1715,10 +1727,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 27</span><span class="mr-name">가족과의 소통</span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         수급자 가족(보호자)과 정기적 소통 노력 기록 충족 시 우수.
       </div>
     </details>
@@ -1734,10 +1746,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 28</span><span class="mr-name">수급자 알권리 보장</span><span class="mr-pts">3점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         기관 내 정보 게시+홈페이지 정보 게시+변경 수정 모두 충족 시 우수.
       </div>
     </details>
@@ -1753,10 +1765,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 29</span><span class="mr-name">계약체결 및 통보</span><span class="mr-pts">3점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         이용계획서 반영 계약+급여 시작일까지 공단 통보+서명 확인 모두 충족 시 우수.
       </div>
     </details>
@@ -1772,10 +1784,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 30·40</span><span class="mr-name">외부기관연계·연계기록지</span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         진료 내용 기록+퇴소·전원 시 연계기록지 작성·제공·대장 기록 충족 시 우수.
       </div>
     </details>
@@ -1800,10 +1812,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 20</span><span class="mr-name">욕구사정 <span class="mr-new">★신설(구강·기피식품)</span></span><span class="mr-pts">2점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         전 수급자 욕구사정 연 1회 이상+구강상태·기피식품 파악 기재(★신설)+10개 영역 판단근거 작성 모두 충족 시 우수.
       </div>
     </details>
@@ -1819,10 +1831,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 22</span><span class="mr-name">급여제공계획 <span class="mr-new">★신설(기능회복훈련)</span></span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         욕구사정·위험도평가 반영 계획 수립+서명+공단 통보+기능회복훈련 포함(★신설)+변경사유 기록 모두 충족 시 우수.
       </div>
     </details>
@@ -1838,10 +1850,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 32</span><span class="mr-name">급여제공 적절성</span><span class="mr-pts">3점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         급여제공기록지 필수사항 기재+변경 시 사유 기록+주 1회 이상 상태변화 기록 모두 충족 시 우수.
       </div>
     </details>
@@ -1857,10 +1869,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 33</span><span class="mr-name">욕구반영</span><span class="mr-pts">3점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         수급자 개별 욕구 반영 급여 제공+급여 제공 전 내용 설명 모두 충족 시 우수.
       </div>
     </details>
@@ -1876,10 +1888,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 23</span><span class="mr-name">투약·약품관리</span><span class="mr-pts">2점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         약품보관함 잠금+분기별 사용기한 점검+수급자별 적정 투약 모두 충족 시 우수.
       </div>
     </details>
@@ -1895,10 +1907,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 24</span><span class="mr-name">신체기능 프로그램</span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         연간계획 수립+주 3회 이상 실시+반기별 의견 수렴·연 1회 이상 반영 모두 충족 시 우수.
       </div>
     </details>
@@ -1914,10 +1926,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 25</span><span class="mr-name">인지기능 프로그램</span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         분기별 상담+결과 반영 확인 모두 충족 시 우수.
       </div>
     </details>
@@ -1933,10 +1945,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 27</span><span class="mr-name">기능회복훈련 <span class="mr-new">★2026 신설</span></span><span class="mr-pts">3점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         수급자 가족(보호자)과 정기적 소통 노력 기록 충족 시 우수.
       </div>
     </details>
@@ -1952,10 +1964,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 26</span><span class="mr-name">사회적응 프로그램</span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         직원 역량 향상 교육·슈퍼비전 등 실시 기록 충족 시 우수.
       </div>
     </details>
@@ -1971,10 +1983,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 28</span><span class="mr-name">이동서비스수칙</span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         기관 내 정보 게시+홈페이지 정보 게시+변경 수정 모두 충족 시 우수.
       </div>
     </details>
@@ -1990,10 +2002,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 29</span><span class="mr-name">사례관리</span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         이용계획서 반영 계약+급여 시작일까지 공단 통보+서명 확인 모두 충족 시 우수.
       </div>
     </details>
@@ -2018,10 +2030,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 34</span><span class="mr-name">급여제공결과평가 <span class="mr-new">★2026 신설</span></span><span class="mr-pts">4점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         반기별 1회 이상 정기 평가+30일 내 계획 재작성+기록지 월 1회 이상 수급자 제공+주 1회 이상 상태변화 기록 모두 충족 시 우수. ★2026 신설.
       </div>
     </details>
@@ -2037,10 +2049,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 32</span><span class="mr-name">백신접종률 <span class="mr-new">★2026 신설</span></span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         급여제공기록지 필수사항 기재+변경 시 사유 기록+주 1회 이상 상태변화 기록 모두 충족 시 우수.
       </div>
     </details>
@@ -2056,10 +2068,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 35</span><span class="mr-name">제도안내 (연명의료) <span class="mr-new">★2026 신설</span></span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         보호자(수급자) 대상 연명의료결정 제도 안내 기록 확인 시 우수. ★2026 신설.
       </div>
     </details>
@@ -2075,10 +2087,10 @@ setTimeout(clLoad, 150);
     <div class="mock-row-top"><span class="mr-num">지표 33·36</span><span class="mr-name">급여만족도 (식사·프로그램·이동) <span class="mr-new">★2026 신설</span></span><span class="mr-pts">3점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         식사 만족도 반기 1회 이상 파악+월 1회 이상 반영+프로그램 만족도+이동서비스 만족도 향상 노력 모두 시 우수.
       </div>
     </details>
@@ -2091,13 +2103,13 @@ setTimeout(clLoad, 150);
   </div>
 
   <div class="mock-row" data-cat="result" data-pts="1">
-    <div class="mock-row-top"><span class="mr-num">지표 31</span><span class="mr-name">등급현황 <span style="font-size:10px;color:#7B83B0;">(전산산출)</span></span><span class="mr-pts">1점</span></div>
+    <div class="mock-row-top"><span class="mr-num">지표 31</span><span class="mr-name">등급현황 <span style="font-size:10px;color:#5A7A6E;">(전산산출)</span></span><span class="mr-pts">1점</span></div>
     
     <details style="margin-top:6px;">
-      <summary style="font-size:10px;color:#7B83B0;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
+      <summary style="font-size:10px;color:#5A7A6E;cursor:pointer;list-style:none;display:flex;align-items:center;gap:4px;">
         <span style="font-size:8px;">▶</span> 척도 기준 보기
       </summary>
-      <div style="margin-top:6px;padding:8px 10px;background:#22263A;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
+      <div style="margin-top:6px;padding:8px 10px;background:#EEF6F2;border-radius:6px;font-size:10px;color:#A8B0C8;line-height:1.7;border-left:2px solid #2D3148;">
         등급 유지·호전율 95%↑→우수 / 90~95%→양호 / 80~90%→보통 / 80%↓→미흡. 전산 자동 산출.
       </div>
     </details>
@@ -2279,9 +2291,9 @@ setTimeout(mockLoad, 100);
   <div class="edu-layout">
     <!-- 사이드바 -->
     <div class="edu-sidebar">
-      <div style="padding:0 18px 16px;border-bottom:1px solid #2D3148;margin-bottom:12px;">
+      <div style="padding:0 18px 16px;border-bottom:1px solid #D1E8E2;margin-bottom:12px;">
         <div class="lg-main">데이음 교육자료</div>
-        <div style="font-size:10px;color:#7B83B0;margin-top:2px;">2026 평가 대비 · 직원 교육</div>
+        <div style="font-size:10px;color:#5A7A6E;margin-top:2px;">2026 평가 대비 · 직원 교육</div>
       </div>
       
   <div class="sidebar-logo">
@@ -2290,20 +2302,20 @@ setTimeout(mockLoad, 100);
   </div>
   <div class="nav-group">전 직원 공통</div>
   <a class="nav-item active" href="#s01"><span class="ni">⭐</span>신설 지표<span class="nb">NEW</span></a>
-  <a class="nav-item" href="#s02"><span class="ni">🚨</span>응급상황 대응</a>
-  <a class="nav-item" href="#s03"><span class="ni">⚠️</span>낙상 예방<span class="nb">NEW</span></a>
+  <a class="nav-item" href="#s02"><span class="ni">🚨</span>응급상황</a>
+  <a class="nav-item" href="#s03"><span class="ni">⚠️</span>낙상 예방<span class="nb">N</span></a>
   <a class="nav-item" href="#s04"><span class="ni">🔥</span>재난·화재</a>
-  <a class="nav-item" href="#s05"><span class="ni">👴</span>노인인권 보호</a>
-  <a class="nav-item" href="#s06"><span class="ni">🛡️</span>직원인권·고충처리</a>
-  <a class="nav-item" href="#s07"><span class="ni">🚌</span>이동서비스 수칙</a>
+  <a class="nav-item" href="#s05"><span class="ni">👴</span>노인인권</a>
+  <a class="nav-item" href="#s06"><span class="ni">🛡️</span>직원인권</a>
+  <a class="nav-item" href="#s07"><span class="ni">🚌</span>이동서비스</a>
   <a class="nav-item" href="#s13"><span class="ni">🙌</span>감염관리</a>
-  <a class="nav-item" href="#s14"><span class="ni">💊</span>투약·약품관리</a>
-  <a class="nav-item" href="#s15"><span class="ni">📋</span>운영규정 11개</a>
-  <a class="nav-item" href="#s16"><span class="ni">👴</span>수급자 8가지 지침</a>
+  <a class="nav-item" href="#s14"><span class="ni">💊</span>투약·약품</a>
+  <a class="nav-item" href="#s15"><span class="ni">📋</span>운영규정</a>
+  <a class="nav-item" href="#s16"><span class="ni">👴</span>수급자지침</a>
   <a class="nav-item" href="#s17"><span class="ni">🗂</span>사례관리</a>
   <div class="nav-group" style="margin-top:6px;">요양보호사</div>
-  <a class="nav-item" href="#s08"><span class="ni">💪</span>기능회복훈련<span class="nb">NEW</span></a>
-  <a class="nav-item" href="#s09"><span class="ni">📖</span>급여제공지침 12개</a>
+  <a class="nav-item" href="#s08"><span class="ni">💪</span>기능회복<span class="nb">N</span></a>
+  <a class="nav-item" href="#s09"><span class="ni">📖</span>급여제공지침</a>
 
     </div>
 
@@ -2669,6 +2681,27 @@ setTimeout(mockLoad, 100);
       <div class="g-card"><div class="g-num">전문소독 — 지표 16-2</div><div class="g-title">분기 1회 이상</div><div class="g-body" style="color:var(--muted);">방역업체 계약·소독증명서 보관</div></div>
       <div class="g-card"><div class="g-num">감염병 대응 — 지표 16-3</div><div class="g-title">매뉴얼 위치 파악</div><div class="g-body" style="color:var(--muted);">격리→신고→소독 순서 숙지</div></div>
       <div class="g-card"><div class="g-num">주방·식당 — 지표 16-4</div><div class="g-title">식품 위생</div><div class="g-body" style="color:var(--muted);">냉장 5℃이하 / 냉동 -18℃이하</div></div>
+    </div>
+
+    <!-- 감염병 대책 매뉴얼 자료 제공 -->
+    <div class="card" style="background:#EEF6F2;border:2px solid #1A9B6C;">
+      <div class="card-head green" style="background:rgba(26,155,108,.15);border-bottom:1px solid #D1E8E2;">
+        <span class="chi">📋</span>
+        <span class="cht" style="color:#1A9B6C;">감염병 대책 매뉴얼 — 2종 제공</span>
+        <span class="chi-idx" style="color:#1A9B6C;">평가 필수 비치</span>
+      </div>
+      <div class="card-body">
+        <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">평가 시 <strong style="color:var(--text);">기관 자체 작성 매뉴얼</strong>과 <strong style="color:var(--text);">공단 표준 매뉴얼</strong> 2종 모두 비치되어 있어야 합니다.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button onclick="downloadFile('infection')" style="display:inline-flex;align-items:center;gap:7px;padding:10px 18px;background:linear-gradient(135deg,#1A9B6C,#0D9488);color:white;border:none;border-radius:10px;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer;">
+            📄 기관 자체 매뉴얼 다운로드
+          </button>
+          <a href="https://www.carefor.co.kr/cs/view_pds.php?calmgno=44532" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;padding:10px 18px;background:#FFFFFF;color:#1A9B6C;border:2px solid #1A9B6C;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;">
+            🔗 공단 공식 매뉴얼 (2023, 케어포)
+          </a>
+        </div>
+        <p style="font-size:11px;color:var(--muted);margin-top:10px;">※ 공단 공식 매뉴얼: 국민건강보험공단 「2023 장기요양기관 안전·감염관리 매뉴얼 2권 — 감염병 예방 및 관리」</p>
+      </div>
     </div>
   </div>
 
@@ -3037,8 +3070,10 @@ window.addEventListener('load', loadState);
     </div>
     <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
     <div class="quiz-body" id="quiz-body">
-      <div class="q-category" id="q-cat"></div>
-      <div class="q-text" id="q-text"></div>
+      <div class="q-card">
+        <div class="q-category" id="q-cat"></div>
+        <div class="q-text" id="q-text"></div>
+      </div>
       <div class="options" id="options-wrap"></div>
       <div class="answer-box" id="answer-box">
         <div class="answer-result" id="answer-result"></div>
@@ -3070,12 +3105,12 @@ window.addEventListener('load', loadState);
     <div class="card">
       <div class="card-title">📋 투약 6가지 원칙 (Right 6)</div>
       <table style="width:100%;border-collapse:collapse;font-size:12px;margin-top:6px;">
-        <tr style="background:#22263A;"><th style="padding:7px 10px;text-align:left;color:#A8B0C8;width:38%;">원칙</th><th style="padding:7px 10px;text-align:left;color:#A8B0C8;">내용</th></tr>
-        <tr style="border-bottom:1px solid #2D3148;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">① 정확한 수급자</td><td style="padding:7px 10px;color:#A8B0C8;">처방받은 해당 수급자에게만</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;background:#1e2235;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">② 정확한 약물</td><td style="padding:7px 10px;color:#A8B0C8;">처방된 약물명 확인 후 투약</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">③ 정확한 용량</td><td style="padding:7px 10px;color:#A8B0C8;">처방된 용량 정확히 준수</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;background:#1e2235;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">④ 정확한 경로</td><td style="padding:7px 10px;color:#A8B0C8;">경구·외용 등 투약 방법 확인</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">⑤ 정확한 시간</td><td style="padding:7px 10px;color:#A8B0C8;">식전·식후 등 처방 시간 준수</td></tr>
+        <tr style="background:#EEF6F2;"><th style="padding:7px 10px;text-align:left;color:#A8B0C8;width:38%;">원칙</th><th style="padding:7px 10px;text-align:left;color:#A8B0C8;">내용</th></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">① 정확한 수급자</td><td style="padding:7px 10px;color:#A8B0C8;">처방받은 해당 수급자에게만</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">② 정확한 약물</td><td style="padding:7px 10px;color:#A8B0C8;">처방된 약물명 확인 후 투약</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">③ 정확한 용량</td><td style="padding:7px 10px;color:#A8B0C8;">처방된 용량 정확히 준수</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">④ 정확한 경로</td><td style="padding:7px 10px;color:#A8B0C8;">경구·외용 등 투약 방법 확인</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">⑤ 정확한 시간</td><td style="padding:7px 10px;color:#A8B0C8;">식전·식후 등 처방 시간 준수</td></tr>
         <tr><td style="padding:7px 10px;color:#4F8EF7;font-weight:700;">⑥ 정확한 기록</td><td style="padding:7px 10px;color:#A8B0C8;">투약 후 기록지에 서명·기재</td></tr>
       </table>
     </div>
@@ -3097,17 +3132,17 @@ window.addEventListener('load', loadState);
     <div class="card">
       <div class="card-title">📌 운영규정 필수 11개 항목</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:8px;">
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">① </span>이용정원에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">② </span>계약에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">③ </span>이용료에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">④ </span>서비스에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑤ </span>배상책임에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑥ </span>개정에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑦ </span>인력관리에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑧ </span>보수에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑨ </span>복리후생에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑩ </span>안전보건에 관한 사항</div>
-        <div style="background:#22263A;border-radius:6px;padding:8px 10px;font-size:11px;grid-column:span 2;"><span style="color:#4F8EF7;font-weight:700;">⑪ </span>고충처리에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">① </span>이용정원에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">② </span>계약에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">③ </span>이용료에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">④ </span>서비스에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑤ </span>배상책임에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑥ </span>개정에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑦ </span>인력관리에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑧ </span>보수에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑨ </span>복리후생에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#4F8EF7;font-weight:700;">⑩ </span>안전보건에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;grid-column:span 2;"><span style="color:#4F8EF7;font-weight:700;">⑪ </span>고충처리에 관한 사항</div>
       </div>
     </div>
     <div class="qa">
@@ -3124,14 +3159,14 @@ window.addEventListener('load', loadState);
     <div class="card">
       <div class="card-title">📌 8가지 지침 핵심 내용</div>
       <table style="width:100%;border-collapse:collapse;font-size:11px;margin-top:6px;">
-        <tr style="background:#22263A;"><th style="padding:6px 8px;text-align:center;color:#A8B0C8;width:6%;">번호</th><th style="padding:6px 8px;text-align:left;color:#A8B0C8;width:28%;">지침명</th><th style="padding:6px 8px;text-align:left;color:#A8B0C8;">핵심 내용</th></tr>
-        <tr style="border-bottom:1px solid #2D3148;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">①</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">욕창 예방</td><td style="padding:6px 8px;color:#A8B0C8;">2시간 체위변경 / 피부 청결·건조 / 에어매트 활용</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">②</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">낙상 예방</td><td style="padding:6px 8px;color:#A8B0C8;">안전손잡이 / 미끄럼방지 / 보조기구 사용법</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">③</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">탈수 예방</td><td style="padding:6px 8px;color:#A8B0C8;">하루 1.5~2L 수분 / 갈증 없어도 규칙적 섭취</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">④</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">배변 관리</td><td style="padding:6px 8px;color:#A8B0C8;">규칙적 배변습관 / 식이섬유 / 충분한 수분</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">⑤</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">관절 구축 예방</td><td style="padding:6px 8px;color:#A8B0C8;">관절 범위 운동 / 정기적 스트레칭</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">⑥</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">치매 예방·관리</td><td style="padding:6px 8px;color:#A8B0C8;">인지활동 참여 / 규칙적 생활 / 사회적 교류</td></tr>
-        <tr style="border-bottom:1px solid #2D3148;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">⑦</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">감염 예방</td><td style="padding:6px 8px;color:#A8B0C8;">손씻기 6단계 / 마스크 / 기침예절 / 예방접종</td></tr>
+        <tr style="background:#EEF6F2;"><th style="padding:6px 8px;text-align:center;color:#A8B0C8;width:6%;">번호</th><th style="padding:6px 8px;text-align:left;color:#A8B0C8;width:28%;">지침명</th><th style="padding:6px 8px;text-align:left;color:#A8B0C8;">핵심 내용</th></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">①</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">욕창 예방</td><td style="padding:6px 8px;color:#A8B0C8;">2시간 체위변경 / 피부 청결·건조 / 에어매트 활용</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">②</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">낙상 예방</td><td style="padding:6px 8px;color:#A8B0C8;">안전손잡이 / 미끄럼방지 / 보조기구 사용법</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">③</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">탈수 예방</td><td style="padding:6px 8px;color:#A8B0C8;">하루 1.5~2L 수분 / 갈증 없어도 규칙적 섭취</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">④</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">배변 관리</td><td style="padding:6px 8px;color:#A8B0C8;">규칙적 배변습관 / 식이섬유 / 충분한 수분</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">⑤</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">관절 구축 예방</td><td style="padding:6px 8px;color:#A8B0C8;">관절 범위 운동 / 정기적 스트레칭</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">⑥</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">치매 예방·관리</td><td style="padding:6px 8px;color:#A8B0C8;">인지활동 참여 / 규칙적 생활 / 사회적 교류</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">⑦</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">감염 예방</td><td style="padding:6px 8px;color:#A8B0C8;">손씻기 6단계 / 마스크 / 기침예절 / 예방접종</td></tr>
         <tr><td style="padding:6px 8px;text-align:center;color:#4F8EF7;font-weight:700;">⑧</td><td style="padding:6px 8px;color:#F0F2FF;font-weight:600;">노인인권 보호</td><td style="padding:6px 8px;color:#A8B0C8;">학대 5유형 / 신고기관 1577-1389 / 자기결정권</td></tr>
       </table>
     </div>
@@ -3609,93 +3644,100 @@ window.goHome = goHome;
   .print-footer { margin-top: 18px; padding-top: 7px; border-top: 1px solid #E5E7EB; font-size: 7.5pt; color: #9CA3AF; text-align: center; }
    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
  }
-/* ── 퀴즈 CSS (격리) ── */
-#quiz-app-wrapper { 
-  :root{--bg:#0D0F14;--surface:#161922;--surface2:#1E2230;--border:#282D3E;--text:#F0F2FF;--muted:#6B7494;--blue:#5B9BF8;--green:#4ADE80;--red:#F87171;--yellow:#FCD34D;--purple:#A78BFA;--teal:#2DD4BF;}
+/* ── 퀴즈 CSS (격리·밝은 카드형) ── */
+#quiz-app-wrapper {
+  :root{--bg:#F5F9F8;--surface:#FFFFFF;--surface2:#EEF6F2;--border:#D1E8E2;--text:#1A2332;--muted:#5A7A6E;--blue:#1A9B6C;--green:#16A34A;--red:#DC2626;--yellow:#D97706;--purple:#7C3AED;--teal:#0D9488;}
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   html,body{height:100%;}
   body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;}
-  .app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
+  .app{max-width:520px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
 
-  /* 홈 */
-  #screen-home{padding:36px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;}
-  .home-logo{width:62px;height:62px;background:linear-gradient(135deg,#3B82F6,#8B5CF6);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:22px;box-shadow:0 0 30px rgba(59,130,246,.3);}
-  .home-title{font-size:21px;font-weight:900;margin-bottom:6px;}
+  /* 홈 화면 */
+  #screen-home{padding:32px 20px 80px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;}
+  .home-logo{width:68px;height:68px;background:linear-gradient(135deg,#1A9B6C,#0D9488);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:20px;box-shadow:0 4px 20px rgba(26,155,108,.25);}
+  .home-title{font-size:22px;font-weight:900;margin-bottom:6px;color:var(--text);}
   .home-title span{color:var(--blue);}
-  .home-sub{font-size:12.5px;color:var(--muted);margin-bottom:32px;}
-  .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;width:100%;margin-bottom:22px;}
-  .mode-card{background:var(--surface);border:1.5px solid var(--border);border-radius:13px;padding:16px 12px;cursor:pointer;transition:all .2s;text-align:center;}
-  .mode-card:hover,.mode-card.selected{border-color:var(--blue);background:rgba(91,155,248,.08);}
-  .mode-card .mc-icon{font-size:22px;margin-bottom:7px;}
-  .mode-card .mc-title{font-size:12.5px;font-weight:700;margin-bottom:2px;}
+  .home-sub{font-size:12.5px;color:var(--muted);margin-bottom:28px;}
+  .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin-bottom:20px;}
+  .mode-card{background:var(--surface);border:2px solid var(--border);border-radius:16px;padding:18px 12px;cursor:pointer;transition:all .2s;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .mode-card:hover,.mode-card.selected{border-color:var(--blue);background:rgba(26,155,108,.06);box-shadow:0 4px 16px rgba(26,155,108,.15);}
+  .mode-card .mc-icon{font-size:24px;margin-bottom:8px;}
+  .mode-card .mc-title{font-size:13px;font-weight:700;margin-bottom:2px;color:var(--text);}
   .mode-card .mc-sub{font-size:10.5px;color:var(--muted);}
   .mode-card.selected .mc-title{color:var(--blue);}
   .nb{display:inline-block;background:var(--red);color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:3px;vertical-align:middle;}
-  .start-btn{width:100%;padding:15px;background:linear-gradient(135deg,#3B82F6,#6366F1);color:white;border:none;border-radius:13px;font-family:'Noto Sans KR',sans-serif;font-size:15.5px;font-weight:700;cursor:pointer;transition:opacity .15s;margin-bottom:10px;}
+  .start-btn{width:100%;padding:15px;background:linear-gradient(135deg,#1A9B6C,#0D9488);color:white;border:none;border-radius:14px;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .15s;margin-bottom:10px;box-shadow:0 4px 16px rgba(26,155,108,.3);}
   .start-btn:hover{opacity:.9;}
-  .stats-row{display:flex;gap:14px;justify-content:center;margin-top:28px;}
-  .stat-item{text-align:center;}
-  .stat-item .s-num{font-size:22px;font-weight:900;color:var(--blue);}
-  .stat-item .s-label{font-size:10px;color:var(--muted);}
+  .stats-row{display:flex;gap:20px;justify-content:center;margin-top:24px;}
+  .stat-item{text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 18px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+  .stat-item .s-num{font-size:22px;font-weight:900;color:var(--blue);line-height:1;}
+  .stat-item .s-label{font-size:10px;color:var(--muted);margin-top:3px;}
 
-  /* 퀴즈 */
+  /* 퀴즈 진행 */
   #screen-quiz{display:none;flex-direction:column;flex:1;}
-  .quiz-header{padding:14px 18px;display:flex;align-items:center;gap:11px;border-bottom:1px solid var(--border);background:var(--surface);}
-  .back-btn{width:30px;height:30px;border-radius:7px;border:1px solid var(--border);background:none;color:var(--muted);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .quiz-header{padding:14px 18px;display:flex;align-items:center;gap:11px;border-bottom:2px solid var(--border);background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .back-btn{width:32px;height:32px;border-radius:8px;border:1.5px solid var(--border);background:none;color:var(--muted);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+  .back-btn:hover{border-color:var(--blue);color:var(--blue);}
   .quiz-header-info{flex:1;}
-  .quiz-header-title{font-size:11.5px;font-weight:700;}
+  .quiz-header-title{font-size:11.5px;font-weight:700;color:var(--text);}
   .quiz-header-count{font-size:10.5px;color:var(--muted);}
-  .quiz-score-badge{font-size:13px;font-weight:700;color:var(--yellow);}
-  .progress-track{height:3px;background:var(--border);overflow:hidden;}
-  .progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .4s ease;}
-  .quiz-body{flex:1;padding:16px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+  .quiz-score-badge{font-size:13px;font-weight:700;color:var(--yellow);background:#FFFBEB;border:1.5px solid #FCD34D;padding:4px 10px;border-radius:8px;}
+  .progress-track{height:4px;background:var(--border);overflow:hidden;}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));transition:width .4s ease;}
+  .quiz-body{flex:1;padding:20px 16px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
   #screen-quiz{display:flex;flex-direction:column;min-height:calc(100vh - 96px);width:100%;}
   #screen-home{width:100%;padding:24px 16px 80px;}
-  .q-category{font-size:9.5px;font-weight:700;letter-spacing:1px;color:var(--muted);margin-bottom:7px;text-transform:uppercase;}
-  .q-text{font-size:16.5px;font-weight:700;line-height:1.5;margin-bottom:22px;min-height:56px;}
-  .options{display:flex;flex-direction:column;gap:9px;}
-  .option-btn{padding:13px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:11px;color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:500;text-align:left;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:9px;}
-  .option-btn:hover:not(:disabled){border-color:var(--blue);background:rgba(91,155,248,.08);}
+  
+  /* 문제 카드 */
+  .q-category{font-size:9.5px;font-weight:700;letter-spacing:1.2px;color:var(--blue);margin-bottom:10px;text-transform:uppercase;background:rgba(26,155,108,.1);display:inline-block;padding:3px 10px;border-radius:99px;}
+  .q-card{background:var(--surface);border-radius:18px;padding:22px 20px;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,.08);border:1px solid var(--border);}
+  .q-text{font-size:17px;font-weight:700;line-height:1.55;color:var(--text);}
+  .options{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+  .option-btn{padding:14px 16px;background:var(--surface);border:2px solid var(--border);border-radius:13px;color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:500;text-align:left;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+  .option-btn:hover:not(:disabled){border-color:var(--blue);background:rgba(26,155,108,.06);box-shadow:0 2px 10px rgba(26,155,108,.15);}
   .option-btn:disabled{cursor:default;}
-  .option-btn.correct{border-color:var(--green);background:rgba(74,222,128,.1);color:var(--green);}
-  .option-btn.wrong{border-color:var(--red);background:rgba(248,113,113,.1);color:var(--red);}
-  .option-btn.reveal{border-color:var(--green);background:rgba(74,222,128,.05);color:var(--green);opacity:.6;}
-  .opt-letter{width:22px;height:22px;border-radius:5px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;flex-shrink:0;}
-  .option-btn.correct .opt-letter{background:var(--green);color:#052e16;}
-  .option-btn.wrong .opt-letter{background:var(--red);color:#450a0a;}
-  .option-btn.reveal .opt-letter{background:var(--green);color:#052e16;opacity:.8;}
-  .answer-box{margin-top:14px;padding:13px 14px;border-radius:11px;display:none;}
+  .option-btn.correct{border-color:var(--green);background:rgba(22,163,74,.08);color:#14532D;box-shadow:0 2px 10px rgba(22,163,74,.2);}
+  .option-btn.wrong{border-color:var(--red);background:rgba(220,38,38,.08);color:#7F1D1D;box-shadow:0 2px 10px rgba(220,38,38,.15);}
+  .option-btn.reveal{border-color:var(--green);background:rgba(22,163,74,.04);color:var(--green);opacity:.7;}
+  .opt-letter{width:26px;height:26px;border-radius:7px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;color:var(--muted);}
+  .option-btn.correct .opt-letter{background:var(--green);color:white;}
+  .option-btn.wrong .opt-letter{background:var(--red);color:white;}
+  .option-btn.reveal .opt-letter{background:var(--green);color:white;opacity:.8;}
+  
+  /* 정답 해설 */
+  .answer-box{margin-top:14px;padding:14px 16px;border-radius:13px;display:none;}
   .answer-box.show{display:block;}
-  .answer-box.ok{background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);}
-  .answer-box.fail{background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);}
-  .answer-result{font-size:12.5px;font-weight:700;margin-bottom:7px;}
+  .answer-box.ok{background:rgba(22,163,74,.07);border:1.5px solid rgba(22,163,74,.3);}
+  .answer-box.fail{background:rgba(220,38,38,.07);border:1.5px solid rgba(220,38,38,.25);}
+  .answer-result{font-size:12.5px;font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:5px;}
   .answer-box.ok .answer-result{color:var(--green);}
   .answer-box.fail .answer-result{color:var(--red);}
-  .answer-desc{font-size:12px;color:#CBD5E1;line-height:1.7;}
+  .answer-desc{font-size:12.5px;color:#374151;line-height:1.75;}
   .answer-desc strong{color:var(--text);font-weight:700;}
-  .quiz-footer{padding:14px 18px;border-top:1px solid var(--border);background:var(--surface);}
-  .next-btn{width:100%;padding:13px;background:var(--blue);color:white;border:none;border-radius:11px;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;display:none;transition:opacity .15s;}
+  .quiz-footer{padding:14px 18px;border-top:2px solid var(--border);background:var(--surface);box-shadow:0 -2px 8px rgba(0,0,0,.06);}
+  .next-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1A9B6C,#0D9488);color:white;border:none;border-radius:13px;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;display:none;transition:opacity .15s;box-shadow:0 3px 12px rgba(26,155,108,.3);}
   .next-btn.show{display:block;}
 
-  /* 결과 */
+  /* 결과 화면 */
   #screen-result{display:none;flex:1;padding:36px 22px;align-items:center;justify-content:center;flex-direction:column;text-align:center;}
-  .result-emoji{font-size:52px;margin-bottom:14px;}
-  .result-title{font-size:21px;font-weight:900;margin-bottom:7px;}
-  .result-score{font-size:46px;font-weight:900;color:var(--blue);line-height:1;margin-bottom:3px;}
-  .result-total{font-size:12.5px;color:var(--muted);margin-bottom:24px;}
+  .result-card{background:var(--surface);border-radius:24px;padding:32px 24px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.10);border:1px solid var(--border);}
+  .result-emoji{font-size:56px;margin-bottom:14px;}
+  .result-title{font-size:21px;font-weight:900;margin-bottom:7px;color:var(--text);}
+  .result-score{font-size:50px;font-weight:900;color:var(--blue);line-height:1;margin-bottom:3px;}
+  .result-total{font-size:12.5px;color:var(--muted);margin-bottom:22px;}
   .result-grade{font-size:13px;font-weight:700;padding:7px 18px;border-radius:99px;margin-bottom:22px;display:inline-block;}
-  .grade-s{background:rgba(74,222,128,.15);color:var(--green);border:1px solid rgba(74,222,128,.3);}
-  .grade-a{background:rgba(91,155,248,.15);color:var(--blue);border:1px solid rgba(91,155,248,.3);}
-  .grade-b{background:rgba(252,211,77,.15);color:var(--yellow);border:1px solid rgba(252,211,77,.3);}
-  .grade-c{background:rgba(248,113,113,.15);color:var(--red);border:1px solid rgba(248,113,113,.3);}
-  .result-wrong-list{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:14px;margin-bottom:18px;text-align:left;}
+  .grade-s{background:rgba(22,163,74,.12);color:var(--green);border:1.5px solid rgba(22,163,74,.3);}
+  .grade-a{background:rgba(26,155,108,.12);color:var(--blue);border:1.5px solid rgba(26,155,108,.3);}
+  .grade-b{background:rgba(217,119,6,.12);color:var(--yellow);border:1.5px solid rgba(217,119,6,.3);}
+  .grade-c{background:rgba(220,38,38,.1);color:var(--red);border:1.5px solid rgba(220,38,38,.25);}
+  .result-wrong-list{width:100%;background:var(--surface2);border:1.5px solid var(--border);border-radius:14px;padding:14px;margin-bottom:18px;text-align:left;}
   .rwl-title{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:9px;}
   .rwl-item{font-size:12px;color:var(--red);padding:5px 0;border-bottom:1px solid var(--border);line-height:1.5;}
   .rwl-item:last-child{border-bottom:none;}
-  .retry-btn{width:100%;padding:13px;background:linear-gradient(135deg,#3B82F6,#6366F1);color:white;border:none;border-radius:11px;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;margin-bottom:9px;}
-  .home-btn{width:100%;padding:11px;background:var(--surface);color:var(--muted);border:1px solid var(--border);border-radius:11px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:500;cursor:pointer;}
+  .retry-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1A9B6C,#0D9488);color:white;border:none;border-radius:13px;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:700;cursor:pointer;margin-bottom:10px;box-shadow:0 3px 12px rgba(26,155,108,.3);}
+  .home-btn{width:100%;padding:12px;background:var(--surface);color:var(--muted);border:1.5px solid var(--border);border-radius:13px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:500;cursor:pointer;}
  }
-#quiz-app-wrapper .app { max-width:480px; margin:0 auto; min-height:auto; }
+#quiz-app-wrapper .app { max-width:520px; margin:0 auto; min-height:auto; }
 </style>
 
 <script>
@@ -3709,6 +3751,490 @@ const DOWNLOAD_FILES = {
   guide12: {
     name: '교육자료_급여제공지침12개_데이음.html',
     content: '<!DOCTYPE html>\n<html lang="ko">\n<head>\n<meta charset="UTF-8">\n<title>급여제공지침 교육자료 — 데이음주간보호센터</title>\n<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">\n<style>\n  @page { size: A4; margin: 16mm 15mm 14mm 15mm; }\n  * { box-sizing: border-box; margin: 0; padding: 0; }\n  body { font-family: \'Noto Sans KR\', sans-serif; font-size: 9.5pt; line-height: 1.65; color: #1a1a1a; background: white; }\n\n  .cover { page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 240mm; text-align: center; padding: 30mm 20mm; }\n  .cover-badge { background: #1a1a2e; color: white; font-size: 8.5pt; font-weight: 700; letter-spacing: 2px; padding: 5px 14px; border-radius: 3px; margin-bottom: 20px; display: inline-block; }\n  .cover h1 { font-size: 22pt; font-weight: 900; line-height: 1.25; color: #1a1a2e; margin-bottom: 10px; }\n  .cover h1 span { color: #059669; }\n  .cover-sub { font-size: 11pt; color: #6B7280; margin-bottom: 28px; }\n  .cover-divider { width: 48px; height: 3px; background: #059669; margin: 0 auto 28px; }\n  .cover-note { font-size: 9pt; color: #9CA3AF; }\n\n  .section { page-break-before: always; padding: 6mm 0; }\n  .sec-num { font-size: 8pt; font-weight: 700; letter-spacing: 1.5px; color: #9CA3AF; margin-bottom: 5px; }\n  .sec-title { font-size: 15pt; font-weight: 900; color: #1a1a2e; margin-bottom: 4px; }\n  .sec-bar { height: 3px; background: #059669; width: 40px; margin-bottom: 12px; }\n  .sec-desc { font-size: 8.5pt; color: #6B7280; margin-bottom: 16px; padding: 8px 11px; background: #F0FDF4; border-radius: 5px; border-left: 3px solid #059669; }\n\n  .guideline-card { border: 1.5px solid #E5E7EB; border-radius: 8px; margin-bottom: 12px; overflow: hidden; page-break-inside: avoid; }\n  .gc-header { padding: 8px 13px; display: flex; align-items: center; gap: 8px; }\n  .gc-header.base { background: #059669; color: white; }\n  .gc-header.extra { background: #7C3AED; color: white; }\n  .gc-num { font-size: 13pt; font-weight: 900; min-width: 28px; }\n  .gc-title { font-size: 10.5pt; font-weight: 700; flex: 1; }\n  .gc-type { font-size: 7.5pt; background: rgba(255,255,255,0.2); padding: 2px 7px; border-radius: 3px; }\n  .gc-body { padding: 11px 13px; }\n  .gc-content { font-size: 9pt; color: #374151; line-height: 1.7; margin-bottom: 8px; }\n  .gc-point { font-size: 8.5pt; color: #6B7280; }\n  .gc-point li { margin-left: 14px; margin-bottom: 2px; }\n  .gc-exam-label { font-size: 8pt; font-weight: 700; color: #059669; margin-bottom: 3px; }\n  .gc-exam { font-size: 8.5pt; color: #14532d; background: #F0FDF4; border-left: 2px solid #059669; padding: 6px 10px; border-radius: 0 4px 4px 0; line-height: 1.65; }\n  .gc-exam strong { font-weight: 700; color: #1a1a2e; }\n\n  .warn-box { background: #FEF9C3; border: 1.5px solid #FDE047; border-radius: 6px; padding: 9px 11px; margin-bottom: 12px; font-size: 8.5pt; }\n  .warn-box .wt { font-weight: 700; color: #854D0E; margin-bottom: 4px; }\n  .warn-box .wc { color: #713F12; line-height: 1.65; }\n\n  .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 8.5pt; }\n  .summary-table th { background: #1a1a2e; color: white; padding: 7px 10px; text-align: left; font-size: 8pt; }\n  .summary-table td { padding: 6px 10px; border-bottom: 1px solid #E5E7EB; vertical-align: top; }\n  .summary-table tr:nth-child(even) td { background: #F9FAFB; }\n  .summary-table tr:last-child td { border-bottom: none; }\n  .tag-base { background: #D1FAE5; color: #065F46; font-size: 7.5pt; padding: 1px 5px; border-radius: 3px; font-weight: 600; }\n  .tag-extra { background: #EDE9FE; color: #4C1D95; font-size: 7.5pt; padding: 1px 5px; border-radius: 3px; font-weight: 600; }\n\n  .q-box { background: #F0F7FF; border-left: 3px solid #2563EB; padding: 7px 11px; margin-bottom: 5px; border-radius: 0 4px 4px 0; }\n  .q-label { font-size: 7.5pt; font-weight: 700; color: #2563EB; margin-bottom: 2px; }\n  .q-text { font-size: 9.5pt; font-weight: 700; color: #1a1a2e; }\n  .a-box { background: #F0FDF4; border-left: 3px solid #059669; padding: 7px 11px; border-radius: 0 4px 4px 0; margin-bottom: 12px; }\n  .a-label { font-size: 7.5pt; font-weight: 700; color: #059669; margin-bottom: 2px; }\n  .a-text { font-size: 9pt; color: #14532d; line-height: 1.7; }\n  .a-text strong { color: #1a1a2e; font-weight: 700; }\n\n  .print-footer { margin-top: 18px; padding-top: 7px; border-top: 1px solid #E5E7EB; font-size: 7.5pt; color: #9CA3AF; text-align: center; }\n  @media print { .section { page-break-before: always; } body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }\n</style>\n</head>\n<body>\n\n<!-- 표지 -->\n<div class="cover">\n  <div class="cover-badge">직원 교육자료 · 2026 평가 대비</div>\n  <h1>급여제공지침<br><span>12개 항목 교육</span></h1>\n  <div class="cover-sub">데이음주간보호센터</div>\n  <div class="cover-divider"></div>\n  <div style="font-size:9pt; color:#6B7280; margin-bottom:20px; line-height:1.8;">\n    기본지침 10개 + 기타지침 2개 (직원인권침해대응지침 · 고충처리지침)<br>\n    지표 06-1·06-3 · 연 1회 이상 전 직원 교육 필수\n  </div>\n  <div class="cover-note">데이음주간보호센터 · 내부 교육자료 · 무단 외부 배포 금지</div>\n</div>\n\n<!-- 요약표 -->\n<div class="section">\n  <div class="sec-num">OVERVIEW</div>\n  <div class="sec-title">12개 항목 한눈에 보기</div>\n  <div class="sec-bar"></div>\n  <div class="sec-desc">\n    평가 기준①: 12개 항목 마련·비치 여부 확인 (현장) / 기준③: 직원 면담 시 <strong>④ 감염예방관리지침, ⑥ 욕창예방관리지침</strong> 2가지 항목 집중 확인\n  </div>\n\n  <table class="summary-table">\n    <tr><th style="width:6%">번호</th><th style="width:25%">지침명</th><th>핵심 내용</th><th style="width:12%">구분</th></tr>\n    <tr><td>①</td><td><strong>종사자 윤리지침</strong></td><td>수급자에 대한 윤리, 전문직으로서의 윤리 (특정 직종 국한 불가)</td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>②</td><td><strong>성폭력 예방·대응지침</strong></td><td>성폭력 유형·예방·대응방법 (직원↔수급자 사이 상황 포함. \'직장 내 성희롱 예방지침\'만 있으면 인정 안 됨)</td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>③</td><td><strong>응급상황 대응지침</strong></td><td>응급상황 종류, 응급상황 발생 시 대응방법</td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>④</td><td><strong>감염예방·관리지침 ★</strong></td><td>감염 종류, 감염 예방·관리, 소독 종류 및 실시 방법 <br><strong style="color:#DC2626;">→ 면담 집중 확인 항목</strong></td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>⑤</td><td><strong>치매예방·관리지침</strong></td><td>치매 종류, 치매 증상, 치매 예방·관리·치료</td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>⑥</td><td><strong>욕창예방·관리지침 ★</strong></td><td>욕창 발생 요인, 욕창 예방 방법, 관리 및 치료 <br><strong style="color:#DC2626;">→ 면담 집중 확인 항목</strong></td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>⑦</td><td><strong>낙상예방·관리지침</strong></td><td>낙상 요인, 낙상 예방 방법, 낙상 발생 시 응급조치</td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>⑧</td><td><strong>노인인권보호지침</strong></td><td>노인 권리 보호, 노인학대 유형, 학대 예방 및 대응방법</td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>⑨</td><td><strong>근골격계 질환 예방지침</strong></td><td>근골격계 질환 예방 방법 (요양보호사 직업병 예방)</td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>⑩</td><td><strong>개인정보보호지침</strong></td><td>수집·이용 목적, 수집 항목, 보유·이용 기간</td><td><span class="tag-base">기본</span></td></tr>\n    <tr><td>⑪</td><td><strong>직원 인권침해 대응지침</strong></td><td>폭언·폭행·성희롱에 대한 대응방법, 기관의 조치사항</td><td><span class="tag-extra">기타</span></td></tr>\n    <tr><td>⑫</td><td><strong>고충처리지침</strong></td><td>고충 접수 방법(익명 창구 포함), 처리 과정, 접수·처리 기한</td><td><span class="tag-extra">기타</span></td></tr>\n  </table>\n\n  <div class="warn-box">\n    <div class="wt">⚠ 평가 현장 확인 사항</div>\n    <div class="wc">\n      · 12개 지침 전부 <strong>기관 내부에 직원이 열람 가능한 장소에 비치</strong>해야 함<br>\n      · <strong>고충처리지침 + 고충처리함</strong> 현장에 비치 (고충처리대장 기록 확인)<br>\n      · 평가 당일 기록 미확인 시 전부 \'불인정(N)\'\n    </div>\n  </div>\n</div>\n\n<!-- 기본지침 ①~③ -->\n<div class="section">\n  <div class="sec-num">기본지침 ①②③</div>\n  <div class="sec-title">윤리 · 성폭력 예방 · 응급상황 대응</div>\n  <div class="sec-bar"></div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">①</span>\n      <span class="gc-title">종사자 윤리지침</span>\n      <span class="gc-type">기본</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">수급자에 대한 윤리와 전문직으로서의 윤리를 담은 지침입니다.</div>\n      <ul class="gc-point">\n        <li>수급자의 자기결정권 존중 — 어르신이 원하시는 방향을 먼저 여쭤보기</li>\n        <li>비밀 유지 — 수급자 개인정보·건강상태를 외부에 발설하지 않기</li>\n        <li>전문직 품위 유지 — 근무 중 사적 행동(핸드폰 사용 등) 자제</li>\n        <li>경계 유지 — 수급자와 사적 금전 거래·선물 수수 금지</li>\n      </ul>\n    </div>\n  </div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">②</span>\n      <span class="gc-title">성폭력 예방 및 대응지침</span>\n      <span class="gc-type">기본</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">직원과 수급자 사이에 발생할 수 있는 성폭력·성희롱 상황을 예방하고 대응하는 지침입니다.<br>\n      <strong style="color:#DC2626;">※ \'직장 내 성희롱 예방지침\'만 있으면 인정 안 됨 — 직원↔수급자 상황 반드시 포함</strong></div>\n      <ul class="gc-point">\n        <li>성희롱 유형: 언어적(성적 발언·농담), 시각적(부적절한 행동), 신체적(접촉) 성희롱</li>\n        <li>발생 시 대응: 명확한 거부 의사 표현 → 즉시 관리자 보고 → 사실관계 기록</li>\n        <li>수급자가 직원에게 성희롱 시: 동일하게 적용, 기관은 즉시 조치</li>\n      </ul>\n    </div>\n  </div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">③</span>\n      <span class="gc-title">응급상황 대응지침</span>\n      <span class="gc-type">기본</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">수급자에게 발생할 수 있는 응급상황의 종류와 대응 방법을 담은 지침입니다.</div>\n      <ul class="gc-point">\n        <li><strong>응급상황 종류:</strong> 낙상·골절, 심정지, 질식, 의식저하(뇌졸중 의심), 고혈압 위기, 저혈당</li>\n        <li><strong>공통 대응 순서:</strong> 현장 안전 확인 → 의식·호흡 확인 → 119 신고 → 관리자·보호자 연락 → 응급처치 → 기록</li>\n        <li><strong>심정지:</strong> 즉시 CPR + 119 + AED 동시</li>\n      </ul>\n      <div class="gc-exam-label">▶ 면담 예상 질문 · 모범 답변</div>\n      <div class="gc-exam">Q. 응급상황 종류를 아는 대로 말해보세요.<br>\n      A. 낙상·골절, <strong>심정지</strong>, 질식, 의식저하, 고혈압 위기, 저혈당 등이 있습니다. 심정지 의심 시에는 즉시 CPR을 시작하고 119에 신고합니다.</div>\n    </div>\n  </div>\n</div>\n\n<!-- 기본지침 ④⑤⑥ (면담 집중) -->\n<div class="section">\n  <div class="sec-num">기본지침 ④⑤⑥ · ★ 면담 집중 확인</div>\n  <div class="sec-title">감염관리 · 치매 · 욕창 예방</div>\n  <div class="sec-bar"></div>\n  <div class="sec-desc"><strong>④ 감염예방관리지침과 ⑥ 욕창예방관리지침</strong>은 평가 면담 시 직원에게 직접 확인하는 2가지 필수 항목입니다. 반드시 내용을 말할 수 있어야 합니다.</div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">④</span>\n      <span class="gc-title">감염예방 및 관리지침 ★ 면담 확인</span>\n      <span class="gc-type">면담</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">감염 종류, 예방·관리 방법, 소독 종류 및 실시 방법</div>\n      <ul class="gc-point">\n        <li><strong>주요 감염 종류:</strong> 코로나19, 독감(인플루엔자), 결핵, 노로바이러스, 옴(개선증), 요로감염 등</li>\n        <li><strong>예방:</strong> 손 씻기 6단계 철저히 / 마스크 착용 / 수급자 건강 상태 매일 관찰</li>\n        <li><strong>감염 발생 시:</strong> 즉시 격리 → 관리자 보고 → 공단·보건소 신고 → 소독 실시</li>\n        <li><strong>소독 방법:</strong> 비품은 <strong>70~75% 알코올</strong> 소독 / 실내 청소용 소독제 / 분기 1회 이상 전문소독</li>\n      </ul>\n      <div class="gc-exam-label">▶ 면담 예상 질문 · 모범 답변</div>\n      <div class="gc-exam">Q. 감염 종류와 예방방법을 설명해주세요.<br>\n      A. 주요 감염 종류로는 <strong>코로나19, 독감, 결핵, 노로바이러스</strong> 등이 있습니다. 예방을 위해 수급자 접촉 전후 <strong>손 씻기를 철저히</strong> 하고, 비품은 <strong>70~75% 알코올</strong>로 소독합니다. 감염 의심 수급자는 즉시 격리하고 관리자에게 보고한 뒤 보건소에 신고합니다.</div>\n    </div>\n  </div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">⑤</span>\n      <span class="gc-title">치매예방 및 관리지침</span>\n      <span class="gc-type">기본</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">치매 종류, 증상, 예방·관리·치료 방법</div>\n      <ul class="gc-point">\n        <li><strong>치매 종류:</strong> 알츠하이머형(가장 흔함), 혈관성 치매, 루이소체 치매 등</li>\n        <li><strong>주요 증상:</strong> 기억력 저하, 지남력 장애, 언어장애, 행동심리증상(BPSD) — 배회·폭언·환각 등</li>\n        <li><strong>대응 원칙:</strong> 부정·반박하지 않기 / 차분하고 일관된 태도 유지 / 안전한 환경 제공</li>\n        <li><strong>인지 자극 활동:</strong> 회상요법, 음악요법, 작업치료 등 참여 지원</li>\n      </ul>\n    </div>\n  </div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">⑥</span>\n      <span class="gc-title">욕창예방 및 관리지침 ★ 면담 확인</span>\n      <span class="gc-type">면담</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">욕창 발생 요인, 예방 방법, 관리 및 치료</div>\n      <ul class="gc-point">\n        <li><strong>욕창 발생 요인:</strong> 지속적 압박(거동 불가), 습기(실금·땀), 영양 부족, 마찰 및 전단력</li>\n        <li><strong>고위험군:</strong> 거동 불가 수급자 / 당뇨·혈액순환 장애 / 저체중·영양 불량</li>\n        <li><strong>예방 방법:</strong> 2시간마다 체위 변경 / 피부 청결·건조 유지 / <strong>에어매트리스·욕창방지방석</strong> 활용 / 충분한 영양 공급</li>\n        <li><strong>발생 시:</strong> 즉시 관리자(간호사) 보고 → 드레싱 처치 → 기록 → 의료기관 연계</li>\n      </ul>\n      <div class="gc-exam-label">▶ 면담 예상 질문 · 모범 답변</div>\n      <div class="gc-exam">Q. 욕창 예방을 위해 어떻게 하고 계신가요?<br>\n      A. 거동이 불편한 어르신은 <strong>2시간마다 체위를 변경</strong>해 드리고, 피부를 청결하고 건조하게 유지합니다. 필요한 경우 <strong>에어매트리스나 욕창방지방석</strong>을 사용하고, 상처 부위는 소독 후 드레싱합니다. 피부에 이상이 발견되면 <strong>즉시 간호사(관리자)에게 보고</strong>합니다.</div>\n    </div>\n  </div>\n</div>\n\n<!-- 기본지침 ⑦~⑩ -->\n<div class="section">\n  <div class="sec-num">기본지침 ⑦⑧⑨⑩</div>\n  <div class="sec-title">낙상 · 노인인권 · 근골격계 · 개인정보</div>\n  <div class="sec-bar"></div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">⑦</span>\n      <span class="gc-title">낙상예방 및 관리지침</span>\n      <span class="gc-type">기본</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">낙상 요인, 예방 방법, 발생 시 응급조치</div>\n      <ul class="gc-point">\n        <li><strong>낙상 고위험 요인:</strong> 낙상 경험, 보행 불안정, 인지기능 저하, 낙상위험 약물, 기립성 저혈압, 근력 저하</li>\n        <li><strong>예방:</strong> 미끄럼방지·안전손잡이 설치 / 이동 시 올바른 부축법 / 워커·지팡이 사용 안내</li>\n        <li><strong>발생 시:</strong> 움직이지 말게 하기 → 119 신고 → 관리자·보호자 연락 → 기록</li>\n      </ul>\n    </div>\n  </div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">⑧</span>\n      <span class="gc-title">노인인권보호지침</span>\n      <span class="gc-type">기본</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">노인 권리 보호, 노인학대 유형(5가지), 학대 예방 및 대응방법</div>\n      <ul class="gc-point">\n        <li><strong>학대 5유형:</strong> 신체적 / 정서적 / 경제적 / 성적 / 방임</li>\n        <li><strong>노인인권 8가지:</strong> 존엄·자율·정보·비밀보장·안전·참여·불만제기·평등</li>\n        <li><strong>신고:</strong> 의심 시 노인보호전문기관 ☎ 1577-1389 즉시 신고 (신고의무자)</li>\n      </ul>\n    </div>\n  </div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">⑨</span>\n      <span class="gc-title">근골격계 질환 예방지침</span>\n      <span class="gc-type">기본</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">요양보호사의 직업성 근골격계 질환 예방 방법</div>\n      <ul class="gc-point">\n        <li><strong>고위험 동작:</strong> 무거운 수급자 이동·체위변경, 장시간 허리 굽힘, 반복 동작</li>\n        <li><strong>예방법:</strong> 올바른 자세로 수급자 이동(허리 대신 다리 힘 사용) / 2인 1조 체위변경 / 이동 보조기구 활용</li>\n        <li><strong>증상 발생 시:</strong> 즉시 관리자 보고 → 산재 신청 가능</li>\n      </ul>\n    </div>\n  </div>\n\n  <div class="guideline-card">\n    <div class="gc-header base">\n      <span class="gc-num">⑩</span>\n      <span class="gc-title">개인정보보호지침</span>\n      <span class="gc-type">기본</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">수집·이용 목적, 수집 항목, 보유·이용 기간</div>\n      <ul class="gc-point">\n        <li><strong>수집 목적:</strong> 장기요양급여 제공 및 기록 관리 목적만 허용</li>\n        <li><strong>금지:</strong> 수급자 사진·건강정보를 SNS에 올리거나 외부에 발설 금지</li>\n        <li><strong>보관:</strong> 개인정보 자료는 잠금장치가 된 보관함에 보관</li>\n        <li><strong>파기:</strong> 이용 목적 달성 후 지정된 기간 내 안전하게 파기</li>\n      </ul>\n    </div>\n  </div>\n</div>\n\n<!-- 기타지침 ⑪⑫ -->\n<div class="section">\n  <div class="sec-num">기타지침 ⑪⑫</div>\n  <div class="sec-title">직원 인권침해 대응 · 고충처리</div>\n  <div class="sec-bar"></div>\n\n  <div class="guideline-card">\n    <div class="gc-header extra">\n      <span class="gc-num">⑪</span>\n      <span class="gc-title">직원 인권침해 대응지침</span>\n      <span class="gc-type">기타</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">수급자·가족으로부터 발생하는 폭언·폭행·성희롱 대응 방법 및 기관 조치사항</div>\n      <ul class="gc-point">\n        <li><strong>폭언 시:</strong> 감정적 대응 자제 → 상황 종료 → 즉시 관리자 보고 → 고충처리 절차</li>\n        <li><strong>폭행 시:</strong> 현장 이탈·안전 확보 → 즉시 신고·보고 → 진단서 확보</li>\n        <li><strong>성희롱 시:</strong> 명확한 거부 의사 표현 → 관리자 즉시 보고 → 기록 보관</li>\n        <li><strong>급여 외 요구 시:</strong> 정중히 거절 후 관리자 보고</li>\n      </ul>\n      <div class="gc-exam-label">▶ 면담 예상 질문 · 모범 답변</div>\n      <div class="gc-exam">Q. 직원 인권침해 대응지침 내용을 알고 계신가요?<br>\n      A. 네. 수급자나 보호자로부터 폭언을 들으면 감정적으로 대응하지 않고 상황이 종료된 후 <strong>즉시 시설장에게 보고</strong>합니다. 기관은 고충처리 절차에 따라 조치하며, 심각한 경우 법적 조치도 가능합니다.</div>\n    </div>\n  </div>\n\n  <div class="guideline-card">\n    <div class="gc-header extra">\n      <span class="gc-num">⑫</span>\n      <span class="gc-title">고충처리지침</span>\n      <span class="gc-type">기타</span>\n    </div>\n    <div class="gc-body">\n      <div class="gc-content">고충 접수 방법(익명 창구 포함), 처리 과정, 접수·처리 기한</div>\n      <ul class="gc-point">\n        <li><strong>접수:</strong> 시설장(담당자)에게 구두 또는 서면 신고 / 고충처리함(익명) 투입 가능</li>\n        <li><strong>처리 과정:</strong> 접수 → 사실 확인(면담) → 조치 결정 → 결과 통보</li>\n        <li><strong>비밀 보장:</strong> 신고자 신원과 내용 철저히 비밀 보장</li>\n        <li><strong>비치 확인:</strong> 고충처리지침 + 고충처리함 + 고충처리대장 모두 현장에 있어야 함</li>\n      </ul>\n      <div class="gc-exam-label">▶ 면담 예상 질문 · 모범 답변</div>\n      <div class="gc-exam">Q. 고충처리 절차를 아시나요? 담당자는 누구인가요?<br>\n      A. 고충처리 담당자는 <strong>시설장(사회복지사)</strong>입니다. 불만이나 피해가 있으면 직접 구두 또는 서면으로 신고하거나 고충처리함에 익명으로 넣을 수 있습니다. 신고자 신원은 비밀이 보장되고, 처리 결과를 통보받습니다.</div>\n    </div>\n  </div>\n\n  <div class="print-footer">\n    데이음주간보호센터 · 급여제공지침 12개 항목 교육자료 · 지표 06-1·06-3 대비 · 내부 배포용\n  </div>\n</div>\n\n</body>\n</html>\n'
+  },
+  infection: {
+    name: '감염병대책매뉴얼_데이음주간보호센터.html',
+    content: `<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>감염병 대책 매뉴얼 — 데이음주간보호센터</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 16mm 15mm 14mm 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans KR', sans-serif; font-size: 9.5pt; line-height: 1.65; color: #1a1a1a; background: white; }
+
+  /* ── 표지 ── */
+  .cover { page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 240mm; text-align: center; padding: 30mm 20mm; }
+  .cover-badge { background: #059669; color: white; font-size: 8.5pt; font-weight: 700; letter-spacing: 2px; padding: 5px 14px; border-radius: 3px; margin-bottom: 20px; display: inline-block; }
+  .cover h1 { font-size: 24pt; font-weight: 900; line-height: 1.25; color: #1a1a2e; margin-bottom: 10px; }
+  .cover h1 span { color: #059669; }
+  .cover-sub { font-size: 11pt; color: #6B7280; margin-bottom: 28px; }
+  .cover-divider { width: 48px; height: 3px; background: #059669; margin: 0 auto 28px; }
+  .cover-info { display: flex; gap: 36px; margin-bottom: 32px; }
+  .cover-info-item .cnum { font-size: 24pt; font-weight: 900; color: #059669; line-height: 1; }
+  .cover-info-item .clabel { font-size: 8pt; color: #6B7280; margin-top: 4px; }
+  .cover-note { font-size: 8.5pt; color: #9CA3AF; }
+  .cover-meta { margin-top: 20px; font-size: 8.5pt; color: #6B7280; line-height: 1.8; background: #F0FDF4; border-radius: 8px; padding: 10px 18px; }
+
+  /* ── 공통 레이아웃 ── */
+  .section { page-break-before: always; padding: 6mm 0; }
+  .sec-eyebrow { font-size: 7.5pt; font-weight: 700; letter-spacing: 1.5px; color: #9CA3AF; margin-bottom: 5px; text-transform: uppercase; }
+  .sec-title { font-size: 14pt; font-weight: 900; color: #1a1a2e; margin-bottom: 4px; line-height: 1.2; }
+  .sec-bar { height: 3px; background: #059669; width: 40px; margin-bottom: 12px; }
+  .sec-desc { font-size: 8.5pt; color: #6B7280; margin-bottom: 14px; padding: 8px 11px; background: #F0FDF4; border-radius: 5px; border-left: 3px solid #059669; }
+
+  /* ── 카드 ── */
+  .card { border: 1.5px solid #E5E7EB; border-radius: 8px; margin-bottom: 12px; overflow: hidden; page-break-inside: avoid; }
+  .card-header { padding: 8px 14px; display: flex; align-items: center; gap: 8px; color: white; }
+  .card-header.green { background: #059669; }
+  .card-header.red { background: #DC2626; }
+  .card-header.blue { background: #2563EB; }
+  .card-header.orange { background: #D97706; }
+  .card-header.purple { background: #7C3AED; }
+  .card-header.teal { background: #0D9488; }
+  .card-icon { font-size: 13pt; }
+  .card-title { font-size: 10.5pt; font-weight: 700; flex: 1; }
+  .card-badge { font-size: 7.5pt; background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; }
+  .card-body { padding: 11px 14px; }
+
+  /* ── 테이블 ── */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 8.5pt; page-break-inside: avoid; }
+  th { background: #1a1a2e; color: white; padding: 6px 9px; text-align: left; font-weight: 700; font-size: 8pt; }
+  td { padding: 5px 9px; border-bottom: 1px solid #E5E7EB; vertical-align: top; line-height: 1.6; }
+  tr:nth-child(even) td { background: #F9FAFB; }
+  tr:last-child td { border-bottom: none; }
+  td strong { font-weight: 700; }
+  .td-red { color: #DC2626; font-weight: 700; }
+  .td-green { color: #059669; font-weight: 700; }
+
+  /* ── 스텝 ── */
+  .step-list { list-style: none; }
+  .step-list li { display: flex; gap: 9px; align-items: flex-start; padding: 5px 0; border-bottom: 1px solid #F3F4F6; font-size: 9pt; }
+  .step-list li:last-child { border-bottom: none; }
+  .step-num { min-width: 20px; height: 20px; background: #059669; color: white; font-size: 8pt; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── 경고 ── */
+  .warn-box { background: #FEF2F2; border: 1.5px solid #FECACA; border-radius: 6px; padding: 9px 11px; margin-bottom: 10px; page-break-inside: avoid; }
+  .warn-title { font-size: 8.5pt; font-weight: 700; color: #DC2626; margin-bottom: 4px; }
+  .warn-text { font-size: 8.5pt; color: #7F1D1D; line-height: 1.65; }
+
+  .info-box { background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 6px; padding: 9px 11px; margin-bottom: 10px; font-size: 8.5pt; }
+  .info-title { font-weight: 700; color: #14532d; margin-bottom: 4px; }
+  .info-text { color: #15803d; line-height: 1.65; }
+
+  /* ── 그리드 ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+  .g-card { border: 1.5px solid #E5E7EB; border-radius: 6px; padding: 9px 11px; page-break-inside: avoid; }
+  .g-num { font-size: 8pt; font-weight: 700; color: #059669; margin-bottom: 2px; }
+  .g-title { font-size: 9pt; font-weight: 700; margin-bottom: 3px; }
+  .g-body { font-size: 8pt; color: #6B7280; line-height: 1.6; }
+
+  /* ── QA ── */
+  .qa-block { margin-bottom: 10px; page-break-inside: avoid; }
+  .q-box { background: #F0FDF4; border-left: 3px solid #059669; padding: 7px 11px; margin-bottom: 5px; border-radius: 0 4px 4px 0; }
+  .q-label { font-size: 7.5pt; font-weight: 700; color: #059669; margin-bottom: 2px; }
+  .q-text { font-size: 9.5pt; font-weight: 700; color: #1a1a2e; }
+  .a-box { background: #F0F7FF; border-left: 3px solid #2563EB; padding: 7px 11px; border-radius: 0 4px 4px 0; }
+  .a-label { font-size: 7.5pt; font-weight: 700; color: #2563EB; margin-bottom: 2px; }
+  .a-text { font-size: 9pt; color: #1e3a8a; line-height: 1.75; }
+  .a-text strong { color: #1a1a2e; font-weight: 700; }
+
+  /* ── 서명란 ── */
+  .sign-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-top: 8px; }
+  .sign-table th { background: #F3F4F6; color: #374151; padding: 6px 10px; border: 1px solid #E5E7EB; font-weight: 700; text-align: center; }
+  .sign-table td { padding: 20px 10px 8px; border: 1px solid #E5E7EB; text-align: center; color: #6B7280; font-size: 8pt; }
+
+  .print-footer { margin-top: 18px; padding-top: 7px; border-top: 1px solid #E5E7EB; font-size: 7.5pt; color: #9CA3AF; text-align: center; }
+  .new-badge { display: inline-block; background: #DC2626; color: white; font-size: 7pt; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 4px; vertical-align: middle; }
+
+  @media print {
+    .section { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ 표지 ══ -->
+<div class="cover">
+  <div class="cover-badge">내부 관리 문서 · 감염예방 및 관리</div>
+  <h1>감염병<br><span>대책 매뉴얼</span></h1>
+  <div class="cover-sub">데이음주간보호센터</div>
+  <div class="cover-divider"></div>
+  <div class="cover-info">
+    <div class="cover-info-item"><div class="cnum">6</div><div class="clabel">주요 감염병 분류</div></div>
+    <div class="cover-info-item"><div class="cnum">4</div><div class="clabel">대응 단계</div></div>
+    <div class="cover-info-item"><div class="cnum">3</div><div class="clabel">보고 기관</div></div>
+  </div>
+  <div class="cover-meta">
+    <strong>근거 법령:</strong> 감염병의 예방 및 관리에 관한 법률 / 장기요양급여 제공기준 및 급여비용 산정방법 등에 관한 고시<br>
+    <strong>참고 자료:</strong> 2023 장기요양기관 안전·감염관리 매뉴얼 2권 (국민건강보험공단)<br>
+    <strong>작성일:</strong> 2026년 1월 &nbsp;&nbsp; <strong>적용 대상:</strong> 전 직원 &nbsp;&nbsp; <strong>갱신 주기:</strong> 연 1회 이상
+  </div>
+  <div class="cover-note">데이음주간보호센터 · 내부 관리 문서 · 무단 외부 배포 금지</div>
+</div>
+
+<!-- ══ 목차 ══ -->
+<div class="section">
+  <div class="sec-eyebrow">CONTENTS</div>
+  <div class="sec-title">목차</div>
+  <div class="sec-bar"></div>
+  <table>
+    <tr><th style="width:8%">번호</th><th>항목</th><th style="width:20%">관련 지표</th></tr>
+    <tr><td>01</td><td><strong>감염관리 체계 및 책임</strong> — 시설장·간호사·요양보호사 역할 분담</td><td>지표 16</td></tr>
+    <tr><td>02</td><td><strong>주요 감염병 종류 및 특성</strong> — 코로나19·독감·결핵·노로·옴·요로감염</td><td>지표 06(감염예방지침)</td></tr>
+    <tr><td>03</td><td><strong>감염 예방 수칙</strong> — 손 씻기·마스크·환경 소독</td><td>지표 16-1</td></tr>
+    <tr><td>04</td><td><strong>감염병 발생 시 대응 절차</strong> — 4단계 대응 흐름</td><td>지표 16-3</td></tr>
+    <tr><td>05</td><td><strong>소독 종류 및 실시 방법</strong> — 비품·실내·전문소독</td><td>지표 16-1·16-2</td></tr>
+    <tr><td>06</td><td><strong>보고·신고 절차</strong> — 공단·보건소·보호자 연락 순서</td><td>지표 16-3</td></tr>
+    <tr><td>07</td><td><strong>격리 지침</strong> — 격리 기준·방법·해제 기준</td><td>지표 16-3</td></tr>
+    <tr><td>08</td><td><strong>교육 및 훈련 계획</strong></td><td>지표 06</td></tr>
+  </table>
+</div>
+
+<!-- ══ 01. 감염관리 체계 ══ -->
+<div class="section">
+  <div class="sec-eyebrow">SECTION 01</div>
+  <div class="sec-title">감염관리 체계 및 책임</div>
+  <div class="sec-bar"></div>
+  <div class="sec-desc">본 기관은 시설장을 감염관리 총괄 책임자로 하여 직종별 역할을 명확히 구분하고 운영합니다.</div>
+
+  <div class="card no-break">
+    <div class="card-header green"><span class="card-icon">🏢</span><span class="card-title">직종별 역할 분담</span></div>
+    <div class="card-body">
+      <table style="margin:0;">
+        <tr><th style="width:20%">직종</th><th>주요 책임</th></tr>
+        <tr><td><strong>시설장</strong></td><td>감염관리 총괄 / 보건소·공단 보고 / 업무 배제 결정 / 전문소독 계약·관리</td></tr>
+        <tr><td><strong>간호사(조무사)</strong></td><td>수급자 감염 증상 사정·판단 / 격리 지시 / 투약 관리 / 의료기관 연계</td></tr>
+        <tr><td><strong>요양보호사</strong></td><td>일상 건강 관찰·이상 보고 / 손 씻기·마스크 착용 / 비품 소독 실시</td></tr>
+        <tr><td><strong>사회복지사</strong></td><td>보호자 연락 및 안내문 발송 / 교육 일지 작성 / 기록 관리</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="info-box no-break">
+    <div class="info-title">📋 감염관리 관련 비치 서류 목록</div>
+    <div class="info-text">
+      ① 본 감염병 대책 매뉴얼 &nbsp;② 감염예방·관리지침(급여제공지침 ④항) &nbsp;③ 소독일지 &nbsp;④ 전문소독 계약서·소독증명서 &nbsp;⑤ 감염병 발생 보고 대장 &nbsp;⑥ 직원 건강검진 결과지 (연 1회)
+    </div>
+  </div>
+</div>
+
+<!-- ══ 02. 주요 감염병 ══ -->
+<div class="section">
+  <div class="sec-eyebrow">SECTION 02</div>
+  <div class="sec-title">주요 감염병 종류 및 특성</div>
+  <div class="sec-bar"></div>
+  <div class="sec-desc">장기요양기관에서 빈번하게 발생하거나 집단 확산 위험이 높은 감염병을 숙지합니다.</div>
+
+  <div class="card no-break">
+    <div class="card-header red"><span class="card-icon">🦠</span><span class="card-title">주요 감염병 6종</span><span class="card-badge">면담 집중 확인</span></div>
+    <div class="card-body">
+      <table style="margin:0;">
+        <tr><th style="width:18%">감염병</th><th style="width:30%">주요 증상</th><th style="width:24%">전파 경로</th><th>주의사항</th></tr>
+        <tr>
+          <td><strong>코로나19</strong></td>
+          <td>발열, 기침, 호흡곤란, 후각·미각 소실</td>
+          <td>비말·접촉 감염</td>
+          <td>즉시 격리, 보건소 신고, 밀접 접촉자 파악</td>
+        </tr>
+        <tr>
+          <td><strong>독감<br>(인플루엔자)</strong></td>
+          <td>고열(38℃↑), 근육통, 기침, 콧물</td>
+          <td>비말 감염</td>
+          <td>예방접종 연 1회 / 발생 시 격리</td>
+        </tr>
+        <tr>
+          <td><strong>결핵</strong></td>
+          <td>2주 이상 기침, 혈담, 발열, 체중감소</td>
+          <td>공기 감염</td>
+          <td class="td-red">직원 연 1회 결핵검진 필수</td>
+        </tr>
+        <tr>
+          <td><strong>노로바이러스</strong></td>
+          <td>구역, 구토, 설사, 복통</td>
+          <td>분변-경구 / 접촉</td>
+          <td>오염 표면 염소 소독 / 조리자 격리</td>
+        </tr>
+        <tr>
+          <td><strong>옴(개선증)</strong></td>
+          <td>심한 야간 가려움, 구진·수포</td>
+          <td>직접 접촉</td>
+          <td>수급자·직원 동시 치료 / 침구류 세탁</td>
+        </tr>
+        <tr>
+          <td><strong>요로감염</strong></td>
+          <td>배뇨통, 빈뇨, 발열, 옆구리 통증</td>
+          <td>비전파성<br>(개인 위생)</td>
+          <td>수분 섭취 권장 / 위생 관리 강화</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 03. 예방 수칙 ══ -->
+<div class="section">
+  <div class="sec-eyebrow">SECTION 03</div>
+  <div class="sec-title">감염 예방 수칙</div>
+  <div class="sec-bar"></div>
+
+  <div class="grid-2 no-break">
+    <div class="card" style="margin:0;">
+      <div class="card-header green"><span class="card-icon">🙌</span><span class="card-title">손 씻기 6단계</span></div>
+      <div class="card-body">
+        <div class="grid-3" style="margin-bottom:8px;">
+          <div class="g-card"><div class="g-num">① 손바닥</div><div class="g-body">손바닥 맞대어 문지르기</div></div>
+          <div class="g-card"><div class="g-num">② 손등</div><div class="g-body">손등·손바닥 맞대어 문지르기</div></div>
+          <div class="g-card"><div class="g-num">③ 손가락 사이</div><div class="g-body">마주잡아 문지르기</div></div>
+          <div class="g-card"><div class="g-num">④ 손가락 등</div><div class="g-body">구부려 손바닥에 문지르기</div></div>
+          <div class="g-card"><div class="g-num">⑤ 엄지</div><div class="g-body">감싸 쥐고 돌려 문지르기</div></div>
+          <div class="g-card"><div class="g-num">⑥ 손톱 밑</div><div class="g-body">손끝 모아 손바닥에 문지르기</div></div>
+        </div>
+        <div style="font-size:7.5pt; color:#374151; background:#F0FDF4; padding:6px 8px; border-radius:4px;">
+          <strong>필수 시점:</strong> 출근 직후 / 수급자 접촉 전후 / 화장실 이용 후 / 식사 전후 / 기저귀 교체 후 / 기침·재채기 후
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin:0;">
+      <div class="card-header teal"><span class="card-icon">😷</span><span class="card-title">마스크·개인보호구</span></div>
+      <div class="card-body">
+        <ul class="step-list">
+          <li><span class="step-num">1</span><span>호흡기 증상 수급자 케어 시 <strong>KF80 이상 마스크</strong> 착용</span></li>
+          <li><span class="step-num">2</span><span>체액·분비물 접촉 가능 시 <strong>장갑 착용</strong></span></li>
+          <li><span class="step-num">3</span><span>마스크 착용 중 눈·코·입 <strong>만지지 않기</strong></span></li>
+          <li><span class="step-num">4</span><span>장갑 벗은 후 <strong>반드시 손 씻기</strong></span></li>
+          <li><span class="step-num">5</span><span>감염 의심 수급자 접촉 후 <strong>의복 교체 고려</strong></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card no-break" style="margin-top:8px;">
+    <div class="card-header blue"><span class="card-icon">🧹</span><span class="card-title">환경 관리 수칙</span></div>
+    <div class="card-body">
+      <table style="margin:0;">
+        <tr><th>구분</th><th>내용</th><th style="width:22%">주기</th></tr>
+        <tr><td><strong>손잡이·난간·스위치</strong></td><td>70~75% 알코올 또는 희석 염소 소독제로 닦기</td><td>매일 1회 이상</td></tr>
+        <tr><td><strong>혈압계·체온계 등 비품</strong></td><td>사용 후 알코올 솜으로 즉시 소독, 소독일지 기재</td><td>사용 후 즉시</td></tr>
+        <tr><td><strong>화장실·목욕실</strong></td><td>희석 염소 소독제 사용 / 바닥·변기 중점 관리</td><td>매일 1회 이상</td></tr>
+        <tr><td><strong>침구·의류</strong></td><td>60℃ 이상 고온 세탁 / 감염 수급자 것은 분리 세탁</td><td>주 1회 이상</td></tr>
+        <tr><td><strong>실내 전체</strong></td><td>전문 방역업체 통해 전문소독 실시 / 증명서 보관</td><td>분기 1회 이상</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 04. 발생 시 대응 절차 ══ -->
+<div class="section">
+  <div class="sec-eyebrow">SECTION 04</div>
+  <div class="sec-title">감염병 발생 시 대응 절차 — 4단계</div>
+  <div class="sec-bar"></div>
+  <div class="sec-desc">감염병 의심 또는 확진 수급자(직원) 발생 시 아래 4단계에 따라 신속하게 대응합니다.</div>
+
+  <div class="card no-break">
+    <div class="card-header red"><span class="card-icon">🚨</span><span class="card-title">STEP 1 — 발견·보고</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li><span class="step-num">1</span><span>요양보호사가 수급자 이상 증상(발열·기침·설사·발진 등) 발견</span></li>
+        <li><span class="step-num">2</span><span><strong>즉시 간호사(간호조무사) 또는 시설장에게 보고</strong></span></li>
+        <li><span class="step-num">3</span><span>간호사가 증상 사정 → 감염병 의심 시 시설장에게 보고</span></li>
+        <li><span class="step-num">4</span><span>수급자 체온, 증상, 발현 시각을 <strong>즉시 기록</strong></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card no-break">
+    <div class="card-header orange"><span class="card-icon">🔒</span><span class="card-title">STEP 2 — 격리 조치</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li><span class="step-num">1</span><span>감염 의심 수급자를 <strong>별도 공간(격리실 또는 1인실)으로 이동</strong></span></li>
+        <li><span class="step-num">2</span><span>전담 요양보호사 지정 (가능한 경우) — 다른 수급자 접촉 최소화</span></li>
+        <li><span class="step-num">3</span><span>격리 공간 출입 시 <strong>마스크·장갑 착용 필수</strong></span></li>
+        <li><span class="step-num">4</span><span>격리 수급자 식사·활동 <strong>별도 제공</strong></span></li>
+        <li><span class="step-num">5</span><span>밀접 접촉자(동일 공간 수급자·직원) 파악 및 건강 모니터링 시작</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card no-break">
+    <div class="card-header blue"><span class="card-icon">📞</span><span class="card-title">STEP 3 — 신고·연락</span></div>
+    <div class="card-body">
+      <table style="margin:0;">
+        <tr><th style="width:28%">연락 대상</th><th>내용</th><th style="width:18%">시기</th></tr>
+        <tr><td><strong>보호자</strong></td><td>감염 증상 발생 사실, 격리 조치 내용, 향후 대응 계획 안내</td><td class="td-red">즉시</td></tr>
+        <tr><td><strong>관할 보건소</strong></td><td>법정 감염병(코로나19·결핵 등) 확진 또는 의심 시 신고</td><td class="td-red">즉시</td></tr>
+        <tr><td><strong>국민건강보험공단</strong><br>(노인장기요양보험 운영센터)</td><td>감염병 확진(의심) 입소자·종사자 발생 즉시 보고</td><td class="td-red">즉시</td></tr>
+        <tr><td><strong>의료기관</strong></td><td>증상 악화 시 이송 또는 진료 의뢰</td><td>필요 시</td></tr>
+      </table>
+      <div class="warn-box" style="margin-top:8px;margin-bottom:0;">
+        <div class="warn-text">⚠ 법정 감염병: 결핵·A형간염·C형간염·옴 등 발병 현황 및 밀접 접촉자 감염예방 조치 실적을 <strong>매 반기(6월 말·12월 말)</strong> 보건복지부(요양보험운영과)에 보고</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card no-break">
+    <div class="card-header teal"><span class="card-icon">🧼</span><span class="card-title">STEP 4 — 소독·사후 관리</span></div>
+    <div class="card-body">
+      <ul class="step-list">
+        <li><span class="step-num">1</span><span>감염 수급자 생활 공간 <strong>즉시 소독</strong> (알코올 70~75% 또는 염소계 소독제)</span></li>
+        <li><span class="step-num">2</span><span>사용 물품·침구·의류 분리 세탁 또는 폐기</span></li>
+        <li><span class="step-num">3</span><span>필요 시 관할 보건소 협조를 받아 <strong>전문 방역소독</strong> 실시</span></li>
+        <li><span class="step-num">4</span><span>밀접 접촉자 <strong>14일간 건강 모니터링</strong> 및 기록</span></li>
+        <li><span class="step-num">5</span><span>감염병 발생 경과, 조치 내용 전부 <strong>대장에 기록·보관</strong></span></li>
+        <li><span class="step-num">6</span><span>격리 해제 기준 충족 후 격리 해제 (간호사 확인)</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 05. 소독 종류 및 방법 ══ -->
+<div class="section">
+  <div class="sec-eyebrow">SECTION 05</div>
+  <div class="sec-title">소독 종류 및 실시 방법</div>
+  <div class="sec-bar"></div>
+  <div class="sec-desc">평가 시 면담 집중 확인 항목입니다. 소독 방법과 농도를 정확히 숙지하세요.</div>
+
+  <div class="card no-break">
+    <div class="card-header green"><span class="card-icon">🧪</span><span class="card-title">소독제 종류 및 사용법</span><span class="card-badge">면담 확인</span></div>
+    <div class="card-body">
+      <table style="margin:0;">
+        <tr><th>소독제</th><th>사용 농도</th><th>적용 대상</th><th>주의사항</th></tr>
+        <tr>
+          <td><strong class="td-green">알코올</strong><br>(에탄올)</td>
+          <td class="td-red">70~75%</td>
+          <td>혈압계·체온계·청진기 등 의료비품, 손잡이·스위치</td>
+          <td>인화성 주의 / 피부에 직접 다량 사용 시 자극</td>
+        </tr>
+        <tr>
+          <td><strong>염소계<br>소독제</strong><br>(락스·차아염소산)</td>
+          <td>1,000ppm<br>(0.1%)</td>
+          <td>화장실·바닥·구토물·혈액 오염 표면</td>
+          <td>환기 필수 / 다른 세제와 혼합 금지 / 금속 부식 주의</td>
+        </tr>
+        <tr>
+          <td><strong>4급 암모늄<br>화합물</strong></td>
+          <td>제품 지시 농도</td>
+          <td>일반 환경 표면 청소·소독</td>
+          <td>결핵균·노로바이러스에 효과 낮음 — 해당 감염 시 염소계 사용</td>
+        </tr>
+      </table>
+      <div class="info-box" style="margin-top:8px;margin-bottom:0;">
+        <div class="info-text"><strong>락스 희석 방법 (1,000ppm):</strong> 시판 락스(5% 농도) 20ml + 물 980ml = 1L 희석액 / 희석 후 24시간 내 사용</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2 no-break" style="margin-top:8px;">
+    <div class="g-card">
+      <div class="g-num">비품 소독 — 지표 16-1</div>
+      <div class="g-title">일상 소독 및 소독일지 작성</div>
+      <div class="g-body">
+        · 혈압계·체온계·청진기: 사용 후 즉시 알코올 70~75%로 닦기<br>
+        · 소독일지: 날짜·대상·소독제·소독자 서명 기재<br>
+        · 공백 없이 매일 기록
+      </div>
+    </div>
+    <div class="g-card">
+      <div class="g-num">전문소독 — 지표 16-2</div>
+      <div class="g-title">분기 1회 이상 전문 방역</div>
+      <div class="g-body">
+        · 전문 방역업체와 연간 계약 유지<br>
+        · 실시 후 소독증명서 수령·보관<br>
+        · 실내·외 포함 전체 면적 소독
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 06. 격리 지침 ══ -->
+<div class="section">
+  <div class="sec-eyebrow">SECTION 06</div>
+  <div class="sec-title">격리 지침</div>
+  <div class="sec-bar"></div>
+
+  <div class="card no-break">
+    <div class="card-header purple"><span class="card-icon">🚧</span><span class="card-title">격리 기준 및 해제</span></div>
+    <div class="card-body">
+      <table style="margin:0;">
+        <tr><th style="width:22%">감염병</th><th>격리 기준</th><th style="width:28%">격리 해제 기준</th></tr>
+        <tr>
+          <td><strong>코로나19</strong></td>
+          <td>확진 또는 의심 증상 발현 시</td>
+          <td>발열 해소 후 24시간 + 증상 호전, 보건소 지침 따름</td>
+        </tr>
+        <tr>
+          <td><strong>독감</strong></td>
+          <td>발열 38℃ 이상 + 호흡기 증상</td>
+          <td>해열 후 24시간 이상 경과</td>
+        </tr>
+        <tr>
+          <td><strong>노로바이러스</strong></td>
+          <td>구토·설사 증상 발현 시</td>
+          <td>증상 소실 후 48시간 이상 경과</td>
+        </tr>
+        <tr>
+          <td><strong>결핵</strong></td>
+          <td>활동성 결핵 진단 시</td>
+          <td>전염력 소실 확인 (주치의·보건소 판단)</td>
+        </tr>
+        <tr>
+          <td><strong>옴</strong></td>
+          <td>확진 시 즉시</td>
+          <td>치료 완료 후 간호사 확인</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 07. 교육 계획 ══ -->
+<div class="section">
+  <div class="sec-eyebrow">SECTION 07</div>
+  <div class="sec-title">교육 및 훈련 계획</div>
+  <div class="sec-bar"></div>
+
+  <div class="card no-break">
+    <div class="card-header blue"><span class="card-icon">📚</span><span class="card-title">연간 감염 교육 계획</span></div>
+    <div class="card-body">
+      <table style="margin:0;">
+        <tr><th>교육 내용</th><th style="width:16%">대상</th><th style="width:16%">주기</th><th style="width:18%">방법</th></tr>
+        <tr><td>감염병 종류·예방·관리 (본 매뉴얼 전반)</td><td>전 직원</td><td>연 1회 이상</td><td>집합 교육</td></tr>
+        <tr><td>손 씻기 6단계 실습</td><td>전 직원</td><td>연 1회 이상</td><td>실습 교육</td></tr>
+        <tr><td>소독 방법 실습 (알코올·락스 희석)</td><td>요양보호사</td><td>연 1회 이상</td><td>실습 교육</td></tr>
+        <tr><td>감염 발생 시 대응 절차 훈련</td><td>전 직원</td><td>반기 1회 이상</td><td>모의 훈련</td></tr>
+        <tr><td>신규 직원 감염 교육</td><td>신규 직원</td><td>입사 7일 이내</td><td>개별 교육</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card no-break" style="margin-top:8px;">
+    <div class="card-header green"><span class="card-icon">✍️</span><span class="card-title">교육 실시 확인 서명란</span></div>
+    <div class="card-body">
+      <table class="sign-table">
+        <tr>
+          <th>교육 일시</th><th>교육 내용</th><th>교육자</th><th>참석자 서명</th>
+        </tr>
+        <tr><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td></tr>
+        <tr><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td></tr>
+        <tr><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td><td>&nbsp;<br>&nbsp;</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="print-footer">
+    데이음주간보호센터 · 감염병 대책 매뉴얼 · 지표 16·06(감염예방관리지침) 대비 · 내부 관리 문서 · 무단 외부 배포 금지
+  </div>
+</div>
+
+</body>
+</html>
+`
   },
   ops11: {
     name: '교육자료_운영규정11개_데이음.html',
@@ -3954,6 +4480,6 @@ window.retryQuiz = retryQuiz;
 window.goHome = goHome;
 })();
 </script>
-<div style="text-align:center;padding:8px;font-size:10px;color:#2D3148;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.23.127</div>
+<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.23.129</div>
 </body>
 </html>
