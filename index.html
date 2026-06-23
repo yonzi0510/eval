@@ -1076,8 +1076,8 @@ function clUpdate() {
     if (cntEl) cntEl.textContent = doneItems.length + '/' + items.length;
   });
   const pct = total > 0 ? Math.round(done / total * 100) : 0;
-  document.getElementById('cl-score').textContent = done + ' / ' + total;
-  document.getElementById('cl-pct').textContent = pct + '%';
+  (function(){var _e=document.getElementById('cl-score');if(_e)_e.textContent=done + ' / ' + total;})()
+  (function(){var _e=document.getElementById('cl-pct');if(_e)_e.textContent=pct + '%';})()
   document.getElementById('cl-fill').style.width = pct + '%';
   const gradeEl = document.getElementById('cl-grade');
   if (pct >= 90)      { gradeEl.textContent = '준비 완료 🎉'; gradeEl.style.color = '#4B9D79'; gradeEl.style.background = 'rgba(75,157,121,.15)'; }
@@ -2163,9 +2163,9 @@ function mockUpdate() {
   const pct = Math.round(total / 100 * 100);
 
   // 고정 바
-  document.getElementById('ms-score').textContent = total.toFixed(2) + ' / 100점';
+  (function(){var _e=document.getElementById('ms-score');if(_e)_e.textContent=total.toFixed(2) + ' / 100점';})()
   document.getElementById('ms-fill').style.width = Math.min(pct, 100) + '%';
-  document.getElementById('ms-cnt').textContent = done + '/36 선택';
+  (function(){var _e=document.getElementById('ms-cnt');if(_e)_e.textContent=done + '/36 선택';})()
 
   // 영역별
   ['admin','env','rights','service','result'].forEach(k => {
@@ -2201,9 +2201,9 @@ function mockUpdate() {
   const gradeEl = document.getElementById('mg-grade');
   gradeEl.textContent = grade !== '-' ? grade + '등급' : '-';
   gradeEl.style.color = gcol;
-  document.getElementById('mg-name').textContent = gname || '지표를 선택하면 등급이 계산됩니다';
-  document.getElementById('mg-score').textContent = done > 0 ? '총 ' + total.toFixed(2) + '점 / 100점 (' + pct + '%)' : '';
-  document.getElementById('ms-grade').textContent = grade !== '-' ? grade + '등급' : '-';
+  (function(){var _e=document.getElementById('mg-name');if(_e)_e.textContent=gname || '지표를 선택하면 등급이 계산됩니다';})()
+  (function(){var _e=document.getElementById('mg-score');if(_e)_e.textContent=done > 0 ? '총 ' + total.toFixed(2) + '점 / 100점 (' + pct + '%)' : '';})()
+  (function(){var _e=document.getElementById('ms-grade');if(_e)_e.textContent=grade !== '-' ? grade + '등급' : '-';})()
   document.getElementById('ms-grade').style.color = gcol;
   document.getElementById('ms-grade').style.background = grade !== '-' ? 'rgba(79,142,247,.1)' : '#2D3148';
 
@@ -2880,8 +2880,8 @@ function updateAll() {
   const pct = Math.round(totalScore / totalMax * 100);
 
   // 상단 진행 바
-  document.getElementById('pct-label').textContent = pct + '%';
-  document.getElementById('score-label').textContent = totalScore.toFixed(0) + ' / ' + totalMax + '점';
+  (function(){var _e=document.getElementById('pct-label');if(_e)_e.textContent=pct + '%';})()
+  (function(){var _e=document.getElementById('score-label');if(_e)_e.textContent=totalScore.toFixed(0) + ' / ' + totalMax + '점';})()
   document.getElementById('sb-fill').style.width = pct + '%';
 
   // ── 등급 계산 (절대평가 기준) ──
@@ -3097,6 +3097,8 @@ window.addEventListener('load', loadState);
     </div>
     <button class="retry-btn" onclick="retryQuiz()">다시 풀기</button>
     <button class="home-btn" onclick="goHome()">홈으로</button>
+  </div>
+
   <!-- S14. 투약 6원칙 -->
   <div class="section" id="s14">
     <div class="section-badge">지표 23</div>
@@ -3266,8 +3268,8 @@ let selectedMode='all', currentQuestions=[], currentIndex=0, score=0, wrongList=
 let tryCount=parseInt(localStorage.getItem('daeum_try')||'0');
 let bestScore=localStorage.getItem('daeum_best')||'—';
 
-document.getElementById('try-count').textContent=tryCount;
-document.getElementById('best-score').textContent=bestScore;
+(function(){var _e=document.getElementById('try-count');if(_e)_e.textContent=tryCount;})()
+(function(){var _e=document.getElementById('best-score');if(_e)_e.textContent=bestScore;})()
 
 function selectMode(el,mode){
   document.querySelectorAll('.mode-card').forEach(c=>c.classList.remove('selected'));
@@ -3292,8 +3294,8 @@ function startQuiz(){
   currentQuestions=getQuestions(selectedMode);
   currentIndex=0;score=0;wrongList=[];
   const labels={all:'전체 문제',new:'신설 지표',emergency:'응급·낙상·화재',rights:'인권·서비스·지침'};
-  document.getElementById('quiz-mode-label').textContent=labels[selectedMode];
-  document.getElementById('score-live').textContent='0';
+  (function(){var _e=document.getElementById('quiz-mode-label');if(_e)_e.textContent=labels[selectedMode];})()
+  (function(){var _e=document.getElementById('score-live');if(_e)_e.textContent='0';})()
   document.getElementById('screen-home').style.display='none';
   document.getElementById('screen-quiz').style.display='flex';
   document.getElementById('screen-result').style.display='none';
@@ -3303,10 +3305,10 @@ function startQuiz(){
 function renderQuestion(){
   const q=currentQuestions[currentIndex];
   const total=currentQuestions.length;
-  document.getElementById('q-count').textContent=`${currentIndex+1} / ${total}`;
+  (function(){var _e=document.getElementById('q-count');if(_e)_e.textContent=`${currentIndex+1} / ${total}`;})()
   document.getElementById('progress-fill').style.width=`${(currentIndex/total)*100}%`;
-  document.getElementById('q-cat').textContent=q.cat;
-  document.getElementById('q-text').textContent=q.q;
+  (function(){var _e=document.getElementById('q-cat');if(_e)_e.textContent=q.cat;})()
+  (function(){var _e=document.getElementById('q-text');if(_e)_e.textContent=q.q;})()
   const letters=['A','B','C','D'];
   const wrap=document.getElementById('options-wrap');
   wrap.innerHTML='';
@@ -3324,7 +3326,7 @@ function renderQuestion(){
   const ab=document.getElementById('answer-box');
   ab.className='answer-box';
   ab.style.display='none';
-  document.getElementById('answer-result').textContent='';
+  (function(){var _e=document.getElementById('answer-result');if(_e)_e.textContent='';})()
   document.getElementById('answer-desc').innerHTML='';
   const nb=document.getElementById('next-btn');
   nb.className='next-btn';
@@ -3346,7 +3348,7 @@ function selectAnswer(btn,correctShuffled,q){
   const ad=document.getElementById('answer-desc');
   if(chosen===correctShuffled){
     score++;
-    document.getElementById('score-live').textContent=score;
+    (function(){var _e=document.getElementById('score-live');if(_e)_e.textContent=score;})()
     btn.classList.add('correct');
     ab.className='answer-box ok show'; ab.style.display='block';
     ar.textContent='✅ 정답입니다!';
@@ -3372,15 +3374,15 @@ function showResult(){
   document.getElementById('screen-quiz').style.display='none';
   const rs=document.getElementById('screen-result');
   rs.style.display='flex';
-  document.getElementById('result-score').textContent=score;
-  document.getElementById('result-total').textContent=`/ ${total} 문항 정답 (${pct}%)`;
+  (function(){var _e=document.getElementById('result-score');if(_e)_e.textContent=score;})()
+  (function(){var _e=document.getElementById('result-total');if(_e)_e.textContent=`/ ${total} 문항 정답 (${pct}%)`;})()
   let emoji,title,gradeText,gradeClass;
   if(pct>=90){emoji='🏆';title='완벽합니다!';gradeText='S등급 · 평가 준비 완료';gradeClass='grade-s';}
   else if(pct>=75){emoji='🎉';title='훌륭합니다!';gradeText='A등급 · 조금만 더!';gradeClass='grade-a';}
   else if(pct>=60){emoji='📚';title='조금 더 공부해요';gradeText='B등급 · 틀린 항목 복습 필요';gradeClass='grade-b';}
   else{emoji='⚠️';title='복습이 필요해요';gradeText='C등급 · 반드시 재학습!';gradeClass='grade-c';}
-  document.getElementById('result-emoji').textContent=emoji;
-  document.getElementById('result-title').textContent=title;
+  (function(){var _e=document.getElementById('result-emoji');if(_e)_e.textContent=emoji;})()
+  (function(){var _e=document.getElementById('result-title');if(_e)_e.textContent=title;})()
   const grade=document.getElementById('result-grade');
   grade.textContent=gradeText;grade.className=`result-grade ${gradeClass}`;
   if(wrongList.length>0){
@@ -3398,8 +3400,8 @@ function goHome(){
   document.getElementById('screen-home').style.display='';
   document.getElementById('screen-quiz').style.display='none';
   document.getElementById('screen-result').style.display='none';
-  document.getElementById('try-count').textContent=tryCount;
-  document.getElementById('best-score').textContent=localStorage.getItem('daeum_best')||'—';
+  (function(){var _e=document.getElementById('try-count');if(_e)_e.textContent=tryCount;})()
+  (function(){var _e=document.getElementById('best-score');if(_e)_e.textContent=localStorage.getItem('daeum_best')||'—';})()
 }
 window.selectMode = selectMode;
 window.getQuestions = getQuestions;
@@ -4330,8 +4332,8 @@ let selectedMode='all', currentQuestions=[], currentIndex=0, score=0, wrongList=
 let tryCount=parseInt(localStorage.getItem('daeum_try')||'0');
 let bestScore=localStorage.getItem('daeum_best')||'—';
 
-document.getElementById('try-count').textContent=tryCount;
-document.getElementById('best-score').textContent=bestScore;
+(function(){var _e=document.getElementById('try-count');if(_e)_e.textContent=tryCount;})()
+(function(){var _e=document.getElementById('best-score');if(_e)_e.textContent=bestScore;})()
 
 function selectMode(el,mode){
   document.querySelectorAll('.mode-card').forEach(c=>c.classList.remove('selected'));
@@ -4356,8 +4358,8 @@ function startQuiz(){
   currentQuestions=getQuestions(selectedMode);
   currentIndex=0;score=0;wrongList=[];
   const labels={all:'전체 문제',new:'신설 지표',emergency:'응급·낙상·화재',rights:'인권·서비스·지침'};
-  document.getElementById('quiz-mode-label').textContent=labels[selectedMode];
-  document.getElementById('score-live').textContent='0';
+  (function(){var _e=document.getElementById('quiz-mode-label');if(_e)_e.textContent=labels[selectedMode];})()
+  (function(){var _e=document.getElementById('score-live');if(_e)_e.textContent='0';})()
   document.getElementById('screen-home').style.display='none';
   document.getElementById('screen-quiz').style.display='flex';
   document.getElementById('screen-result').style.display='none';
@@ -4367,10 +4369,10 @@ function startQuiz(){
 function renderQuestion(){
   const q=currentQuestions[currentIndex];
   const total=currentQuestions.length;
-  document.getElementById('q-count').textContent=`${currentIndex+1} / ${total}`;
+  (function(){var _e=document.getElementById('q-count');if(_e)_e.textContent=`${currentIndex+1} / ${total}`;})()
   document.getElementById('progress-fill').style.width=`${(currentIndex/total)*100}%`;
-  document.getElementById('q-cat').textContent=q.cat;
-  document.getElementById('q-text').textContent=q.q;
+  (function(){var _e=document.getElementById('q-cat');if(_e)_e.textContent=q.cat;})()
+  (function(){var _e=document.getElementById('q-text');if(_e)_e.textContent=q.q;})()
   const letters=['A','B','C','D'];
   const wrap=document.getElementById('options-wrap');
   wrap.innerHTML='';
@@ -4388,7 +4390,7 @@ function renderQuestion(){
   const ab=document.getElementById('answer-box');
   ab.className='answer-box';
   ab.style.display='none';
-  document.getElementById('answer-result').textContent='';
+  (function(){var _e=document.getElementById('answer-result');if(_e)_e.textContent='';})()
   document.getElementById('answer-desc').innerHTML='';
   const nb=document.getElementById('next-btn');
   nb.className='next-btn';
@@ -4410,7 +4412,7 @@ function selectAnswer(btn,correctShuffled,q){
   const ad=document.getElementById('answer-desc');
   if(chosen===correctShuffled){
     score++;
-    document.getElementById('score-live').textContent=score;
+    (function(){var _e=document.getElementById('score-live');if(_e)_e.textContent=score;})()
     btn.classList.add('correct');
     ab.className='answer-box ok show'; ab.style.display='block';
     ar.textContent='✅ 정답입니다!';
@@ -4436,15 +4438,15 @@ function showResult(){
   document.getElementById('screen-quiz').style.display='none';
   const rs=document.getElementById('screen-result');
   rs.style.display='flex';
-  document.getElementById('result-score').textContent=score;
-  document.getElementById('result-total').textContent=`/ ${total} 문항 정답 (${pct}%)`;
+  (function(){var _e=document.getElementById('result-score');if(_e)_e.textContent=score;})()
+  (function(){var _e=document.getElementById('result-total');if(_e)_e.textContent=`/ ${total} 문항 정답 (${pct}%)`;})()
   let emoji,title,gradeText,gradeClass;
   if(pct>=90){emoji='🏆';title='완벽합니다!';gradeText='S등급 · 평가 준비 완료';gradeClass='grade-s';}
   else if(pct>=75){emoji='🎉';title='훌륭합니다!';gradeText='A등급 · 조금만 더!';gradeClass='grade-a';}
   else if(pct>=60){emoji='📚';title='조금 더 공부해요';gradeText='B등급 · 틀린 항목 복습 필요';gradeClass='grade-b';}
   else{emoji='⚠️';title='복습이 필요해요';gradeText='C등급 · 반드시 재학습!';gradeClass='grade-c';}
-  document.getElementById('result-emoji').textContent=emoji;
-  document.getElementById('result-title').textContent=title;
+  (function(){var _e=document.getElementById('result-emoji');if(_e)_e.textContent=emoji;})()
+  (function(){var _e=document.getElementById('result-title');if(_e)_e.textContent=title;})()
   const grade=document.getElementById('result-grade');
   grade.textContent=gradeText;grade.className=`result-grade ${gradeClass}`;
   if(wrongList.length>0){
@@ -4462,8 +4464,8 @@ function goHome(){
   document.getElementById('screen-home').style.display='';
   document.getElementById('screen-quiz').style.display='none';
   document.getElementById('screen-result').style.display='none';
-  document.getElementById('try-count').textContent=tryCount;
-  document.getElementById('best-score').textContent=localStorage.getItem('daeum_best')||'—';
+  (function(){var _e=document.getElementById('try-count');if(_e)_e.textContent=tryCount;})()
+  (function(){var _e=document.getElementById('best-score');if(_e)_e.textContent=localStorage.getItem('daeum_best')||'—';})()
 }
 
 window.downloadFile = downloadFile;
@@ -4480,6 +4482,6 @@ window.retryQuiz = retryQuiz;
 window.goHome = goHome;
 })();
 </script>
-<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.23.129</div>
+<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.23.130</div>
 </body>
 </html>
