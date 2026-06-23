@@ -668,6 +668,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
   <button class="cf-btn" onclick="clFilter('edu',this)">🎓 직원교육</button>
   <button class="cf-btn" onclick="clFilter('ops',this)">⚙️ 운영관리</button>
   <button class="cf-btn" onclick="clFilter('new',this)" style="border-color:rgba(248,113,113,.4);color:#F87171;">🆕 신설</button>
+  <button class="cf-btn" onclick="clFilter('link',this)" style="border-color:rgba(26,155,108,.5);color:#1A9B6C;">🔗 자료</button>
 </div>
 
 <div class="cl-wrap">
@@ -825,7 +826,6 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">소화기·경보설비 — 매월 점검·피난안내도 부착</div>
     <div class="ci-sub"><strong>확인:</strong> 소화기·소화전·경보설비 매월 점검 / 화재위험 요인 제거 / 피난안내도 각 층별 부착</div>
-    <div class="ci-sub" style="margin-top:4px;"><a href="https://safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?&category=fires&actsHeaderTitle=%ED%99%94%EC%9E%AC&menuSn=4" target="_blank" rel="noopener" style="color:#1A9B6C;font-size:10.5px;font-weight:600;text-decoration:none;">📎 화재 대피행동요령 →</a></div>
     <div class="ci-tags"><span class="ctag ctag-idx">지표 13</span></div></div>
   </div>
 
@@ -864,7 +864,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
     <div class="ci-tags"><span class="ctag ctag-idx">지표 16-①②④</span></div></div>
   </div>
 
-  <div class="cl-item" onclick="clToggle(this)" data-cat="site">
+  <div class="cl-item" onclick="clToggle(this)" data-cat="site" data-link="1">
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">감염병 대응체계 수립 — 기관 자체 매뉴얼 비치</div>
     <div class="ci-sub"><strong>확인:</strong> 국가 위기상황 발생 시 대응체계 + 기관 내 감염병 환자 발생·확산 시 대응체계 각각 수립 / 공단 매뉴얼 수준으로 기관 상황에 맞게 작성·비치</div>
@@ -882,7 +882,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
     <div class="ci-tags"><span class="ctag ctag-idx">지표 18·28</span></div></div>
   </div>
 
-  <div class="cl-item" onclick="clToggle(this)" data-cat="site">
+  <div class="cl-item" onclick="clToggle(this)" data-cat="site" data-link="1">
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">직원인권·상호존중 포스터 — 직원 휴게실·탈의실 게시</div>
     <div class="ci-sub"><strong>확인:</strong> 직원 인권침해 대응 포스터 게시 / 직원·수급자 간 상호존중 포스터 게시 / 고충처리함·고충처리지침·고충처리대장 비치</div>
@@ -892,7 +892,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
     <div class="ci-tags"><span class="ctag ctag-idx">지표 7·8</span></div></div>
   </div>
 
-  <div class="cl-item" onclick="clToggle(this)" data-cat="site">
+  <div class="cl-item" onclick="clToggle(this)" data-cat="site" data-link="1">
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">노인인권·학대예방 안내문 게시</div>
     <div class="ci-sub"><strong>확인:</strong> 노인인권대신고 안내문 게시 / 수급자(보호자) 연 1회 이상 8가지 지침 설명 기록</div>
@@ -918,7 +918,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
     <div class="ci-tags"><span class="ctag ctag-idx">지표 33</span></div></div>
   </div>
 
-  <div class="cl-item" onclick="clToggle(this)" data-cat="site">
+  <div class="cl-item" onclick="clToggle(this)" data-cat="site" data-link="1">
     <div class="ci-chk">✓</div><div class="ci-body">
     <div class="ci-txt">재난대응 매뉴얼·훈련 — 반기 1회 이상 실시</div>
     <div class="ci-sub"><strong>확인:</strong> 재난상황 대응 매뉴얼 비치 / 반기 1회 이상 재난대응훈련 실시 (수급자·직원 포함) / 훈련 결과 기록</div>
@@ -1081,6 +1081,13 @@ function clFilter(cat, btn) {
   } else if (cat === 'new') {
     cats.forEach(c => c.style.display = '');
     items.forEach(i => { i.style.display = i.dataset.new === '1' ? '' : 'none'; });
+    cats.forEach(c => {
+      const vis = [...c.querySelectorAll('.cl-item')].filter(i => i.style.display !== 'none');
+      c.style.display = vis.length ? '' : 'none';
+    });
+  } else if (cat === 'link') {
+    cats.forEach(c => c.style.display = '');
+    items.forEach(i => { i.style.display = i.dataset.link === '1' ? '' : 'none'; });
     cats.forEach(c => {
       const vis = [...c.querySelectorAll('.cl-item')].filter(i => i.style.display !== 'none');
       c.style.display = vis.length ? '' : 'none';
@@ -2746,6 +2753,109 @@ setTimeout(mockLoad, 100);
   </div>
 </div>
 
+  <!-- S14. 투약 6원칙 -->
+  <div class="section" id="s14">
+    <div class="section-badge">지표 23</div>
+    <h2 class="section-title">💊 투약·약품관리</h2>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">투약 6가지 원칙 숙지 / 약품보관함 잠금·분기 점검 / 직원 면담 확인</p>
+    <div class="card">
+      <div class="card-title">📋 투약 6가지 원칙 (Right 6)</div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;margin-top:6px;">
+        <tr style="background:#EEF6F2;"><th style="padding:7px 10px;text-align:left;color:#5A7A6E;width:38%;">원칙</th><th style="padding:7px 10px;text-align:left;color:#5A7A6E;">내용</th></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">① 정확한 수급자</td><td style="padding:7px 10px;color:#5A7A6E;">처방받은 해당 수급자에게만</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">② 정확한 약물</td><td style="padding:7px 10px;color:#5A7A6E;">처방된 약물명 확인 후 투약</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">③ 정확한 용량</td><td style="padding:7px 10px;color:#5A7A6E;">처방된 용량 정확히 준수</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">④ 정확한 경로</td><td style="padding:7px 10px;color:#5A7A6E;">경구·외용 등 투약 방법 확인</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">⑤ 정확한 시간</td><td style="padding:7px 10px;color:#5A7A6E;">식전·식후 등 처방 시간 준수</td></tr>
+        <tr><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">⑥ 정확한 기록</td><td style="padding:7px 10px;color:#5A7A6E;">투약 후 기록지에 서명·기재</td></tr>
+      </table>
+    </div>
+    <div class="qa">
+      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ①</div><div class="q-text">투약 시 확인해야 하는 6가지 원칙이 무엇인가요?</div></div>
+      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">투약 6원칙은 <strong>정확한 수급자, 정확한 약물, 정확한 용량, 정확한 경로, 정확한 시간, 정확한 기록</strong>입니다. 투약 전 반드시 수급자명과 약물명을 확인하고, 투약 후에는 기록지에 서명합니다.</div></div>
+    </div>
+    <div class="qa">
+      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ②</div><div class="q-text">약품은 어떻게 보관하고 있나요?</div></div>
+      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">약품보관함에 <strong>잠금장치</strong>를 설치하여 보관하고 있으며, 냉장 보관이 필요한 약은 냉장고에 따로 보관합니다. <strong>분기별 1회 이상 사용기한과 보관상태를 점검</strong>하고 기록합니다.</div></div>
+    </div>
+  </div>
+
+  <!-- S15. 운영규정 11개 항목 -->
+  <div class="section" id="s15">
+    <div class="section-badge">지표 1·6</div>
+    <h2 class="section-title">📋 운영규정 11개 항목</h2>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">운영규정 비치·내용 충실 여부 / 연 1회 이상 직원 교육 / 직원 면담 확인</p>
+    <div class="card">
+      <div class="card-title">📌 운영규정 필수 11개 항목</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:8px;">
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">① </span>이용정원에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">② </span>계약에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">③ </span>이용료에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">④ </span>서비스에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑤ </span>배상책임에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑥ </span>개정에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑦ </span>인력관리에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑧ </span>보수에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑨ </span>복리후생에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑩ </span>안전보건에 관한 사항</div>
+        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;grid-column:span 2;"><span style="color:#1A9B6C;font-weight:700;">⑪ </span>고충처리에 관한 사항</div>
+      </div>
+    </div>
+    <div class="qa">
+      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ①</div><div class="q-text">운영규정에 포함되어야 하는 항목이 몇 가지이고 어떤 것들인가요?</div></div>
+      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">운영규정에는 <strong>11개 항목</strong>이 포함되어야 합니다. 이용정원·계약·이용료·서비스·배상책임·개정·인력관리·보수·복리후생·안전보건·고충처리에 관한 사항입니다. 저희 기관 운영규정은 <strong>직원이 열람 가능한 장소에 비치</strong>되어 있습니다.</div></div>
+    </div>
+  </div>
+
+  <!-- S16. 수급자 8가지 지침 -->
+  <div class="section" id="s16">
+    <div class="section-badge">지표 19</div>
+    <h2 class="section-title">👴 수급자에게 설명하는 8가지 지침</h2>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">연 1회 이상 수급자(보호자)에게 설명 필수 / 직원이 내용 숙지 / 면담 확인</p>
+    <div class="card">
+      <div class="card-title">📌 8가지 지침 핵심 내용</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-top:6px;">
+        <tr style="background:#EEF6F2;"><th style="padding:6px 8px;text-align:center;color:#5A7A6E;width:6%;">번호</th><th style="padding:6px 8px;text-align:left;color:#5A7A6E;width:28%;">지침명</th><th style="padding:6px 8px;text-align:left;color:#5A7A6E;">핵심 내용</th></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">①</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">욕창 예방</td><td style="padding:6px 8px;color:#5A7A6E;">2시간 체위변경 / 피부 청결·건조 / 에어매트 활용</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">②</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">낙상 예방</td><td style="padding:6px 8px;color:#5A7A6E;">안전손잡이 / 미끄럼방지 / 보조기구 사용법</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">③</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">탈수 예방</td><td style="padding:6px 8px;color:#5A7A6E;">하루 1.5~2L 수분 / 갈증 없어도 규칙적 섭취</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">④</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">배변 관리</td><td style="padding:6px 8px;color:#5A7A6E;">규칙적 배변습관 / 식이섬유 / 충분한 수분</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">⑤</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">관절 구축 예방</td><td style="padding:6px 8px;color:#5A7A6E;">관절 범위 운동 / 정기적 스트레칭</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">⑥</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">치매 예방·관리</td><td style="padding:6px 8px;color:#5A7A6E;">인지활동 참여 / 규칙적 생활 / 사회적 교류</td></tr>
+        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">⑦</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">감염 예방</td><td style="padding:6px 8px;color:#5A7A6E;">손씻기 6단계 / 마스크 / 기침예절 / 예방접종</td></tr>
+        <tr><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">⑧</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">노인인권 보호</td><td style="padding:6px 8px;color:#5A7A6E;">학대 5유형 / 신고기관 1577-1389 / 자기결정권</td></tr>
+      </table>
+    </div>
+    <div class="qa">
+      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ①</div><div class="q-text">수급자(보호자)에게 설명드리는 지침이 몇 가지이고 어떤 내용인가요?</div></div>
+      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">연 1회 이상 <strong>8가지 지침</strong>을 설명해 드리고 있습니다. <strong>욕창 예방, 낙상 예방, 탈수 예방, 배변 관리, 관절 구축 예방, 치매 예방·관리, 감염 예방, 노인인권 보호</strong>입니다. 설명 후 확인 서명을 받아 기록으로 보관합니다.</div></div>
+    </div>
+  </div>
+
+  <!-- S17. 사례관리 -->
+  <div class="section" id="s17">
+    <div class="section-badge">지표 29</div>
+    <h2 class="section-title">🗂 사례관리</h2>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">반기별 1회 이상 회의 실시 / 30일 내 급여 반영 / 직원 절차 숙지</p>
+    <div class="card">
+      <div class="card-title">📋 사례관리 4단계 절차</div>
+      <div style="margin-top:8px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;"><div style="background:#4F8EF7;color:white;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">1</div><div style="font-size:12px;color:#E0E4F0;line-height:1.6;"><strong>대상자 선정</strong> — 기능 저하·입원 후 복귀·독거 등 지원 필요 수급자</div></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;"><div style="background:#4F8EF7;color:white;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">2</div><div style="font-size:12px;color:#E0E4F0;line-height:1.6;"><strong>사례관리 회의</strong> — 반기별 1회 이상 / 사복사·간호사·요양보호사 다직종 참여 / 회의록 작성</div></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;"><div style="background:#4F8EF7;color:white;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">3</div><div style="font-size:12px;color:#E0E4F0;line-height:1.6;"><strong>급여 반영</strong> — 회의일로부터 <strong>30일 이내</strong> 급여제공계획 반영</div></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;"><div style="background:#4F8EF7;color:white;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">4</div><div style="font-size:12px;color:#E0E4F0;line-height:1.6;"><strong>결과 평가</strong> — 반영 효과 평가 및 기록</div></div>
+      </div>
+    </div>
+    <div class="qa">
+      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ①</div><div class="q-text">사례관리는 어떻게 진행되나요?</div></div>
+      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">사례관리는 <strong>반기별 1회 이상</strong> 실시합니다. 지원이 필요한 수급자를 선정하고, 사회복지사·간호사·요양보호사가 함께 회의를 진행합니다. 결과는 <strong>회의일로부터 30일 이내</strong>에 급여제공계획에 반영하고, 효과를 평가하여 기록합니다.</div></div>
+    </div>
+  </div>
+
+  </div>
+
+
+
 
 <!-- ══════════════════════════════════
      탭 3: Day:음 소개
@@ -3135,110 +3245,7 @@ window.addEventListener('load', loadState);
     </div>
     <button class="retry-btn" onclick="retryQuiz()">다시 풀기</button>
     <button class="home-btn" onclick="goHome()">홈으로</button>
-  </div>
-
-  <!-- S14. 투약 6원칙 -->
-  <div class="section" id="s14">
-    <div class="section-badge">지표 23</div>
-    <h2 class="section-title">💊 투약·약품관리</h2>
-    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">투약 6가지 원칙 숙지 / 약품보관함 잠금·분기 점검 / 직원 면담 확인</p>
-    <div class="card">
-      <div class="card-title">📋 투약 6가지 원칙 (Right 6)</div>
-      <table style="width:100%;border-collapse:collapse;font-size:12px;margin-top:6px;">
-        <tr style="background:#EEF6F2;"><th style="padding:7px 10px;text-align:left;color:#5A7A6E;width:38%;">원칙</th><th style="padding:7px 10px;text-align:left;color:#5A7A6E;">내용</th></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">① 정확한 수급자</td><td style="padding:7px 10px;color:#5A7A6E;">처방받은 해당 수급자에게만</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">② 정확한 약물</td><td style="padding:7px 10px;color:#5A7A6E;">처방된 약물명 확인 후 투약</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">③ 정확한 용량</td><td style="padding:7px 10px;color:#5A7A6E;">처방된 용량 정확히 준수</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">④ 정확한 경로</td><td style="padding:7px 10px;color:#5A7A6E;">경구·외용 등 투약 방법 확인</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">⑤ 정확한 시간</td><td style="padding:7px 10px;color:#5A7A6E;">식전·식후 등 처방 시간 준수</td></tr>
-        <tr><td style="padding:7px 10px;color:#1A9B6C;font-weight:700;">⑥ 정확한 기록</td><td style="padding:7px 10px;color:#5A7A6E;">투약 후 기록지에 서명·기재</td></tr>
-      </table>
-    </div>
-    <div class="qa">
-      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ①</div><div class="q-text">투약 시 확인해야 하는 6가지 원칙이 무엇인가요?</div></div>
-      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">투약 6원칙은 <strong>정확한 수급자, 정확한 약물, 정확한 용량, 정확한 경로, 정확한 시간, 정확한 기록</strong>입니다. 투약 전 반드시 수급자명과 약물명을 확인하고, 투약 후에는 기록지에 서명합니다.</div></div>
-    </div>
-    <div class="qa">
-      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ②</div><div class="q-text">약품은 어떻게 보관하고 있나요?</div></div>
-      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">약품보관함에 <strong>잠금장치</strong>를 설치하여 보관하고 있으며, 냉장 보관이 필요한 약은 냉장고에 따로 보관합니다. <strong>분기별 1회 이상 사용기한과 보관상태를 점검</strong>하고 기록합니다.</div></div>
-    </div>
-  </div>
-
-  <!-- S15. 운영규정 11개 항목 -->
-  <div class="section" id="s15">
-    <div class="section-badge">지표 1·6</div>
-    <h2 class="section-title">📋 운영규정 11개 항목</h2>
-    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">운영규정 비치·내용 충실 여부 / 연 1회 이상 직원 교육 / 직원 면담 확인</p>
-    <div class="card">
-      <div class="card-title">📌 운영규정 필수 11개 항목</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:8px;">
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">① </span>이용정원에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">② </span>계약에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">③ </span>이용료에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">④ </span>서비스에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑤ </span>배상책임에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑥ </span>개정에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑦ </span>인력관리에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑧ </span>보수에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑨ </span>복리후생에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;"><span style="color:#1A9B6C;font-weight:700;">⑩ </span>안전보건에 관한 사항</div>
-        <div style="background:#EEF6F2;border-radius:6px;padding:8px 10px;font-size:11px;grid-column:span 2;"><span style="color:#1A9B6C;font-weight:700;">⑪ </span>고충처리에 관한 사항</div>
-      </div>
-    </div>
-    <div class="qa">
-      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ①</div><div class="q-text">운영규정에 포함되어야 하는 항목이 몇 가지이고 어떤 것들인가요?</div></div>
-      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">운영규정에는 <strong>11개 항목</strong>이 포함되어야 합니다. 이용정원·계약·이용료·서비스·배상책임·개정·인력관리·보수·복리후생·안전보건·고충처리에 관한 사항입니다. 저희 기관 운영규정은 <strong>직원이 열람 가능한 장소에 비치</strong>되어 있습니다.</div></div>
-    </div>
-  </div>
-
-  <!-- S16. 수급자 8가지 지침 -->
-  <div class="section" id="s16">
-    <div class="section-badge">지표 19</div>
-    <h2 class="section-title">👴 수급자에게 설명하는 8가지 지침</h2>
-    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">연 1회 이상 수급자(보호자)에게 설명 필수 / 직원이 내용 숙지 / 면담 확인</p>
-    <div class="card">
-      <div class="card-title">📌 8가지 지침 핵심 내용</div>
-      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-top:6px;">
-        <tr style="background:#EEF6F2;"><th style="padding:6px 8px;text-align:center;color:#5A7A6E;width:6%;">번호</th><th style="padding:6px 8px;text-align:left;color:#5A7A6E;width:28%;">지침명</th><th style="padding:6px 8px;text-align:left;color:#5A7A6E;">핵심 내용</th></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">①</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">욕창 예방</td><td style="padding:6px 8px;color:#5A7A6E;">2시간 체위변경 / 피부 청결·건조 / 에어매트 활용</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">②</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">낙상 예방</td><td style="padding:6px 8px;color:#5A7A6E;">안전손잡이 / 미끄럼방지 / 보조기구 사용법</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">③</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">탈수 예방</td><td style="padding:6px 8px;color:#5A7A6E;">하루 1.5~2L 수분 / 갈증 없어도 규칙적 섭취</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">④</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">배변 관리</td><td style="padding:6px 8px;color:#5A7A6E;">규칙적 배변습관 / 식이섬유 / 충분한 수분</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">⑤</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">관절 구축 예방</td><td style="padding:6px 8px;color:#5A7A6E;">관절 범위 운동 / 정기적 스트레칭</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;background:#1e2235;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">⑥</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">치매 예방·관리</td><td style="padding:6px 8px;color:#5A7A6E;">인지활동 참여 / 규칙적 생활 / 사회적 교류</td></tr>
-        <tr style="border-bottom:1px solid #D1E8E2;"><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">⑦</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">감염 예방</td><td style="padding:6px 8px;color:#5A7A6E;">손씻기 6단계 / 마스크 / 기침예절 / 예방접종</td></tr>
-        <tr><td style="padding:6px 8px;text-align:center;color:#1A9B6C;font-weight:700;">⑧</td><td style="padding:6px 8px;color:#1A2332;font-weight:600;">노인인권 보호</td><td style="padding:6px 8px;color:#5A7A6E;">학대 5유형 / 신고기관 1577-1389 / 자기결정권</td></tr>
-      </table>
-    </div>
-    <div class="qa">
-      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ①</div><div class="q-text">수급자(보호자)에게 설명드리는 지침이 몇 가지이고 어떤 내용인가요?</div></div>
-      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">연 1회 이상 <strong>8가지 지침</strong>을 설명해 드리고 있습니다. <strong>욕창 예방, 낙상 예방, 탈수 예방, 배변 관리, 관절 구축 예방, 치매 예방·관리, 감염 예방, 노인인권 보호</strong>입니다. 설명 후 확인 서명을 받아 기록으로 보관합니다.</div></div>
-    </div>
-  </div>
-
-  <!-- S17. 사례관리 -->
-  <div class="section" id="s17">
-    <div class="section-badge">지표 29</div>
-    <h2 class="section-title">🗂 사례관리</h2>
-    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px;">반기별 1회 이상 회의 실시 / 30일 내 급여 반영 / 직원 절차 숙지</p>
-    <div class="card">
-      <div class="card-title">📋 사례관리 4단계 절차</div>
-      <div style="margin-top:8px;">
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;"><div style="background:#4F8EF7;color:white;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">1</div><div style="font-size:12px;color:#E0E4F0;line-height:1.6;"><strong>대상자 선정</strong> — 기능 저하·입원 후 복귀·독거 등 지원 필요 수급자</div></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;"><div style="background:#4F8EF7;color:white;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">2</div><div style="font-size:12px;color:#E0E4F0;line-height:1.6;"><strong>사례관리 회의</strong> — 반기별 1회 이상 / 사복사·간호사·요양보호사 다직종 참여 / 회의록 작성</div></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;"><div style="background:#4F8EF7;color:white;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">3</div><div style="font-size:12px;color:#E0E4F0;line-height:1.6;"><strong>급여 반영</strong> — 회의일로부터 <strong>30일 이내</strong> 급여제공계획 반영</div></div>
-        <div style="display:flex;align-items:flex-start;gap:10px;"><div style="background:#4F8EF7;color:white;border-radius:50%;width:22px;height:22px;min-width:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">4</div><div style="font-size:12px;color:#E0E4F0;line-height:1.6;"><strong>결과 평가</strong> — 반영 효과 평가 및 기록</div></div>
-      </div>
-    </div>
-    <div class="qa">
-      <div class="q-box"><div class="q-label">Q. 구술 예상 질문 ①</div><div class="q-text">사례관리는 어떻게 진행되나요?</div></div>
-      <div class="a-box"><div class="a-label">A. 모범 답변</div><div class="a-text">사례관리는 <strong>반기별 1회 이상</strong> 실시합니다. 지원이 필요한 수급자를 선정하고, 사회복지사·간호사·요양보호사가 함께 회의를 진행합니다. 결과는 <strong>회의일로부터 30일 이내</strong>에 급여제공계획에 반영하고, 효과를 평가하여 기록합니다.</div></div>
-    </div>
-  </div>
-
-  </div>
-
-</div>
+  </div></div>
 <script>
 (function(){
 const ALL_QUESTIONS = [
@@ -4524,6 +4531,6 @@ window.retryQuiz = retryQuiz;
 window.goHome = goHome;
 })();
 </script>
-<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.23.140</div>
+<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.23.141</div>
 </body>
 </html>
