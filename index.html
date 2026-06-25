@@ -2298,6 +2298,14 @@ function mockReset() {
 window.mockReset = mockReset;
 
 // 탭 전환 시 로드
+function showTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById('panel-' + name);
+  if (panel) panel.classList.add('active');
+  const btn = document.querySelector('.tab-btn[onclick*="showTab(\'' + name + '\')"]');
+  if (btn) btn.classList.add('active');
+}
 const origShowTab = window.showTab;
 window.showTab = function(name) {
   origShowTab && origShowTab(name);
@@ -4224,6 +4232,6 @@ window.retryQuiz = retryQuiz;
 window.goHome = goHome;
 })();
 </script>
-<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.23.144</div>
+<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.23.145</div>
 </body>
 </html>
