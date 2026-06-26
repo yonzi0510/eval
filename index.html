@@ -558,11 +558,14 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
 <script>
 function resetAllChecks() {
   try { localStorage.removeItem('eval_checks'); } catch(e) {}
-  document.querySelectorAll('.ci-check-item').forEach(function(el) { el.classList.remove('checked'); });
-  document.querySelectorAll('.cl-item').forEach(function(el) { el.classList.remove('all-checked','open'); });
-  document.querySelectorAll('.ci-sub-prog-fill').forEach(function(el) { el.style.width = '0%'; });
-  document.querySelectorAll('.ci-sub-prog-txt').forEach(function(el) {
-    var t = el.closest('.ci-checks') ? el.closest('.ci-checks').querySelectorAll('.ci-check-item').length : 0;
+  var panel = document.getElementById('panel-checklist');
+  if (!panel) return;
+  panel.querySelectorAll('.ci-check-item').forEach(function(el) { el.classList.remove('checked'); });
+  panel.querySelectorAll('.cl-item').forEach(function(el) { el.classList.remove('all-checked','open'); });
+  panel.querySelectorAll('.ci-sub-prog-fill').forEach(function(el) { el.style.width = '0%'; });
+  panel.querySelectorAll('.ci-sub-prog-txt').forEach(function(el) {
+    var grp = el.closest('.ci-checks');
+    var t = grp ? grp.querySelectorAll('.ci-check-item').length : 0;
     el.textContent = '0/' + t;
   });
   alert('초기화 완료!');
@@ -5333,6 +5336,6 @@ window.retryQuiz = retryQuiz;
 window.goHome = goHome;
 })();
 </script>
-<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.26.005</div>
+<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.26.006</div>
 </body>
 </html>
