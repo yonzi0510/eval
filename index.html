@@ -557,7 +557,6 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
 </style>
 <script>
 function resetAllChecks() {
-  if (!confirm('세부 체크 항목을 모두 초기화할까요?')) return;
   try { localStorage.removeItem('eval_checks'); } catch(e) {}
   document.querySelectorAll('.ci-check-item').forEach(function(el) { el.classList.remove('checked'); });
   document.querySelectorAll('.cl-item').forEach(function(el) { el.classList.remove('all-checked','open'); });
@@ -566,6 +565,7 @@ function resetAllChecks() {
     var t = el.closest('.ci-checks') ? el.closest('.ci-checks').querySelectorAll('.ci-check-item').length : 0;
     el.textContent = '0/' + t;
   });
+  alert('초기화 완료!');
 }
 function showTab(name) {
   document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
@@ -5345,6 +5345,6 @@ window.retryQuiz = retryQuiz;
 window.goHome = goHome;
 })();
 </script>
-<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.26.003</div>
+<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.06.26.004</div>
 </body>
 </html>
