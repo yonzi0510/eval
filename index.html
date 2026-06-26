@@ -537,22 +537,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
   }
 
 .cl-item.all-checked .ci-chk { color:#1A9B6C; } .cl-item.all-checked { background:rgba(26,155,108,.04); }
-/* ── 세부 체크박스 ── */
-.ci-checks { display:none; margin-top:10px; padding-top:10px; border-top:1px solid #E5EDE9; }
-.cl-item.open .ci-checks { display:block; }
-.ci-check-item { display:flex; align-items:flex-start; gap:8px; padding:5px 0; cursor:pointer; }
-.ci-check-item input[type="checkbox"] { display:none; }
-.ci-check-box { width:17px; height:17px; min-width:17px; border:2px solid #B0CCBE; border-radius:4px; background:white; display:flex; align-items:center; justify-content:center; transition:all .15s; margin-top:1px; }
-.ci-check-item.checked .ci-check-box { background:#1A9B6C; border-color:#1A9B6C; }
-.ci-check-item.checked .ci-check-box::after { content:'✓'; color:white; font-size:10px; font-weight:700; }
-.ci-check-label { font-size:12.5px; color:#374151; line-height:1.55; }
-.ci-check-item.checked .ci-check-label { color:#1A9B6C; text-decoration:line-through; opacity:.7; }
-.ci-sub-progress { margin-top:6px; display:flex; align-items:center; gap:6px; }
-.ci-sub-prog-bar { flex:1; height:4px; background:#E5EDE9; border-radius:99px; overflow:hidden; }
-.ci-sub-prog-fill { height:100%; background:#1A9B6C; border-radius:99px; transition:width .3s; }
-.ci-sub-prog-txt { font-size:10px; color:#6B7280; min-width:28px; text-align:right; }
-
-/* ── 세부 체크박스 ── */
+/* ── 세부 체크박스 v2 ── */
 .cl-item.all-checked { background:rgba(26,155,108,.04); }
 .cl-item.all-checked .ci-chk { color:#1A9B6C; }
 .ci-checks { display:none; margin-top:10px; padding-top:10px; border-top:1px solid #E5EDE9; }
@@ -567,6 +552,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
 .ci-sub-prog-bar { flex:1; height:4px; background:#E5EDE9; border-radius:99px; overflow:hidden; }
 .ci-sub-prog-fill { height:100%; background:#1A9B6C; border-radius:99px; transition:width .3s; }
 .ci-sub-prog-txt { font-size:10px; color:#6B7280; min-width:28px; text-align:right; }
+.reset-checks-btn { background:none; border:1.5px solid #E5E7EB; border-radius:8px; padding:5px 12px; font-family:'Noto Sans KR',sans-serif; font-size:11px; color:#9CA3AF; cursor:pointer; margin-left:4px; }
+.reset-checks-btn:hover { border-color:#DC2626; color:#DC2626; }
 </style>
 <script>
 function showTab(name) {
@@ -727,21 +714,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_ef086c73">
   <div class="ci-check-item" id="ck_ef086c73_0" onclick="toggleCheck(event,'ck_ef086c73_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">이용정원·계약·이용료·서비스·배상·개정·인력관리·보수·복리후생·안전보건·고충처리 포함 여부</span>
-  </div>
-  <div class="ci-check-item" id="ck_ef086c73_1" onclick="toggleCheck(event,'ck_ef086c73_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">직원 열람 가능 장소 비치</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_ef086c73_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_ef086c73_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_ef086c73">
-  <div class="ci-check-item" id="ck_ef086c73_0" onclick="toggleCheck(event,'ck_ef086c73_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">이용정원·계약·이용료·서비스 내용 포함</span>
   </div>
   <div class="ci-check-item" id="ck_ef086c73_1" onclick="toggleCheck(event,'ck_ef086c73_1')">
@@ -778,25 +750,6 @@ function showTab(name) {
     <div class="ci-txt">연간 사업계획서 — 기관운영·서비스제공·직원관리 3개 영역</div>
     <div class="ci-sub"><strong>확인:</strong> 2026년 사업계획서 수립 여부 / 3개 영역 모두 포함 / 전년 평가 결과 반영</div>
     <div class="ci-checks" id="ck_a639b05c">
-  <div class="ci-check-item" id="ck_a639b05c_0" onclick="toggleCheck(event,'ck_a639b05c_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">2026년 사업계획서 수립 여부</span>
-  </div>
-  <div class="ci-check-item" id="ck_a639b05c_1" onclick="toggleCheck(event,'ck_a639b05c_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">3개 영역 모두 포함</span>
-  </div>
-  <div class="ci-check-item" id="ck_a639b05c_2" onclick="toggleCheck(event,'ck_a639b05c_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전년 평가 결과 반영</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_a639b05c_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_a639b05c_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_a639b05c">
   <div class="ci-check-item" id="ck_a639b05c_0" onclick="toggleCheck(event,'ck_a639b05c_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">2026년 연간 사업계획서 수립 여부</span>
@@ -855,25 +808,6 @@ function showTab(name) {
     <span class="ci-sub-prog-txt" id="ck_c66f26ca_txt">0/3</span>
   </div>
 </div>
-    
-<div class="ci-checks" id="ck_c66f26ca">
-  <div class="ci-check-item" id="ck_c66f26ca_0" onclick="toggleCheck(event,'ck_c66f26ca_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">이동서비스 수칙 문서 비치</span>
-  </div>
-  <div class="ci-check-item" id="ck_c66f26ca_1" onclick="toggleCheck(event,'ck_c66f26ca_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">차량운행표 수급자(보호자) 제공</span>
-  </div>
-  <div class="ci-check-item" id="ck_c66f26ca_2" onclick="toggleCheck(event,'ck_c66f26ca_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">자동차종합보험 유효기간 확인</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_c66f26ca_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_c66f26ca_txt">0/3</span>
-  </div>
-</div>
 
     <div class="ci-tags"><span class="ctag ctag-idx">지표 28</span></div></div>
   </div>
@@ -883,29 +817,6 @@ function showTab(name) {
     <div class="ci-txt">급여제공계획서 — 기능회복훈련 항목 포함 (★신설)</div>
     <div class="ci-sub"><strong>확인:</strong> 전 수급자 욕구사정·위험도평가 반영 / <strong>기능회복훈련 목표·내용 기재</strong> / 수급자(보호자) 서명 / 공단 통보</div>
     <div class="ci-checks" id="ck_d84b1aa8">
-  <div class="ci-check-item" id="ck_d84b1aa8_0" onclick="toggleCheck(event,'ck_d84b1aa8_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 수급자 욕구사정·위험도평가 반영</span>
-  </div>
-  <div class="ci-check-item" id="ck_d84b1aa8_1" onclick="toggleCheck(event,'ck_d84b1aa8_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">기능회복훈련 목표·내용 기재</span>
-  </div>
-  <div class="ci-check-item" id="ck_d84b1aa8_2" onclick="toggleCheck(event,'ck_d84b1aa8_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">수급자(보호자) 서명</span>
-  </div>
-  <div class="ci-check-item" id="ck_d84b1aa8_3" onclick="toggleCheck(event,'ck_d84b1aa8_3')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">공단 통보</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_d84b1aa8_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_d84b1aa8_txt">0/4</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_d84b1aa8">
   <div class="ci-check-item" id="ck_d84b1aa8_0" onclick="toggleCheck(event,'ck_d84b1aa8_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">전 수급자 욕구사정·위험도평가 반영</span>
@@ -938,25 +849,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_7528cd45">
   <div class="ci-check-item" id="ck_7528cd45_0" onclick="toggleCheck(event,'ck_7528cd45_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 수급자 연 1회 이상</span>
-  </div>
-  <div class="ci-check-item" id="ck_7528cd45_1" onclick="toggleCheck(event,'ck_7528cd45_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">구강상태 평가·기피식품 파악 기재 필수</span>
-  </div>
-  <div class="ci-check-item" id="ck_7528cd45_2" onclick="toggleCheck(event,'ck_7528cd45_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">10개 영역 판단근거 작성</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_7528cd45_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_7528cd45_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_7528cd45">
-  <div class="ci-check-item" id="ck_7528cd45_0" onclick="toggleCheck(event,'ck_7528cd45_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">전 수급자 연 1회 이상 실시</span>
   </div>
   <div class="ci-check-item" id="ck_7528cd45_1" onclick="toggleCheck(event,'ck_7528cd45_1')">
@@ -985,25 +877,6 @@ function showTab(name) {
     <div class="ci-txt">위험도평가 — 낙상(Huhn)·욕창(Braden)·인지(CIST) 반기 1회</div>
     <div class="ci-sub"><strong>확인:</strong> 전 수급자 낙상·욕창·인지기능 평가 반기 1회 이상 / 수급자명·일자·작성자명 필수 기재 / 급여제공계획 반영</div>
     <div class="ci-checks" id="ck_52cadc6b">
-  <div class="ci-check-item" id="ck_52cadc6b_0" onclick="toggleCheck(event,'ck_52cadc6b_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 수급자 낙상·욕창·인지기능 평가 반기 1회 이상</span>
-  </div>
-  <div class="ci-check-item" id="ck_52cadc6b_1" onclick="toggleCheck(event,'ck_52cadc6b_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">수급자명·일자·작성자명 필수 기재</span>
-  </div>
-  <div class="ci-check-item" id="ck_52cadc6b_2" onclick="toggleCheck(event,'ck_52cadc6b_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">급여제공계획 반영</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_52cadc6b_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_52cadc6b_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_52cadc6b">
   <div class="ci-check-item" id="ck_52cadc6b_0" onclick="toggleCheck(event,'ck_52cadc6b_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">전 수급자 낙상위험도(Huhn) 평가 반기 1회 이상</span>
@@ -1048,25 +921,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_76a724ea_2" onclick="toggleCheck(event,'ck_76a724ea_2')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">기록지 월 1회 이상 제공</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_76a724ea_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_76a724ea_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_76a724ea">
-  <div class="ci-check-item" id="ck_76a724ea_0" onclick="toggleCheck(event,'ck_76a724ea_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">수급자별 급여제공결과 반기 1회 이상 평가</span>
-  </div>
-  <div class="ci-check-item" id="ck_76a724ea_1" onclick="toggleCheck(event,'ck_76a724ea_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">30일 내 급여제공계획 재작성</span>
-  </div>
-  <div class="ci-check-item" id="ck_76a724ea_2" onclick="toggleCheck(event,'ck_76a724ea_2')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">기록지 월 1회 이상 수급자(보호자) 제공</span>
   </div>
   <div class="ci-sub-progress">
@@ -1093,25 +947,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_0ac85ea1_2" onclick="toggleCheck(event,'ck_0ac85ea1_2')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">계약서 서명 확인</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_0ac85ea1_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_0ac85ea1_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_0ac85ea1">
-  <div class="ci-check-item" id="ck_0ac85ea1_0" onclick="toggleCheck(event,'ck_0ac85ea1_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">개인별 장기요양이용계획서 반영 계약 체결</span>
-  </div>
-  <div class="ci-check-item" id="ck_0ac85ea1_1" onclick="toggleCheck(event,'ck_0ac85ea1_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">급여 시작일까지 공단 통보</span>
-  </div>
-  <div class="ci-check-item" id="ck_0ac85ea1_2" onclick="toggleCheck(event,'ck_0ac85ea1_2')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">계약서 수급자(보호자) 서명 확인</span>
   </div>
   <div class="ci-sub-progress">
@@ -1128,25 +963,6 @@ function showTab(name) {
     <div class="ci-txt">상담일지 — 수급자 분기별 1회 이상·결과 반영</div>
     <div class="ci-sub"><strong>확인:</strong> 분기별 1회 이상 상담 실시·일지 작성 / 상담결과 급여에 반영 / 월간 프로그램계획표·식단표 월 1회 이상 제공</div>
     <div class="ci-checks" id="ck_8249ae1c">
-  <div class="ci-check-item" id="ck_8249ae1c_0" onclick="toggleCheck(event,'ck_8249ae1c_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">분기별 1회 이상 상담 실시·일지 작성</span>
-  </div>
-  <div class="ci-check-item" id="ck_8249ae1c_1" onclick="toggleCheck(event,'ck_8249ae1c_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">상담결과 급여에 반영</span>
-  </div>
-  <div class="ci-check-item" id="ck_8249ae1c_2" onclick="toggleCheck(event,'ck_8249ae1c_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">월간 프로그램계획표·식단표 월 1회 이상 제공</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_8249ae1c_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_8249ae1c_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_8249ae1c">
   <div class="ci-check-item" id="ck_8249ae1c_0" onclick="toggleCheck(event,'ck_8249ae1c_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">분기별 1회 이상 상담 실시·일지 작성</span>
@@ -1187,25 +1003,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_4b51873f_2" onclick="toggleCheck(event,'ck_4b51873f_2')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">30일 내 급여 반영 및 결과 평가</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_4b51873f_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_4b51873f_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_4b51873f">
-  <div class="ci-check-item" id="ck_4b51873f_0" onclick="toggleCheck(event,'ck_4b51873f_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">사례관리 회의 반기 1회 이상 실시</span>
-  </div>
-  <div class="ci-check-item" id="ck_4b51873f_1" onclick="toggleCheck(event,'ck_4b51873f_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">회의록 작성 (대상자·회의내용·계획)</span>
-  </div>
-  <div class="ci-check-item" id="ck_4b51873f_2" onclick="toggleCheck(event,'ck_4b51873f_2')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">30일 내 급여제공계획 반영</span>
   </div>
   <div class="ci-check-item" id="ck_4b51873f_3" onclick="toggleCheck(event,'ck_4b51873f_3')">
@@ -1226,29 +1023,6 @@ function showTab(name) {
     <div class="ci-txt">프로그램 연간계획 및 일지 — 신체·인지·사회적응</div>
     <div class="ci-sub"><strong>확인:</strong> 신체·인지 프로그램 주 3회 이상 / 사회적응 프로그램 월 1회 이상 / 일지 기록 / 반기별 의견 수렴·반영</div>
     <div class="ci-checks" id="ck_81f46a59">
-  <div class="ci-check-item" id="ck_81f46a59_0" onclick="toggleCheck(event,'ck_81f46a59_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">신체·인지 프로그램 주 3회 이상</span>
-  </div>
-  <div class="ci-check-item" id="ck_81f46a59_1" onclick="toggleCheck(event,'ck_81f46a59_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">사회적응 프로그램 월 1회 이상</span>
-  </div>
-  <div class="ci-check-item" id="ck_81f46a59_2" onclick="toggleCheck(event,'ck_81f46a59_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">일지 기록</span>
-  </div>
-  <div class="ci-check-item" id="ck_81f46a59_3" onclick="toggleCheck(event,'ck_81f46a59_3')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">반기별 의견 수렴·반영</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_81f46a59_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_81f46a59_txt">0/4</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_81f46a59">
   <div class="ci-check-item" id="ck_81f46a59_0" onclick="toggleCheck(event,'ck_81f46a59_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">신체 프로그램 주 3회 이상</span>
@@ -1285,25 +1059,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_0b91b9de">
   <div class="ci-check-item" id="ck_0b91b9de_0" onclick="toggleCheck(event,'ck_0b91b9de_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">급여제공기록지 필수사항 기재</span>
-  </div>
-  <div class="ci-check-item" id="ck_0b91b9de_1" onclick="toggleCheck(event,'ck_0b91b9de_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">변경 시 사유 기록</span>
-  </div>
-  <div class="ci-check-item" id="ck_0b91b9de_2" onclick="toggleCheck(event,'ck_0b91b9de_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">주 1회 이상 수급자 상태변화 기록</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_0b91b9de_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_0b91b9de_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_0b91b9de">
-  <div class="ci-check-item" id="ck_0b91b9de_0" onclick="toggleCheck(event,'ck_0b91b9de_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">일자·급여내용·시간·서명 기재</span>
   </div>
   <div class="ci-check-item" id="ck_0b91b9de_1" onclick="toggleCheck(event,'ck_0b91b9de_1')">
@@ -1334,21 +1089,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_19d4403f_1" onclick="toggleCheck(event,'ck_19d4403f_1')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">안내 확인 기록 보관</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_19d4403f_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_19d4403f_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_19d4403f">
-  <div class="ci-check-item" id="ck_19d4403f_0" onclick="toggleCheck(event,'ck_19d4403f_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">보호자(수급자) 대상 연명의료결정 제도 안내</span>
-  </div>
-  <div class="ci-check-item" id="ck_19d4403f_1" onclick="toggleCheck(event,'ck_19d4403f_1')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">안내 일시·방법·서명 확인 기록 보관</span>
   </div>
   <div class="ci-sub-progress">
@@ -1365,25 +1105,6 @@ function showTab(name) {
     <div class="ci-txt">연계기록지 — 퇴소·전원 시 작성·제공·대장 기록</div>
     <div class="ci-sub"><strong>확인:</strong> 퇴소·전원 시 연계기록지 작성 / 수급자(보호자)에게 제공 / 제공대장 기록 (수급자명·일자·방법·수령자)</div>
     <div class="ci-checks" id="ck_cd3bb2dd">
-  <div class="ci-check-item" id="ck_cd3bb2dd_0" onclick="toggleCheck(event,'ck_cd3bb2dd_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">퇴소·전원 시 연계기록지 작성</span>
-  </div>
-  <div class="ci-check-item" id="ck_cd3bb2dd_1" onclick="toggleCheck(event,'ck_cd3bb2dd_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">수급자(보호자)에게 제공</span>
-  </div>
-  <div class="ci-check-item" id="ck_cd3bb2dd_2" onclick="toggleCheck(event,'ck_cd3bb2dd_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">제공대장 기록 (수급자명·일자·방법·수령자)</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_cd3bb2dd_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_cd3bb2dd_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_cd3bb2dd">
   <div class="ci-check-item" id="ck_cd3bb2dd_0" onclick="toggleCheck(event,'ck_cd3bb2dd_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">퇴소·전원 시 연계기록지 작성</span>
@@ -1428,21 +1149,6 @@ function showTab(name) {
     <span class="ci-sub-prog-txt" id="ck_6f1d6938_txt">0/2</span>
   </div>
 </div>
-    
-<div class="ci-checks" id="ck_6f1d6938">
-  <div class="ci-check-item" id="ck_6f1d6938_0" onclick="toggleCheck(event,'ck_6f1d6938_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">현관·유리문에 충돌방지 표시 부착</span>
-  </div>
-  <div class="ci-check-item" id="ck_6f1d6938_1" onclick="toggleCheck(event,'ck_6f1d6938_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">높이 150cm 이하 위치 확인</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_6f1d6938_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_6f1d6938_txt">0/2</span>
-  </div>
-</div>
 
     <div class="ci-tags"><span class="ctag ctag-idx">지표 9</span><span class="ctag ctag-new">★신설</span></div></div>
   </div>
@@ -1452,25 +1158,6 @@ function showTab(name) {
     <div class="ci-txt">실내환기 일일 점검표 — 매일 작성·비치 (★신설)</div>
     <div class="ci-sub"><strong>확인:</strong> 환기 일일 점검표 비치 여부 / 공백 없이 매일 작성 여부 / 환기 횟수 하루 3회 이상</div>
     <div class="ci-checks" id="ck_0092485b">
-  <div class="ci-check-item" id="ck_0092485b_0" onclick="toggleCheck(event,'ck_0092485b_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">환기 일일 점검표 비치 여부</span>
-  </div>
-  <div class="ci-check-item" id="ck_0092485b_1" onclick="toggleCheck(event,'ck_0092485b_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">공백 없이 매일 작성 여부</span>
-  </div>
-  <div class="ci-check-item" id="ck_0092485b_2" onclick="toggleCheck(event,'ck_0092485b_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">환기 횟수 하루 3회 이상</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_0092485b_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_0092485b_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_0092485b">
   <div class="ci-check-item" id="ck_0092485b_0" onclick="toggleCheck(event,'ck_0092485b_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">환기 일일 점검표 비치</span>
@@ -1497,21 +1184,6 @@ function showTab(name) {
     <div class="ci-txt">안전손잡이 — 수급자 이용 공간 전체 설치</div>
     <div class="ci-sub"><strong>확인:</strong> 목욕실·화장실·식당·프로그램실·세면대 주변 안전손잡이 설치 / 기능·방향 적정 여부</div>
     <div class="ci-checks" id="ck_0bf671dc">
-  <div class="ci-check-item" id="ck_0bf671dc_0" onclick="toggleCheck(event,'ck_0bf671dc_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">목욕실·화장실·식당·프로그램실·세면대 주변 안전손잡이 설치</span>
-  </div>
-  <div class="ci-check-item" id="ck_0bf671dc_1" onclick="toggleCheck(event,'ck_0bf671dc_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">기능·방향 적정 여부</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_0bf671dc_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_0bf671dc_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_0bf671dc">
   <div class="ci-check-item" id="ck_0bf671dc_0" onclick="toggleCheck(event,'ck_0bf671dc_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">목욕실·화장실 안전손잡이 설치</span>
@@ -1555,25 +1227,6 @@ function showTab(name) {
     <span class="ci-sub-prog-txt" id="ck_651fd3ea_txt">0/3</span>
   </div>
 </div>
-    
-<div class="ci-checks" id="ck_651fd3ea">
-  <div class="ci-check-item" id="ck_651fd3ea_0" onclick="toggleCheck(event,'ck_651fd3ea_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">바닥 미끄럼방지 처리</span>
-  </div>
-  <div class="ci-check-item" id="ck_651fd3ea_1" onclick="toggleCheck(event,'ck_651fd3ea_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">화장실·목욕실 낙상주의 안내표지 부착</span>
-  </div>
-  <div class="ci-check-item" id="ck_651fd3ea_2" onclick="toggleCheck(event,'ck_651fd3ea_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">턱 2cm 초과 시 경사처리</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_651fd3ea_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_651fd3ea_txt">0/3</span>
-  </div>
-</div>
 
     <div class="ci-tags"><span class="ctag ctag-idx">지표 10</span><span class="ctag ctag-new">★신설</span></div></div>
   </div>
@@ -1583,21 +1236,6 @@ function showTab(name) {
     <div class="ci-txt">문턱제거·경사처리 — 수급자 이동 공간 전체</div>
     <div class="ci-sub"><strong>확인:</strong> 침실·거실·프로그램실·목욕실·화장실·식당 문턱 제거 또는 경사처리 / 적재물 제거 여부</div>
     <div class="ci-checks" id="ck_e6cf095c">
-  <div class="ci-check-item" id="ck_e6cf095c_0" onclick="toggleCheck(event,'ck_e6cf095c_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">침실·거실·프로그램실·목욕실·화장실·식당 문턱 제거 또는 경사처리</span>
-  </div>
-  <div class="ci-check-item" id="ck_e6cf095c_1" onclick="toggleCheck(event,'ck_e6cf095c_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">적재물 제거 여부</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_e6cf095c_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_e6cf095c_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_e6cf095c">
   <div class="ci-check-item" id="ck_e6cf095c_0" onclick="toggleCheck(event,'ck_e6cf095c_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">침실·거실·프로그램실 문턱 제거 또는 경사처리</span>
@@ -1624,25 +1262,6 @@ function showTab(name) {
     <div class="ci-txt">소화기·경보설비 — 매월 점검·피난안내도 부착</div>
     <div class="ci-sub"><strong>확인:</strong> 소화기·소화전·경보설비 매월 점검 / 화재위험 요인 제거 / 피난안내도 각 층별 부착</div>
     <div class="ci-checks" id="ck_24a13c11">
-  <div class="ci-check-item" id="ck_24a13c11_0" onclick="toggleCheck(event,'ck_24a13c11_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">소화기·소화전·경보설비 매월 점검</span>
-  </div>
-  <div class="ci-check-item" id="ck_24a13c11_1" onclick="toggleCheck(event,'ck_24a13c11_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">화재위험 요인 제거</span>
-  </div>
-  <div class="ci-check-item" id="ck_24a13c11_2" onclick="toggleCheck(event,'ck_24a13c11_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">피난안내도 각 층별 부착</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_24a13c11_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_24a13c11_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_24a13c11">
   <div class="ci-check-item" id="ck_24a13c11_0" onclick="toggleCheck(event,'ck_24a13c11_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">소화기 매월 점검 (압력계·안전핀 확인)</span>
@@ -1673,25 +1292,6 @@ function showTab(name) {
     <div class="ci-txt">응급알림장치 — 생활실·화장실·목욕실 각 1개 이상·정상작동</div>
     <div class="ci-sub"><strong>확인:</strong> 응급상황 알림장치 설치 확인 / 정상 작동 여부 / 비상연락망 비치</div>
     <div class="ci-checks" id="ck_58c02a4e">
-  <div class="ci-check-item" id="ck_58c02a4e_0" onclick="toggleCheck(event,'ck_58c02a4e_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">응급상황 알림장치 설치 확인</span>
-  </div>
-  <div class="ci-check-item" id="ck_58c02a4e_1" onclick="toggleCheck(event,'ck_58c02a4e_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">정상 작동 여부</span>
-  </div>
-  <div class="ci-check-item" id="ck_58c02a4e_2" onclick="toggleCheck(event,'ck_58c02a4e_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">비상연락망 비치</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_58c02a4e_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_58c02a4e_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_58c02a4e">
   <div class="ci-check-item" id="ck_58c02a4e_0" onclick="toggleCheck(event,'ck_58c02a4e_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">생활실 응급알림장치 설치 및 정상 작동</span>
@@ -1728,21 +1328,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_976106bd_1" onclick="toggleCheck(event,'ck_976106bd_1')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">일반 의약품 사용기한·보관상태 분기별 1회 이상 점검 기록</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_976106bd_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_976106bd_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_976106bd">
-  <div class="ci-check-item" id="ck_976106bd_0" onclick="toggleCheck(event,'ck_976106bd_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">약품보관함 잠금장치 설치</span>
-  </div>
-  <div class="ci-check-item" id="ck_976106bd_1" onclick="toggleCheck(event,'ck_976106bd_1')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">분기 1회 이상 의약품 사용기한 점검</span>
   </div>
   <div class="ci-check-item" id="ck_976106bd_2" onclick="toggleCheck(event,'ck_976106bd_2')">
@@ -1763,21 +1348,6 @@ function showTab(name) {
     <div class="ci-txt">주방 잠금장치 — 주방 출입문·수납공간·가스밸브</div>
     <div class="ci-sub"><strong>확인:</strong> 주방 출입문 잠금장치 설치 / 개방형 주방은 수납공간 잠금 및 가스밸브 안전장치 설치 여부</div>
     <div class="ci-checks" id="ck_7f20ef12">
-  <div class="ci-check-item" id="ck_7f20ef12_0" onclick="toggleCheck(event,'ck_7f20ef12_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">주방 출입문 잠금장치 설치</span>
-  </div>
-  <div class="ci-check-item" id="ck_7f20ef12_1" onclick="toggleCheck(event,'ck_7f20ef12_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">개방형 주방은 수납공간 잠금 및 가스밸브 안전장치 설치 여부</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_7f20ef12_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_7f20ef12_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_7f20ef12">
   <div class="ci-check-item" id="ck_7f20ef12_0" onclick="toggleCheck(event,'ck_7f20ef12_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">주방 출입문 잠금장치 설치</span>
@@ -1814,25 +1384,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_515f8336_2" onclick="toggleCheck(event,'ck_515f8336_2')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">영상장비(CCTV) 열람 권한·보관기간 관리 현황</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_515f8336_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_515f8336_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_515f8336">
-  <div class="ci-check-item" id="ck_515f8336_0" onclick="toggleCheck(event,'ck_515f8336_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">수급자 개인정보 포함 자료 보관함 잠금장치 여부</span>
-  </div>
-  <div class="ci-check-item" id="ck_515f8336_1" onclick="toggleCheck(event,'ck_515f8336_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">열쇠·비밀번호 관리 현황</span>
-  </div>
-  <div class="ci-check-item" id="ck_515f8336_2" onclick="toggleCheck(event,'ck_515f8336_2')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">CCTV 열람 권한 지정 여부</span>
   </div>
   <div class="ci-check-item" id="ck_515f8336_3" onclick="toggleCheck(event,'ck_515f8336_3')">
@@ -1853,25 +1404,6 @@ function showTab(name) {
     <div class="ci-txt">감염관리 — 비품소독·분기 전문소독·식품위생</div>
     <div class="ci-sub"><strong>확인:</strong> 간호비품 소독 및 청결 관리 / 분기별 1회 이상 전문소독 실시·증명서 보관 / 냉장 5℃↓·냉동 -18℃↓ 유지</div>
     <div class="ci-checks" id="ck_26888272">
-  <div class="ci-check-item" id="ck_26888272_0" onclick="toggleCheck(event,'ck_26888272_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">간호비품 소독 및 청결 관리</span>
-  </div>
-  <div class="ci-check-item" id="ck_26888272_1" onclick="toggleCheck(event,'ck_26888272_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">분기별 1회 이상 전문소독 실시·증명서 보관</span>
-  </div>
-  <div class="ci-check-item" id="ck_26888272_2" onclick="toggleCheck(event,'ck_26888272_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">냉장 5℃↓·냉동 -18℃↓ 유지</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_26888272_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_26888272_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_26888272">
   <div class="ci-check-item" id="ck_26888272_0" onclick="toggleCheck(event,'ck_26888272_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">간호비품 소독 및 청결 관리</span>
@@ -1909,21 +1441,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_0aad6731">
   <div class="ci-check-item" id="ck_0aad6731_0" onclick="toggleCheck(event,'ck_0aad6731_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">국가 위기상황 발생 시 대응체계 + 기관 내 감염병 환자 발생·확산 시 대응체계 각각 수립</span>
-  </div>
-  <div class="ci-check-item" id="ck_0aad6731_1" onclick="toggleCheck(event,'ck_0aad6731_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">공단 매뉴얼 수준으로 기관 상황에 맞게 작성·비치</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_0aad6731_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_0aad6731_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_0aad6731">
-  <div class="ci-check-item" id="ck_0aad6731_0" onclick="toggleCheck(event,'ck_0aad6731_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">국가 위기상황(팬데믹 등) 대응체계 수립</span>
   </div>
   <div class="ci-check-item" id="ck_0aad6731_1" onclick="toggleCheck(event,'ck_0aad6731_1')">
@@ -1952,17 +1469,6 @@ function showTab(name) {
     <div class="ci-txt">기관 내 정보 게시 — 운영규정개요·인력현황·평가결과 등</div>
     <div class="ci-sub"><strong>확인:</strong> 운영규정 개요·인력현황표·급여종류·노인학대신고기관·배상책임보험증서·최종평가결과 게시</div>
     <div class="ci-checks" id="ck_42e6b2f8">
-  <div class="ci-check-item" id="ck_42e6b2f8_0" onclick="toggleCheck(event,'ck_42e6b2f8_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">운영규정 개요·인력현황표·급여종류·노인학대신고기관·배상책임보험증서·최종평가결과 게시</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_42e6b2f8_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_42e6b2f8_txt">0/1</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_42e6b2f8">
   <div class="ci-check-item" id="ck_42e6b2f8_0" onclick="toggleCheck(event,'ck_42e6b2f8_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">운영규정 개요 게시</span>
@@ -2014,25 +1520,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_00b8c083_2" onclick="toggleCheck(event,'ck_00b8c083_2')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">고충처리함·고충처리지침·고충처리대장 비치</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_00b8c083_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_00b8c083_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_00b8c083">
-  <div class="ci-check-item" id="ck_00b8c083_0" onclick="toggleCheck(event,'ck_00b8c083_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">직원 인권침해 대응 포스터 게시</span>
-  </div>
-  <div class="ci-check-item" id="ck_00b8c083_1" onclick="toggleCheck(event,'ck_00b8c083_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">직원·수급자 간 상호존중 포스터 게시</span>
-  </div>
-  <div class="ci-check-item" id="ck_00b8c083_2" onclick="toggleCheck(event,'ck_00b8c083_2')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">고충처리함 비치</span>
   </div>
   <div class="ci-check-item" id="ck_00b8c083_3" onclick="toggleCheck(event,'ck_00b8c083_3')">
@@ -2060,21 +1547,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_da8bee86">
   <div class="ci-check-item" id="ck_da8bee86_0" onclick="toggleCheck(event,'ck_da8bee86_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">노인인권대신고 안내문 게시</span>
-  </div>
-  <div class="ci-check-item" id="ck_da8bee86_1" onclick="toggleCheck(event,'ck_da8bee86_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">수급자(보호자) 연 1회 이상 8가지 지침 설명 기록</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_da8bee86_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_da8bee86_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_da8bee86">
-  <div class="ci-check-item" id="ck_da8bee86_0" onclick="toggleCheck(event,'ck_da8bee86_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">노인학대 신고 안내문 게시 (1577-1389)</span>
   </div>
   <div class="ci-check-item" id="ck_da8bee86_1" onclick="toggleCheck(event,'ck_da8bee86_1')">
@@ -2099,17 +1571,6 @@ function showTab(name) {
     <div class="ci-txt">인플루엔자 예방접종 기록 — 전 수급자 완비 (★신설)</div>
     <div class="ci-sub"><strong>확인:</strong> 전 수급자 독감 예방접종 기록 완비 여부 (미접종 시 사유 기재)</div>
     <div class="ci-checks" id="ck_5de5c8fb">
-  <div class="ci-check-item" id="ck_5de5c8fb_0" onclick="toggleCheck(event,'ck_5de5c8fb_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 수급자 독감 예방접종 기록 완비 여부 (미접종 시 사유 기재)</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_5de5c8fb_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_5de5c8fb_txt">0/1</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_5de5c8fb">
   <div class="ci-check-item" id="ck_5de5c8fb_0" onclick="toggleCheck(event,'ck_5de5c8fb_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">전 수급자 독감 예방접종 기록 완비</span>
@@ -2149,25 +1610,6 @@ function showTab(name) {
     <span class="ci-sub-prog-txt" id="ck_19fa1a34_txt">0/3</span>
   </div>
 </div>
-    
-<div class="ci-checks" id="ck_19fa1a34">
-  <div class="ci-check-item" id="ck_19fa1a34_0" onclick="toggleCheck(event,'ck_19fa1a34_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">영양사가 작성한 식단표 매달 게시</span>
-  </div>
-  <div class="ci-check-item" id="ck_19fa1a34_1" onclick="toggleCheck(event,'ck_19fa1a34_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">1식 4찬 이상 구성</span>
-  </div>
-  <div class="ci-check-item" id="ck_19fa1a34_2" onclick="toggleCheck(event,'ck_19fa1a34_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">기피식품 반영 여부</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_19fa1a34_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_19fa1a34_txt">0/3</span>
-  </div>
-</div>
 
     <div class="ci-tags"><span class="ctag ctag-idx">지표 33</span></div></div>
   </div>
@@ -2181,25 +1623,6 @@ function showTab(name) {
       <a href="https://safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?&category=earthQuake&actsHeaderTitle=%EC%A7%80%EC%A7%84&menuSn=4" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:#EEF6F2;border:1.5px solid #1A9B6C;border-radius:6px;font-size:10px;font-weight:700;color:#1A9B6C;text-decoration:none;">📎 지진 대피행동요령</a>
     </div>
     <div class="ci-checks" id="ck_362af9b3">
-  <div class="ci-check-item" id="ck_362af9b3_0" onclick="toggleCheck(event,'ck_362af9b3_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">재난상황 대응 매뉴얼 비치</span>
-  </div>
-  <div class="ci-check-item" id="ck_362af9b3_1" onclick="toggleCheck(event,'ck_362af9b3_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">반기 1회 이상 재난대응훈련 실시 (수급자·직원 포함)</span>
-  </div>
-  <div class="ci-check-item" id="ck_362af9b3_2" onclick="toggleCheck(event,'ck_362af9b3_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">훈련 결과 기록</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_362af9b3_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_362af9b3_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_362af9b3">
   <div class="ci-check-item" id="ck_362af9b3_0" onclick="toggleCheck(event,'ck_362af9b3_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">재난상황 대응 매뉴얼 현장 비치</span>
@@ -2252,25 +1675,6 @@ function showTab(name) {
     <span class="ci-sub-prog-txt" id="ck_76687c75_txt">0/3</span>
   </div>
 </div>
-    
-<div class="ci-checks" id="ck_76687c75">
-  <div class="ci-check-item" id="ck_76687c75_0" onclick="toggleCheck(event,'ck_76687c75_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 직원 연 1회 이상 운영규정 교육 실시</span>
-  </div>
-  <div class="ci-check-item" id="ck_76687c75_1" onclick="toggleCheck(event,'ck_76687c75_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">교육일지(일자·방법·강사·서명) 작성</span>
-  </div>
-  <div class="ci-check-item" id="ck_76687c75_2" onclick="toggleCheck(event,'ck_76687c75_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">신규직원 7일 이내 교육 기록</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_76687c75_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_76687c75_txt">0/3</span>
-  </div>
-</div>
 
     <div class="ci-tags"><span class="ctag ctag-idx">지표 6-②</span></div></div>
   </div>
@@ -2280,25 +1684,6 @@ function showTab(name) {
     <div class="ci-txt">급여제공지침 12개 교육 — 연 1회 이상·직원 내용 숙지</div>
     <div class="ci-sub"><strong>확인:</strong> 전 직원 연 1회 이상 12개 지침 교육 / 교육일지 작성 / 직원 면담 시 지침별 주요내용 답변 가능 여부</div>
     <div class="ci-checks" id="ck_d1db723a">
-  <div class="ci-check-item" id="ck_d1db723a_0" onclick="toggleCheck(event,'ck_d1db723a_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 직원 연 1회 이상 12개 지침 교육</span>
-  </div>
-  <div class="ci-check-item" id="ck_d1db723a_1" onclick="toggleCheck(event,'ck_d1db723a_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">교육일지 작성</span>
-  </div>
-  <div class="ci-check-item" id="ck_d1db723a_2" onclick="toggleCheck(event,'ck_d1db723a_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">직원 면담 시 지침별 주요내용 답변 가능 여부</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_d1db723a_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_d1db723a_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_d1db723a">
   <div class="ci-check-item" id="ck_d1db723a_0" onclick="toggleCheck(event,'ck_d1db723a_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">전 직원 연 1회 이상 12개 지침 교육</span>
@@ -2338,21 +1723,6 @@ function showTab(name) {
     <span class="ci-sub-prog-txt" id="ck_5b667483_txt">0/2</span>
   </div>
 </div>
-    
-<div class="ci-checks" id="ck_5b667483">
-  <div class="ci-check-item" id="ck_5b667483_0" onclick="toggleCheck(event,'ck_5b667483_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">보수교육 대상 요양보호사 전원 이수</span>
-  </div>
-  <div class="ci-check-item" id="ck_5b667483_1" onclick="toggleCheck(event,'ck_5b667483_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">이수증 또는 수료 기록 보관</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_5b667483_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_5b667483_txt">0/2</span>
-  </div>
-</div>
 
     <div class="ci-tags"><span class="ctag ctag-idx">지표 5</span><span class="ctag ctag-new">★신설</span></div></div>
   </div>
@@ -2375,21 +1745,6 @@ function showTab(name) {
     <span class="ci-sub-prog-txt" id="ck_0c067a91_txt">0/2</span>
   </div>
 </div>
-    
-<div class="ci-checks" id="ck_0c067a91">
-  <div class="ci-check-item" id="ck_0c067a91_0" onclick="toggleCheck(event,'ck_0c067a91_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 직원 결핵검진 포함 건강검진 매년 실시</span>
-  </div>
-  <div class="ci-check-item" id="ck_0c067a91_1" onclick="toggleCheck(event,'ck_0c067a91_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">검진결과서 보관</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_0c067a91_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_0c067a91_txt">0/2</span>
-  </div>
-</div>
 
     <div class="ci-tags"><span class="ctag ctag-idx">지표 15</span></div></div>
   </div>
@@ -2399,25 +1754,6 @@ function showTab(name) {
     <div class="ci-txt">노인인권 교육 — 반기 1회 이상·직원 주요내용 숙지</div>
     <div class="ci-sub"><strong>확인:</strong> 전 직원 노인인권교육 반기 1회 이상 / 학대 5가지 유형·신고기관(1577-1389) 숙지 / 교육일지 작성</div>
     <div class="ci-checks" id="ck_8c5662c0">
-  <div class="ci-check-item" id="ck_8c5662c0_0" onclick="toggleCheck(event,'ck_8c5662c0_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 직원 노인인권교육 반기 1회 이상</span>
-  </div>
-  <div class="ci-check-item" id="ck_8c5662c0_1" onclick="toggleCheck(event,'ck_8c5662c0_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">학대 5가지 유형·신고기관(1577-1389) 숙지</span>
-  </div>
-  <div class="ci-check-item" id="ck_8c5662c0_2" onclick="toggleCheck(event,'ck_8c5662c0_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">교육일지 작성</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_8c5662c0_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_8c5662c0_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_8c5662c0">
   <div class="ci-check-item" id="ck_8c5662c0_0" onclick="toggleCheck(event,'ck_8c5662c0_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">전 직원 노인인권교육 반기 1회 이상</span>
@@ -2448,25 +1784,6 @@ function showTab(name) {
     <div class="ci-txt">응급상황 대응 — 직원 종류·대처법 숙지</div>
     <div class="ci-sub"><strong>확인:</strong> 응급상황 종류 6가지 숙지 (심정지·질식·경련·화상·낙상·저혈당) / 각 상황별 대처법 / CPR+AED 사용법</div>
     <div class="ci-checks" id="ck_a92c6ddb">
-  <div class="ci-check-item" id="ck_a92c6ddb_0" onclick="toggleCheck(event,'ck_a92c6ddb_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">응급상황 종류 6가지 숙지 (심정지·질식·경련·화상·낙상·저혈당)</span>
-  </div>
-  <div class="ci-check-item" id="ck_a92c6ddb_1" onclick="toggleCheck(event,'ck_a92c6ddb_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">각 상황별 대처법</span>
-  </div>
-  <div class="ci-check-item" id="ck_a92c6ddb_2" onclick="toggleCheck(event,'ck_a92c6ddb_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">CPR+AED 사용법</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_a92c6ddb_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_a92c6ddb_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_a92c6ddb">
   <div class="ci-check-item" id="ck_a92c6ddb_0" onclick="toggleCheck(event,'ck_a92c6ddb_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">응급상황 6가지 종류 숙지 (심정지·질식·경련·화상·낙상·저혈당)</span>
@@ -2503,25 +1820,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_2e3d9117">
   <div class="ci-check-item" id="ck_2e3d9117_0" onclick="toggleCheck(event,'ck_2e3d9117_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">Huhn 평가도구 기준 낙상 고위험 기준 3가지 이상</span>
-  </div>
-  <div class="ci-check-item" id="ck_2e3d9117_1" onclick="toggleCheck(event,'ck_2e3d9117_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">올바른 이동방법</span>
-  </div>
-  <div class="ci-check-item" id="ck_2e3d9117_2" onclick="toggleCheck(event,'ck_2e3d9117_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">워커·휠체어 사용 안내법 숙지</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_2e3d9117_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_2e3d9117_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_2e3d9117">
-  <div class="ci-check-item" id="ck_2e3d9117_0" onclick="toggleCheck(event,'ck_2e3d9117_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">Huhn 평가도구 기준 낙상 고위험 기준 3가지 이상 숙지</span>
   </div>
   <div class="ci-check-item" id="ck_2e3d9117_1" onclick="toggleCheck(event,'ck_2e3d9117_1')">
@@ -2546,25 +1844,6 @@ function showTab(name) {
     <div class="ci-txt">재난대응 — 화재행동요령·소화기 사용법·자위소방대 역할 숙지</div>
     <div class="ci-sub"><strong>확인:</strong> 화재 7단계 행동요령 / 소화기 PASS 4단계 / 자위소방대 4개 반 역할 및 <strong>본인 소속 반 암기</strong></div>
     <div class="ci-checks" id="ck_d8c91172">
-  <div class="ci-check-item" id="ck_d8c91172_0" onclick="toggleCheck(event,'ck_d8c91172_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">화재 7단계 행동요령</span>
-  </div>
-  <div class="ci-check-item" id="ck_d8c91172_1" onclick="toggleCheck(event,'ck_d8c91172_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">소화기 PASS 4단계</span>
-  </div>
-  <div class="ci-check-item" id="ck_d8c91172_2" onclick="toggleCheck(event,'ck_d8c91172_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">자위소방대 4개 반 역할 및 본인 소속 반 암기</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_d8c91172_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_d8c91172_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_d8c91172">
   <div class="ci-check-item" id="ck_d8c91172_0" onclick="toggleCheck(event,'ck_d8c91172_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">화재 7단계 행동요령 숙지</span>
@@ -2595,29 +1874,6 @@ function showTab(name) {
     <div class="ci-txt">감염예방·욕창예방 지침 숙지 — 면담 집중 확인 항목</div>
     <div class="ci-sub"><strong>확인:</strong> 감염 종류(코로나·독감·결핵·노로) / 소독 70~75% 알코올 / 욕창 2시간 체위변경 / 에어매트·욕창방지방석</div>
     <div class="ci-checks" id="ck_529d3400">
-  <div class="ci-check-item" id="ck_529d3400_0" onclick="toggleCheck(event,'ck_529d3400_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">감염 종류(코로나·독감·결핵·노로)</span>
-  </div>
-  <div class="ci-check-item" id="ck_529d3400_1" onclick="toggleCheck(event,'ck_529d3400_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">소독 70~75% 알코올</span>
-  </div>
-  <div class="ci-check-item" id="ck_529d3400_2" onclick="toggleCheck(event,'ck_529d3400_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">욕창 2시간 체위변경</span>
-  </div>
-  <div class="ci-check-item" id="ck_529d3400_3" onclick="toggleCheck(event,'ck_529d3400_3')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">에어매트·욕창방지방석</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_529d3400_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_529d3400_txt">0/4</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_529d3400">
   <div class="ci-check-item" id="ck_529d3400_0" onclick="toggleCheck(event,'ck_529d3400_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">감염병 종류 숙지 (코로나·독감·결핵·노로)</span>
@@ -2654,25 +1910,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_c45e9d70_1" onclick="toggleCheck(event,'ck_c45e9d70_1')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">고충처리함·지침·대장 비치</span>
-  </div>
-  <div class="ci-check-item" id="ck_c45e9d70_2" onclick="toggleCheck(event,'ck_c45e9d70_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">절차 5단계 숙지</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_c45e9d70_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_c45e9d70_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_c45e9d70">
-  <div class="ci-check-item" id="ck_c45e9d70_0" onclick="toggleCheck(event,'ck_c45e9d70_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">고충처리 담당자(시설장) 인지</span>
-  </div>
-  <div class="ci-check-item" id="ck_c45e9d70_1" onclick="toggleCheck(event,'ck_c45e9d70_1')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">고충처리함·지침·대장 비치 확인</span>
   </div>
   <div class="ci-check-item" id="ck_c45e9d70_2" onclick="toggleCheck(event,'ck_c45e9d70_2')">
@@ -2699,21 +1936,6 @@ function showTab(name) {
   </div>
   <div class="ci-check-item" id="ck_516af1ba_1" onclick="toggleCheck(event,'ck_516af1ba_1')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">담당 수급자 기능회복훈련 내용 말할 수 있는지</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_516af1ba_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_516af1ba_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_516af1ba">
-  <div class="ci-check-item" id="ck_516af1ba_0" onclick="toggleCheck(event,'ck_516af1ba_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">신체기능훈련·기본동작훈련·일상생활동작훈련 3종 개념 숙지</span>
-  </div>
-  <div class="ci-check-item" id="ck_516af1ba_1" onclick="toggleCheck(event,'ck_516af1ba_1')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">담당 수급자 기능회복훈련 목표 숙지</span>
   </div>
   <div class="ci-check-item" id="ck_516af1ba_2" onclick="toggleCheck(event,'ck_516af1ba_2')">
@@ -2734,25 +1956,6 @@ function showTab(name) {
     <div class="ci-txt">이동서비스 수칙 — 직원 숙지·안전 서비스 제공</div>
     <div class="ci-sub"><strong>확인:</strong> 이동서비스 수칙 내용 숙지 / 승차·운행·하차·사고 시 대응 / 핸드폰 사용 금지·안전벨트 착용 확인</div>
     <div class="ci-checks" id="ck_0cf1bf42">
-  <div class="ci-check-item" id="ck_0cf1bf42_0" onclick="toggleCheck(event,'ck_0cf1bf42_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">이동서비스 수칙 내용 숙지</span>
-  </div>
-  <div class="ci-check-item" id="ck_0cf1bf42_1" onclick="toggleCheck(event,'ck_0cf1bf42_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">승차·운행·하차·사고 시 대응</span>
-  </div>
-  <div class="ci-check-item" id="ck_0cf1bf42_2" onclick="toggleCheck(event,'ck_0cf1bf42_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">핸드폰 사용 금지·안전벨트 착용 확인</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_0cf1bf42_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_0cf1bf42_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_0cf1bf42">
   <div class="ci-check-item" id="ck_0cf1bf42_0" onclick="toggleCheck(event,'ck_0cf1bf42_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">이동서비스 수칙 내용 숙지</span>
@@ -2790,21 +1993,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_0137be8f">
   <div class="ci-check-item" id="ck_0137be8f_0" onclick="toggleCheck(event,'ck_0137be8f_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">건강·국민연금·고용·산재·노인장기요양보험 가입·완납</span>
-  </div>
-  <div class="ci-check-item" id="ck_0137be8f_1" onclick="toggleCheck(event,'ck_0137be8f_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">보험료 납부 내역 보관</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_0137be8f_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_0137be8f_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_0137be8f">
-  <div class="ci-check-item" id="ck_0137be8f_0" onclick="toggleCheck(event,'ck_0137be8f_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">건강·국민연금·고용·산재보험 가입·완납</span>
   </div>
   <div class="ci-check-item" id="ck_0137be8f_1" onclick="toggleCheck(event,'ck_0137be8f_1')">
@@ -2829,21 +2017,6 @@ function showTab(name) {
     <div class="ci-txt">직원 복지 — 분기별 1회 이상 포상 등 복지 제공</div>
     <div class="ci-sub"><strong>확인:</strong> 분기별 1회 이상 복지(포상 등) 제공 기록 / 근로계약서 체결 및 보수 지급 내역</div>
     <div class="ci-checks" id="ck_c2d5aa26">
-  <div class="ci-check-item" id="ck_c2d5aa26_0" onclick="toggleCheck(event,'ck_c2d5aa26_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">분기별 1회 이상 복지(포상 등) 제공 기록</span>
-  </div>
-  <div class="ci-check-item" id="ck_c2d5aa26_1" onclick="toggleCheck(event,'ck_c2d5aa26_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">근로계약서 체결 및 보수 지급 내역</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_c2d5aa26_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_c2d5aa26_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_c2d5aa26">
   <div class="ci-check-item" id="ck_c2d5aa26_0" onclick="toggleCheck(event,'ck_c2d5aa26_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">분기 1회 이상 복지(포상 등) 제공 기록</span>
@@ -2872,21 +2045,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_6f3c9405">
   <div class="ci-check-item" id="ck_6f3c9405_0" onclick="toggleCheck(event,'ck_6f3c9405_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">기관 정보 등록 여부</span>
-  </div>
-  <div class="ci-check-item" id="ck_6f3c9405_1" onclick="toggleCheck(event,'ck_6f3c9405_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">주소·전화·인력·시설·급여종류 정보 최신화</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_6f3c9405_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_6f3c9405_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_6f3c9405">
-  <div class="ci-check-item" id="ck_6f3c9405_0" onclick="toggleCheck(event,'ck_6f3c9405_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">기관 정보 홈페이지 등록 여부</span>
   </div>
   <div class="ci-check-item" id="ck_6f3c9405_1" onclick="toggleCheck(event,'ck_6f3c9405_1')">
@@ -2913,21 +2071,6 @@ function showTab(name) {
     <div class="ci-checks" id="ck_fd43f9cc">
   <div class="ci-check-item" id="ck_fd43f9cc_0" onclick="toggleCheck(event,'ck_fd43f9cc_0')">
     <div class="ci-check-box"></div>
-    <span class="ci-check-label">수급자(보호자) 대상 폭언·폭행·성희롱 예방 및 상호존중 내용 안내</span>
-  </div>
-  <div class="ci-check-item" id="ck_fd43f9cc_1" onclick="toggleCheck(event,'ck_fd43f9cc_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">안내 기록 보관</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_fd43f9cc_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_fd43f9cc_txt">0/2</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_fd43f9cc">
-  <div class="ci-check-item" id="ck_fd43f9cc_0" onclick="toggleCheck(event,'ck_fd43f9cc_0')">
-    <div class="ci-check-box"></div>
     <span class="ci-check-label">수급자(보호자) 대상 폭언·폭행 예방 안내</span>
   </div>
   <div class="ci-check-item" id="ck_fd43f9cc_1" onclick="toggleCheck(event,'ck_fd43f9cc_1')">
@@ -2952,25 +2095,6 @@ function showTab(name) {
     <div class="ci-txt">식사 만족도 조사 — 반기 1회 이상·월 1회 반영</div>
     <div class="ci-sub"><strong>확인:</strong> 전 수급자 식사 만족도 반기 1회 이상 파악 / 결과를 월 1회 이상 식사에 반영 / 기피식품 대체 제공</div>
     <div class="ci-checks" id="ck_9231b891">
-  <div class="ci-check-item" id="ck_9231b891_0" onclick="toggleCheck(event,'ck_9231b891_0')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">전 수급자 식사 만족도 반기 1회 이상 파악</span>
-  </div>
-  <div class="ci-check-item" id="ck_9231b891_1" onclick="toggleCheck(event,'ck_9231b891_1')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">결과를 월 1회 이상 식사에 반영</span>
-  </div>
-  <div class="ci-check-item" id="ck_9231b891_2" onclick="toggleCheck(event,'ck_9231b891_2')">
-    <div class="ci-check-box"></div>
-    <span class="ci-check-label">기피식품 대체 제공</span>
-  </div>
-  <div class="ci-sub-progress">
-    <div class="ci-sub-prog-bar"><div class="ci-sub-prog-fill" id="ck_9231b891_prog" style="width:0%"></div></div>
-    <span class="ci-sub-prog-txt" id="ck_9231b891_txt">0/3</span>
-  </div>
-</div>
-    
-<div class="ci-checks" id="ck_9231b891">
   <div class="ci-check-item" id="ck_9231b891_0" onclick="toggleCheck(event,'ck_9231b891_0')">
     <div class="ci-check-box"></div>
     <span class="ci-check-label">전 수급자 식사 만족도 반기 1회 이상 파악</span>
@@ -3046,8 +2170,7 @@ function toggleCheck(e, id) {
     state[id] = el.classList.contains('checked');
     localStorage.setItem('eval_checks', JSON.stringify(state));
   } catch(err) {}
-  var groupId = id.substring(0, id.lastIndexOf('_'));
-  updateSubProgress(groupId);
+  updateSubProgress(id.substring(0, id.lastIndexOf('_')));
 }
 function updateSubProgress(groupId) {
   var group = document.getElementById(groupId);
@@ -3055,86 +2178,36 @@ function updateSubProgress(groupId) {
   var items = group.querySelectorAll('.ci-check-item');
   var checked = group.querySelectorAll('.ci-check-item.checked').length;
   var total = items.length;
-  var pct = total ? Math.round(checked / total * 100) : 0;
   var bar = document.getElementById(groupId + '_prog');
   var txt = document.getElementById(groupId + '_txt');
-  if (bar) bar.style.width = pct + '%';
+  if (bar) bar.style.width = (total ? Math.round(checked/total*100) : 0) + '%';
   if (txt) txt.textContent = checked + '/' + total;
   var clItem = group.closest('.cl-item');
-  if (clItem) {
-    clItem.classList.toggle('all-checked', checked === total && total > 0);
-  }
+  if (clItem) clItem.classList.toggle('all-checked', checked === total && total > 0);
 }
 function loadChecks() {
   try {
     var state = JSON.parse(localStorage.getItem('eval_checks') || '{}');
     Object.keys(state).forEach(function(id) {
-      if (state[id]) {
-        var el = document.getElementById(id);
-        if (el) el.classList.add('checked');
-      }
+      if (state[id]) { var el = document.getElementById(id); if (el) el.classList.add('checked'); }
     });
-    document.querySelectorAll('.ci-checks').forEach(function(group) {
-      updateSubProgress(group.id);
-    });
-  } catch(err) {}
+    document.querySelectorAll('.ci-checks').forEach(function(g) { updateSubProgress(g.id); });
+  } catch(e) {}
+}
+function resetAllChecks() {
+  if (!confirm('세부 체크 항목을 모두 초기화할까요?')) return;
+  try { localStorage.removeItem('eval_checks'); } catch(e) {}
+  document.querySelectorAll('.ci-check-item').forEach(function(el) { el.classList.remove('checked'); });
+  document.querySelectorAll('.cl-item').forEach(function(el) { el.classList.remove('all-checked','open'); });
+  document.querySelectorAll('.ci-sub-prog-fill').forEach(function(el) { el.style.width = '0%'; });
+  document.querySelectorAll('.ci-sub-prog-txt').forEach(function(el) {
+    var t = el.closest('.ci-checks') ? el.closest('.ci-checks').querySelectorAll('.ci-check-item').length : 0;
+    el.textContent = '0/' + t;
+  });
 }
 window.toggleCheck = toggleCheck;
 window.loadChecks = loadChecks;
-document.addEventListener('DOMContentLoaded', loadChecks);
-
-// ── 세부 체크박스 ──
-function toggleCheck(e, id) {
-  e.stopPropagation();
-  var el = document.getElementById(id);
-  if (!el) return;
-  el.classList.toggle('checked');
-  // localStorage 저장
-  try {
-    var state = JSON.parse(localStorage.getItem('eval_checks') || '{}');
-    state[id] = el.classList.contains('checked');
-    localStorage.setItem('eval_checks', JSON.stringify(state));
-  } catch(err) {}
-  updateProgress(id.split('_').slice(0,2).join('_'));
-}
-function updateProgress(groupId) {
-  var group = document.getElementById(groupId);
-  if (!group) return;
-  var items = group.querySelectorAll('.ci-check-item');
-  var checked = group.querySelectorAll('.ci-check-item.checked').length;
-  var total = items.length;
-  var pct = total ? Math.round(checked/total*100) : 0;
-  var bar = document.getElementById(groupId + '_prog');
-  var txt = document.getElementById(groupId + '_txt');
-  if (bar) bar.style.width = pct + '%';
-  if (txt) txt.textContent = checked + '/' + total;
-  // 전체 항목 체크 완료 시 cl-item에 완료 표시
-  var clItem = group.closest('.cl-item');
-  if (clItem) {
-    if (checked === total && total > 0) {
-      clItem.classList.add('all-checked');
-    } else {
-      clItem.classList.remove('all-checked');
-    }
-  }
-}
-function loadChecks() {
-  try {
-    var state = JSON.parse(localStorage.getItem('eval_checks') || '{}');
-    Object.keys(state).forEach(function(id) {
-      if (state[id]) {
-        var el = document.getElementById(id);
-        if (el) el.classList.add('checked');
-      }
-    });
-    // 모든 그룹 progress 업데이트
-    document.querySelectorAll('.ci-checks').forEach(function(group) {
-      updateProgress(group.id);
-    });
-  } catch(err) {}
-}
-window.toggleCheck = toggleCheck;
-window.loadChecks = loadChecks;
+window.resetAllChecks = resetAllChecks;
 document.addEventListener('DOMContentLoaded', loadChecks);
 
 function clUpdate() {
