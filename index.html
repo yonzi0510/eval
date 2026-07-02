@@ -660,6 +660,8 @@ function showTab(name) {
 .ind-search-input{flex:1;padding:9px 12px;border:1.5px solid #D1E8E2;border-radius:8px;font-size:12.5px;font-family:'Noto Sans KR',sans-serif;color:#1a1a2e;}
 .ind-search-input:focus{outline:none;border-color:#1A9B6C;}
 .ind-search-clear{width:34px;min-width:34px;border:1.5px solid #D1E8E2;border-radius:8px;background:#fff;color:#5A7A6E;font-size:13px;cursor:pointer;}
+.ind-toggle-done{white-space:nowrap;padding:0 12px;border:1.5px solid #D1E8E2;border-radius:8px;background:#fff;color:#5A7A6E;font-size:11.5px;font-weight:600;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
+.ind-toggle-done.on{background:#1A9B6C;border-color:#1A9B6C;color:#fff;}
 .ind-search-status{font-size:11px;color:#1A9B6C;font-weight:600;margin-bottom:8px;min-height:14px;}
 .ind-no-result{text-align:center;padding:30px 10px;color:#9CA3AF;font-size:12.5px;}
 .ind-progress-bar{background:#FFFFFF;border:1px solid #D1E8E2;border-radius:10px;padding:10px 14px;margin-bottom:12px;}
@@ -726,6 +728,7 @@ function showTab(name) {
   <div class="ind-search-row">
     <input type="text" id="ind-search" class="ind-search-input" placeholder="🔍 지표명·내용·확인방법으로 검색 (예: 안전손잡이, 환기, 인권)" oninput="indFilter(this.value)">
     <button class="ind-search-clear" onclick="document.getElementById('ind-search').value=''; indFilter('');" title="검색어 지우기">✕</button>
+    <button class="ind-toggle-done" id="ind-toggle-done" onclick="indToggleShowDone()">🙈 완료항목 숨김</button>
   </div>
   <div class="ind-search-status" id="ind-search-status"></div>
   <div id="ind-list"></div>
@@ -812,21 +815,7 @@ const INDICATORS_DATA = [
     score: 2,
     criteria: [
       { no:'①', who:'기관', text:'급여제공지침 등 12개 항목을 마련하여 비치하고 있다.', example:'급여제공지침 12개 항목(기본 10 + 기타 2) 구비 여부', method:'현장·기록·전산', points:0.5, isNew:false,
-        detail:"급여제공지침 등 12개 항목:\n[기본지침 10개]\n① 종사자 윤리지침 — 수급자에 대한 윤리, 전문직 윤리 (특정 직종 국한 불가)\n② 성폭력 예방 및 대응지침 — 유형·예방·대응방법 (직원↔수급자 상황 포함 필수)\n③ 응급상황 대응지침 — 응급상황 종류, 대응방법\n④ 감염예방 및 관리지침 — 감염종류, 예방·관리, 소독 종류·방법\n⑤ 치매예방 및 관리지침 — 치매종류·증상·예방·관리·치료\n⑥ 욕창예방 및 관리지침 — 욕창발생요인·예방·관리·치료\n⑦ 낙상예방 및 관리지침 — 낙상요인·예방방법·응급조치\n⑧ 노인인권보호지침 — 권리보호, 학대유형, 예방·대응방법\n⑨ 근골격계 질환 예방 지침\n⑩ 개인정보보호지침 — 수집·이용목적, 수집항목, 보유·이용기간\n[기타지침 2개]\n⑪ 직원 인권침해 대응지침 — 폭언·폭행·상해 대응, 성희롱·성폭력 대응, 급여외행위 대응, 기관 조치사항\n⑫ 고충처리지침 — 접수방법(익명창구 포함), 처리과정(접수·처리·결과안내), 접수·처리기한\n\n[확인방법]\n2023년 재가급여 평가매뉴얼 주야간보호 평가지표26(급여제공 역량관리) 기준①의 직전 정기평가결과가 '충족(Y)'인 기관은 공단 전산자료를 연계하여 평가한다.\n급여제공지침 12개 항목을 마련하여 기관 내부에 비치하고 있는지 확인한다. 평가 당일 기록이 확인되지 않는 경우 '불인정(N)'.\n※ 고충처리지침과 고충처리함까지 현장에 비치하여야 하며 고충처리대장은 기록을 확인하여 평가함",
-        links:[
-          {label:'① 종사자 윤리지침', href:'assets/guidelines/01_ethics.hwp', type:'download'},
-          {label:'② 성폭력 예방 및 대응지침', href:'assets/guidelines/02_sexual_violence_prevention.hwp', type:'download'},
-          {label:'③ 응급상황 대응지침', href:'assets/guidelines/03_emergency_response.hwp', type:'download'},
-          {label:'④ 감염예방 및 관리지침(자체 제작본)', href:'assets/infection_prevention_guideline.docx', type:'download'},
-          {label:'⑤ 치매예방 및 관리지침', href:'assets/guidelines/05_dementia_prevention.hwp', type:'download'},
-          {label:'⑥ 욕창예방 및 관리지침', href:'assets/guidelines/06_pressure_ulcer_prevention.hwp', type:'download'},
-          {label:'⑦ 낙상예방 및 관리지침', href:'assets/guidelines/07_fall_prevention.hwp', type:'download'},
-          {label:'⑧ 노인인권보호지침', href:'assets/guidelines/08_elderly_rights_protection.hwp', type:'download'},
-          {label:'⑨ 근골격계 질환 예방지침', href:'assets/guidelines/09_musculoskeletal_prevention.hwp', type:'download'},
-          {label:'⑩ 개인정보보호지침', href:'assets/guidelines/10_personal_data_protection.hwp', type:'download'},
-          {label:'⑪ 직원 인권침해 대응지침', href:'assets/guidelines/11_staff_rights_violation_response.hwp', type:'download'},
-          {label:'⑫ 고충처리지침', href:'assets/guidelines/12_grievance_handling.hwp', type:'download'}
-        ] },
+        detail:"급여제공지침 등 12개 항목:\n[기본지침 10개]\n① 종사자 윤리지침 — 수급자에 대한 윤리, 전문직 윤리 (특정 직종 국한 불가)\n② 성폭력 예방 및 대응지침 — 유형·예방·대응방법 (직원↔수급자 상황 포함 필수)\n③ 응급상황 대응지침 — 응급상황 종류, 대응방법\n④ 감염예방 및 관리지침 — 감염종류, 예방·관리, 소독 종류·방법\n⑤ 치매예방 및 관리지침 — 치매종류·증상·예방·관리·치료\n⑥ 욕창예방 및 관리지침 — 욕창발생요인·예방·관리·치료\n⑦ 낙상예방 및 관리지침 — 낙상요인·예방방법·응급조치\n⑧ 노인인권보호지침 — 권리보호, 학대유형, 예방·대응방법\n⑨ 근골격계 질환 예방 지침\n⑩ 개인정보보호지침 — 수집·이용목적, 수집항목, 보유·이용기간\n[기타지침 2개]\n⑪ 직원 인권침해 대응지침 — 폭언·폭행·상해 대응, 성희롱·성폭력 대응, 급여외행위 대응, 기관 조치사항\n⑫ 고충처리지침 — 접수방법(익명창구 포함), 처리과정(접수·처리·결과안내), 접수·처리기한\n\n[확인방법]\n2023년 재가급여 평가매뉴얼 주야간보호 평가지표26(급여제공 역량관리) 기준①의 직전 정기평가결과가 '충족(Y)'인 기관은 공단 전산자료를 연계하여 평가한다.\n급여제공지침 12개 항목을 마련하여 기관 내부에 비치하고 있는지 확인한다. 평가 당일 기록이 확인되지 않는 경우 '불인정(N)'.\n※ 고충처리지침과 고충처리함까지 현장에 비치하여야 하며 고충처리대장은 기록을 확인하여 평가함" },
       { no:'②', who:'기관', text:'모든 직원에게 연 1회 이상 운영규정 교육을 실시한다.', example:'필수사항: 교육일자, 교육방법, 강사명, 참석자명(서명)', method:'기록', points:1, isNew:true,
         detail:"모든 직원에게 연 1회 이상 운영규정교육을 실시하였는지 관련 자료를 확인한다. 평가 당일 기록이 확인되지 않는 경우 '불인정(N)'.\n평가 당일 퇴사일이 확인되는 직원의 교육실시 여부는 확인하지 않는다. (지자체에 퇴직신고 되지 않은 경우 '불인정(N)')\n신규직원은 급여제공 시작일로부터 7일 이내로 교육받았는지 확인한다." },
       { no:'③', who:'직원', text:'모든 직원은 연 1회 이상 급여제공지침 교육을 받고 있으며, 각 지침별 주요내용을 알고 있다.', example:'', method:'면담', points:0.5, isNew:false,
@@ -848,7 +837,6 @@ const INDICATORS_DATA = [
       { no:'③', who:'직원', text:'직원은 「직원」 인권침해대응지침 내용을 알고 있다.', example:'', method:'면담', points:0.8, isNew:false,
         detail:"직원, 시설장이 기관의 「직원」 인권침해 대응지침 내용을 알고 있는지 면담으로 확인한다.\n지침 내용은 수급자 및 가족으로부터 발생할 수 있는 폭언‧폭행‧상해에 대한 대응방법, 성희롱‧성폭력 행위에 대한 대응방법, 급여 외 행위 제공요구에 대한 대응방법, 직원의 인권침해 상황에서의 기관의 조치사항이 포함되어야 하며, 이를 알고 있는지 면담으로 확인한다.\n\n[인권침해 대응 3단계]\n① 자제요청 및 즉시경고 — 폭언(고성·욕설·모욕·협박·성희롱 등) 중단 요청, 문제 해결에 도움 안 됨을 알리고 대화 유도\n② 녹음 사전고지 및 법규위반 공지 — 폭언 지속 시 사전고지 후 녹음·녹화\n③ 응대종료·경찰신고 — 지속 시 관리자 도움받아 서비스 불가 설명, 즉시 현장 이탈, 6하원칙 문서 작성(필요시 법적대응 검토)\n※ 위기·응급상황 판단 시 1단계 생략, 바로 3단계(경찰신고)\n\n※ 참고: 노인장기요양보험 홈페이지/알림·자료실/알림방/공지사항 「재가요양보호사 인권보호 매뉴얼」 활용 안내",
         links:[
-          {label:'직원 인권침해 대응지침 다운로드', href:'assets/guidelines/11_staff_rights_violation_response.hwp', type:'download'},
           {label:'노인장기요양보험 공식 인권보호 매뉴얼 안내', type:'external', href:'https://www.longtermcare.or.kr/'}
         ] }
     ]
@@ -867,8 +855,7 @@ const INDICATORS_DATA = [
       { no:'③', who:'기관', text:'직원에게 분기별 1회 이상 복지(포상 등)를 제공한다.', example:'서적, 상품권, 교육·훈련비, 동호회, 의료비, 휴가비, 단체보험, 포상휴가·포상금, 명절선물 등', method:'기록', points:1, isNew:false,
         detail:"복지(포상 등) 제공은 제공대장(제공일자, 수령인 서명, 포상품 등) 및 관련자료(거래이체내역, 영수증 등)를 확인한다.\n복지(포상) 예시: 서적, 상품권 등 현물 지원, 교육‧훈련비 지원, 동호회 지원, 의료비 지원, 휴가비‧교통비‧피복비‧예방접종비 지원, 단체(상해)보험 가입, 포상휴가, 포상금, 명절선물, 특별수당 등 인건비에 포함하지 않는 급여 외 수당만 인정함.\n후원품 증정, 회식 또는 상장(상패)만 수여, 대표자 본인에게 포상하는 경우 등은 인정하지 않음.\n물품 구매 분기와 복지(포상) 제공 분기가 다른 경우, 분기별 제공 여부는 제공일자로 확인함. 해당 분기에 제공일자가 속해있지 않은 경우 '불인정(N)'." },
       { no:'④', who:'직원', text:'직원은 고충처리절차를 알고 그에 따른 적절한 조치를 받는다.', example:'적절한 조치: 기관 내 자체적인 업무전환, 지자체 시정조치 등', method:'면담', points:1, isNew:false,
-        detail:"직원, 시설장은 고충처리절차를 알고 있으며 그에 따른 적절한 조치를 받는지 면담을 통해 확인한다.\n고충처리지침의 내용은 고충의 접수 방법(익명성이 보장되는 접수창구 포함), 고충의 처리 과정(접수, 처리, 결과 안내), 고충의 처리에 대한 응답 기한이 포함되어 있어야 하며, 조치를 받은 고충의 상황은 직원의 인권침해 발생 시 조치한 상황도 포함된다.",
-        links:[{label:'고충처리지침 다운로드', href:'assets/guidelines/12_grievance_handling.hwp', type:'download'}] },
+        detail:"직원, 시설장은 고충처리절차를 알고 있으며 그에 따른 적절한 조치를 받는지 면담을 통해 확인한다.\n고충처리지침의 내용은 고충의 접수 방법(익명성이 보장되는 접수창구 포함), 고충의 처리 과정(접수, 처리, 결과 안내), 고충의 처리에 대한 응답 기한이 포함되어 있어야 하며, 조치를 받은 고충의 상황은 직원의 인권침해 발생 시 조치한 상황도 포함된다." },
       { no:'⑤', who:'기관', text:'퇴직금 제도를 운영한다.', example:'퇴직급여제도(확정급여형·확정기여형·중소기업퇴직연금기금) 또는 기관 자체 운영(퇴직금통장)', method:'기록', points:1, isNew:false,
         detail:"퇴직금제도를 운영하고 있는지 기록으로 확인한다.\n퇴직금제도: 퇴직급여제도(확정급여형퇴직연금제도, 확정기여형퇴직연금제도, 중소기업퇴직연금기금제도), 기관 자체 운영(기관명의의 퇴직금통장 운영)\n※ 기관명의의 통장으로 자체 운영 시, 이체확인증을 확인함" }
     ]
@@ -905,8 +892,7 @@ const INDICATORS_DATA = [
     score: 4,
     criteria: [
       { no:'①', who:'기관', text:'기관 내부에 안전손잡이를 설치한다.', example:'복도(양쪽벽면), 목욕실, 프로그램실, 세면대와 변기 주위, 싱크대 등', method:'현장', points:0.5, isNew:false,
-        detail:"안전손잡이는 다음의 '안전성'과 '기능성'을 갖추어야만 설치한 것으로 인정한다.\n- 설치기준(안전성): 설치부위에 체중을 실었을 때 파손 등으로 낙상 사고 위험이 없어야 함\n- 설치기준(기능성): 흔들림 없이 고정이 되어야 함\n- 불인정 예시: 접착식, 압착식 또는 흡착식 손잡이는 불인정\n\n수급자가 접근 가능한 시설 내부에 있는 모든 공간에 안전손잡이가 설치되어 있는지 확인한다.\n- 수급자가 접근 가능한 공간에 설치된 세면대(싱크대 포함)의 안전손잡이 설치 여부 확인함\n- 수급자가 접근 가능한 샤워기(목욕실, 화장실 등)마다 안전손잡이가 설치되어 있어야 함. 단, 샤워기가 2개 이상 인접해 있는 경우 샤워기 사이에 안전손잡이를 설치하여 각각의 샤워기에서 사용가능한 경우 인정함\n- 목욕실에 욕조가 있는 경우, 욕조 출입을 위한 보조 손잡이가 있는지 확인함\n\n안전손잡이 설치가 불가능한 경우(가구로 벽면이 노출되지 않는 환경)는 인정한다.",
-        links:[{label:'낙상예방 및 관리지침 다운로드', href:'assets/guidelines/07_fall_prevention.hwp', type:'download'}] },
+        detail:"안전손잡이는 다음의 '안전성'과 '기능성'을 갖추어야만 설치한 것으로 인정한다.\n- 설치기준(안전성): 설치부위에 체중을 실었을 때 파손 등으로 낙상 사고 위험이 없어야 함\n- 설치기준(기능성): 흔들림 없이 고정이 되어야 함\n- 불인정 예시: 접착식, 압착식 또는 흡착식 손잡이는 불인정\n\n수급자가 접근 가능한 시설 내부에 있는 모든 공간에 안전손잡이가 설치되어 있는지 확인한다.\n- 수급자가 접근 가능한 공간에 설치된 세면대(싱크대 포함)의 안전손잡이 설치 여부 확인함\n- 수급자가 접근 가능한 샤워기(목욕실, 화장실 등)마다 안전손잡이가 설치되어 있어야 함. 단, 샤워기가 2개 이상 인접해 있는 경우 샤워기 사이에 안전손잡이를 설치하여 각각의 샤워기에서 사용가능한 경우 인정함\n- 목욕실에 욕조가 있는 경우, 욕조 출입을 위한 보조 손잡이가 있는지 확인함\n\n안전손잡이 설치가 불가능한 경우(가구로 벽면이 노출되지 않는 환경)는 인정한다." },
       { no:'②', who:'기관', text:'낙상 위험이 높은 공간에 미끄럼방지 처리를 하고 낙상주의 안내표지를 부착한다.', example:'목욕실, 화장실 등', method:'현장', points:0.5, isNew:false,
         detail:"목욕실과 화장실 바닥 전체에 미끄럼방지 처리가 되어 있는지 확인한다.\n- 미끄럼방지 처리: 미끄럼방지 타일, 미끄럼방지 매트 등\n- 일회성 또는 부분적인 방지 처리, 마모되어 그 기능을 상실한 것은 인정하지 않음\n\n수급자가 접근 가능한 공간 중 낙상 위험이 높은 화장실, 목욕실 등 낙상위험 안내표지 부착을 현장에서 확인한다.",
         links:[{label:'낙상주의 표지 다운로드', href:'assets/fall_caution_sign.png', type:'download'}] },
@@ -921,7 +907,7 @@ const INDICATORS_DATA = [
         detail:"요양보호사 양성교육과정 매뉴얼에 따라 수급자를 안전하게 이동시킬 수 있는지 확인한다.\n- 직원역할을 수행하는 직원이 휠체어에서 바닥으로 이동, 바닥에서 휠체어로 이동, 휠체어에서 의자(침대)로 이동, 의자(침대)에서 휠체어로 이동하는 경우에 대해 확인함\n- 2명의 직원(시연하는 직원 중 1명이 수급자 역할 담당)이 평가자가 제시하는 이동상황을 시연함",
         links:[
           {label:'우리 직원 교육자료에서 휠체어 이동 시연 준비 보기', type:'internal', target:'edu-wheelchair-transfer'},
-          {label:'노인장기요양보험 공식 동영상 매뉴얼 안내', type:'external', href:'https://www.longtermcare.or.kr/'}
+          {label:'휠체어 이동 시연 영상 (유튜브)', type:'external', href:'https://www.youtube.com/watch?v=GIC2v8bnbEU'}
         ] }
     ]
   },
@@ -936,7 +922,8 @@ const INDICATORS_DATA = [
         detail:"재난상황 대응매뉴얼과 훈련실시 자료를 확인한다.\n- 재난상황 대응 매뉴얼에는 직원 및 수급자를 포함한 재난상황 대응방법(훈련), 비상연락체계가 포함되어 있는지 확인함\n- 교육 및 소화기 사용 시연만 실시한 경우 대응훈련으로 인정하지 않음\n- 재난상황 대응훈련은 실제 상황을 고려하여 직원과 입소자를 안전한 장소로 대피시키고 유도하는 훈련을 포함하여 실시해야 하며 교육만 실시한 경우 인정하지 않음(대피훈련사진 포함)\n- 재난상황: 자연재난(태풍, 낙뢰, 폭설, 폭우, 지진, 홍수 등), 인적재난(화재, 전기‧가스사고, 붕괴 등)",
         links:[
           {label:'화재 대피행동요령 (국민재난안전포털)', type:'external', href:'https://safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?&category=fires&actsHeaderTitle=%ED%99%94%EC%9E%AC&menuSn=4'},
-          {label:'지진 대피행동요령 (국민재난안전포털)', type:'external', href:'https://safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?&category=earthQuake&actsHeaderTitle=%EC%A7%80%EC%A7%84&menuSn=4'}
+          {label:'지진 대피행동요령 (국민재난안전포털)', type:'external', href:'https://safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?&category=earthQuake&actsHeaderTitle=%EC%A7%80%EC%A7%84&menuSn=4'},
+          {label:'데이음으로 소방훈련 결과보고서 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=report'}
         ] },
       { no:'②', who:'직원', text:'화재, 지진 등 재난상황 대응방법 및 소화기 작동방법을 직원이 알고 있다.', example:'', method:'면담·시연', points:1, isNew:false,
         detail:"재난상황 대응방법을 숙지하고 있는지 직원과 면담한다.\n직원이 소화기, 소화전 등 소화설비 작동방법을 숙지하고 있는지 시연하여 확인한다." }
@@ -950,8 +937,7 @@ const INDICATORS_DATA = [
     score: 3,
     criteria: [
       { no:'①', who:'기관', text:'응급상황 매뉴얼 및 비상연락체계가 있다.', example:'필수사항: 응급상황 대처법, 담당역할, 비상연락체계', method:'기록', points:1, isNew:false,
-        detail:"응급상황 매뉴얼에 심정지, 질식, 경련, 화상, 낙상을 포함한 응급상황에 대한 응급조치 또는 대처법이 있어야 하며, 담당역할과 비상연락체계가 구축되어 있는지 확인한다.",
-        links:[{label:'응급상황 대응지침 다운로드', href:'assets/guidelines/03_emergency_response.hwp', type:'download'}] },
+        detail:"응급상황 매뉴얼에 심정지, 질식, 경련, 화상, 낙상을 포함한 응급상황에 대한 응급조치 또는 대처법이 있어야 하며, 담당역할과 비상연락체계가 구축되어 있는지 확인한다." },
       { no:'②', who:'기관', text:'기관 내부에 응급상황 알림장치가 설치되어 있으며 정상적으로 작동한다.', example:'설치장소: 생활실, 화장실(칸마다), 목욕실에 각각 1개 이상', method:'현장', points:1, isNew:false,
         detail:"응급상황 알림장치: 위치파악이 가능한 응급벨 또는 인터폰\n알림장치가 정상적으로 작동하지 않거나 위치 확인이 불가능한 경우 인정하지 않는다." },
       { no:'③', who:'직원', text:'직원은 수급자에게 발생할 수 있는 응급상황의 종류에 대해 알고 있다.', example:'응급상황 예: 심정지, 질식, 경련, 화상, 낙상 등', method:'면담', points:0.5, isNew:false,
@@ -1015,7 +1001,6 @@ const INDICATORS_DATA = [
         detail:"감염병 유행 및 기관에 감염병 환자 발생 확산 시 체계적인 관리를 위하여 대응체계를 운영하는지 확인한다.\n대응체계는 감염병에 의한 국가 위기상황 발생 시 대응체계와 기관 내 감염병 환자 발생·확산 시 대응체계를 각각 수립하여 운영하는지를 확인함. 2023 장기요양기관 안전·감염관리 매뉴얼 2권(감염병 예방 및 관리)에 상응하는 수준으로 기관 상황에 맞게 작성함.\n직원이 감염병 대응체계 등에 포함된 감염병 유행 및 발생 시 어떤 조치를 하였는지 관련자료를 확인하고, 직원과 면담한다.\n[감염병 유행 조치사항] 면회객 제한, 직원 및 방문객 발열 확인, 실내 추가 소독, 위생용품 비치, 감염병 예방 추가 교육, 수급자 및 직원 독감 예방접종, 방역지침 준수(손소독, 마스크 착용 등) 등\n[감염병 발생 조치사항] 수급자 증상관찰, 보호자 안내, 보건소 보고 및 신고, 병원 이송 등",
         links:[
           {label:'감염예방 및 관리지침·대응체계(자체 제작본) 다운로드', href:'assets/infection_prevention_guideline.docx', type:'download'},
-          {label:'감염병대책매뉴얼 예시 템플릿 다운로드', type:'function', call:"downloadFile('infection')"},
           {label:'공단 공식 매뉴얼 PDF (2권)', href:'2023 장기요양기관 안전감염관리 매뉴얼 2권(감염병 예방 및 관리).pdf', type:'download'},
           {label:'공단 공식 매뉴얼 PDF (1권)', href:'https://github.com/yonzi0510/eval/releases/download/v1.0/2023_._._._1.pdf.pdf', type:'external'}
         ] },
@@ -1031,7 +1016,8 @@ const INDICATORS_DATA = [
     score: 4,
     criteria: [
       { no:'①', who:'기관', text:'모든 수급자(보호자)와 상담을 분기별 1회 이상 실시한다.', example:'필수사항: 상담일자, 수급자명, 상담직원명, 상담대상자명(관계), 상담내용', method:'기록', points:1, isNew:false,
-        detail:"'상담직원'은 업무분장 등에 관리자(수급자나 급여제공직원을 관리하는 중간관리자 포함)로 구분된 해당급여 직원을 말한다.\n'상담내용'은 수급자의 상태, 욕구, 건의사항 등을 말한다.\n모든 수급자(보호자) 상담은 내방, 방문, 전화상담 등 모두 인정한다. 단, 일방향 소통(SNS로 정보제공 등)은 인정하지 않으며 양방향 소통이 이루어졌는지를 확인한다." },
+        detail:"'상담직원'은 업무분장 등에 관리자(수급자나 급여제공직원을 관리하는 중간관리자 포함)로 구분된 해당급여 직원을 말한다.\n'상담내용'은 수급자의 상태, 욕구, 건의사항 등을 말한다.\n모든 수급자(보호자) 상담은 내방, 방문, 전화상담 등 모두 인정한다. 단, 일방향 소통(SNS로 정보제공 등)은 인정하지 않으며 양방향 소통이 이루어졌는지를 확인한다.",
+        links:[{label:'데이음으로 상담일지 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=consult'}] },
       { no:'②', who:'기관', text:'수급자(보호자)의 상담결과를 연 1회 이상 급여에 반영하여 제공한다.', example:'', method:'기록', points:1, isNew:false,
         detail:"평가지표 프로그램 항목의 의견수렴 결과반영과 중복된 경우 인정하지 않는다.\n상담결과 반영 여부는 급여제공계획서 또는 상태변화기록지, 급여제공기록지 등을 통해 급여제공내용의 변경이 확인되어야 하며 상담일로부터 30일 이내에 반영된 내용이 있는지 확인한다." },
       { no:'③', who:'기관', text:'월간 프로그램 계획표, 식단표, 기관의 소식을 월 1회 이상 온라인 또는 오프라인으로 제공한다.', example:'', method:'기록', points:2, isNew:false,
@@ -1062,8 +1048,7 @@ const INDICATORS_DATA = [
     score: 6,
     criteria: [
       { no:'①', who:'기관', text:'모든 직원에게 노인인권교육을 반기별 1회 이상 실시한다.', example:'필수사항: 교육일시·교육내용·교육방법·강사명·참석자명(서명). 교육내용: 노인권리보호·학대유형·학대예방및대응방법', method:'기록', points:2, isNew:false,
-        detail:"모든 직원에게 반기별 1회 이상 노인인권교육을 실시하였는지 관련 자료를 확인한다. 교육방법: 자체교육, 외부강사초빙, 온라인 교육 이수 등. 교육내용: 노인인권보호지침(노인권리보호, 노인 학대 유형, 노인 학대 예방 및 대응방법). 관련 법정의무교육을 이수한 경우 이수증 또는 수료증과 교육내용을 확인하여 교육실시 인정.\n평가 당일 퇴사일이 확인되는 직원의 해당 반기 교육실시여부는 확인하지 않는다. 지자체에 퇴직신고 되지 않은 경우 '불인정(N)'.\n(예시) 퇴사일 2026.7.16. 평가일 2026.7.23. → 2026년 상반기 교육 미실시면 '불인정(N)', 2026년 하반기 교육 미실시면 '인정(Y)'",
-        links:[{label:'노인인권보호지침 다운로드', href:'assets/guidelines/08_elderly_rights_protection.hwp', type:'download'}] },
+        detail:"모든 직원에게 반기별 1회 이상 노인인권교육을 실시하였는지 관련 자료를 확인한다. 교육방법: 자체교육, 외부강사초빙, 온라인 교육 이수 등. 교육내용: 노인인권보호지침(노인권리보호, 노인 학대 유형, 노인 학대 예방 및 대응방법). 관련 법정의무교육을 이수한 경우 이수증 또는 수료증과 교육내용을 확인하여 교육실시 인정.\n평가 당일 퇴사일이 확인되는 직원의 해당 반기 교육실시여부는 확인하지 않는다. 지자체에 퇴직신고 되지 않은 경우 '불인정(N)'.\n(예시) 퇴사일 2026.7.16. 평가일 2026.7.23. → 2026년 상반기 교육 미실시면 '불인정(N)', 2026년 하반기 교육 미실시면 '인정(Y)'" },
       { no:'②', who:'직원', text:'모든 직원은 노인인권교육의 주요내용을 알고 있다.', example:'', method:'면담', points:1, isNew:false,
         detail:"노인인권교육 내용을 알고 있는지 직원과 면담으로 확인한다. 노인권리보호, 노인학대 유형, 노인학대 예방, 노인학대 발생 시 대응방법 숙지여부 등.\n기준①이 '불인정(N)'되는 경우, 기준②도 연동하여 '불인정(N)'한다." },
       { no:'③', who:'기관', text:'노인 인권 및 학대예방을 위한 활동을 실시한다.', example:'노인학대신고 안내문 게시', method:'현장', points:1, isNew:true,
@@ -1087,7 +1072,8 @@ const INDICATORS_DATA = [
     score: 2,
     criteria: [
       { no:'①', who:'기관', text:'모든 수급자의 종합적인 욕구사정을 연 1회 이상 정기적으로 실시한다.', example:'필수사항: 수급자명, 일자, 작성자명, 세부내용(신체·질병·인지·의사소통·구강·영양·가족및환경상태, 주관적욕구, 자원이용욕구, 총평)', method:'기록', points:2, isNew:false,
-        detail:"욕구사정은 대면하여 실시함을 원칙으로 하며, 해당급여직원이 연 1회 이상 작성하였는지 확인한다.\n신규수급자는 급여제공 시작일까지 실시하였는지 확인한다.\n세부내용 9개 항목에 대한 욕구사정 및 총평은 종합소견을 서술형으로 충실하게 작성하였는지 확인한다.\n- 세부내용 중 '기피식품 파악'은 식사제공 유의사항 등에 기록되어있는지 확인함. 기피식품이란 종교, 건강(알러지, 소화 등), 개인의 기호나 기타 사유로 섭취하기 어려운 식재료 혹은 식품\n욕구사정이 단순 체크리스트로 작성된 경우 욕구사정 항목별 또는 총평에 판단 근거(수급자 기능 및 상태)가 확인되면 인정한다.\n(예시) 신체상태 욕구사정 항목 중 옷 벗고 입기를 '△(부분도움)'으로만 표시한 경우 인정하지 않고, 판단근거를 '왼쪽편마비로 옷을 갈아입을 때 일부 도움을 주어야함' 등으로 작성한 경우 인정\n\n[욕구사정 세부내용 9개 항목] ① 신체상태(일상생활동작 수행능력 등) ② 질병상태(과거병력, 현 진단명 등) ③ 인지상태 ④ 의사소통(청취·발음능력 등) ⑤ 구강상태(치아상태, 잇몸상태 등) ⑥ 영양상태(기피식품, 음식섭취패턴, 배설양상 등) ⑦ 가족 및 환경상태 ⑧ 주관적 욕구 ⑨ 자원이용 욕구 + 총평(서술형 작성만 인정)" }
+        detail:"욕구사정은 대면하여 실시함을 원칙으로 하며, 해당급여직원이 연 1회 이상 작성하였는지 확인한다.\n신규수급자는 급여제공 시작일까지 실시하였는지 확인한다.\n세부내용 9개 항목에 대한 욕구사정 및 총평은 종합소견을 서술형으로 충실하게 작성하였는지 확인한다.\n- 세부내용 중 '기피식품 파악'은 식사제공 유의사항 등에 기록되어있는지 확인함. 기피식품이란 종교, 건강(알러지, 소화 등), 개인의 기호나 기타 사유로 섭취하기 어려운 식재료 혹은 식품\n욕구사정이 단순 체크리스트로 작성된 경우 욕구사정 항목별 또는 총평에 판단 근거(수급자 기능 및 상태)가 확인되면 인정한다.\n(예시) 신체상태 욕구사정 항목 중 옷 벗고 입기를 '△(부분도움)'으로만 표시한 경우 인정하지 않고, 판단근거를 '왼쪽편마비로 옷을 갈아입을 때 일부 도움을 주어야함' 등으로 작성한 경우 인정\n\n[욕구사정 세부내용 9개 항목] ① 신체상태(일상생활동작 수행능력 등) ② 질병상태(과거병력, 현 진단명 등) ③ 인지상태 ④ 의사소통(청취·발음능력 등) ⑤ 구강상태(치아상태, 잇몸상태 등) ⑥ 영양상태(기피식품, 음식섭취패턴, 배설양상 등) ⑦ 가족 및 환경상태 ⑧ 주관적 욕구 ⑨ 자원이용 욕구 + 총평(서술형 작성만 인정)",
+        links:[{label:'데이음으로 욕구사정 평가지 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=needs'}] }
     ]
   },
   {
@@ -1098,9 +1084,11 @@ const INDICATORS_DATA = [
     score: 6,
     criteria: [
       { no:'①', who:'기관', text:'모든 수급자의 낙상위험도 평가를 반기별 1회 이상 실시한다.', example:'낙상위험 평가도구 예시: Bobath Memorial Hospital Fall Risk Assessment Scales, Morse Fall Scale', method:'기록', points:2, isNew:false,
-        detail:"낙상 및 욕창 위험도평가, 인지기능 평가는 대면하여 실시함을 원칙으로 하며, 해당급여 직원이 실시한 경우만 인정한다.\n신규수급자는 급여제공 시작일까지 실시하였는지 확인한다.\n검증된 도구(관련학회나 논문에서 발표된 도구)를 이용하여 객관적으로 수준을 파악할 수 있어야 한다." },
+        detail:"낙상 및 욕창 위험도평가, 인지기능 평가는 대면하여 실시함을 원칙으로 하며, 해당급여 직원이 실시한 경우만 인정한다.\n신규수급자는 급여제공 시작일까지 실시하였는지 확인한다.\n검증된 도구(관련학회나 논문에서 발표된 도구)를 이용하여 객관적으로 수준을 파악할 수 있어야 한다.",
+        links:[{label:'데이음으로 낙상·욕창위험도 평가 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=fall'}] },
       { no:'②', who:'기관', text:'모든 수급자의 욕창위험도 평가를 반기별 1회 이상 실시한다.', example:'욕창위험 평가도구 예시: Braden scale, Norton scale, Gosnell scale, Knoll scale', method:'기록', points:2, isNew:false,
-        detail:"낙상 및 욕창 위험도평가는 대면하여 실시함을 원칙으로 하며, 해당급여 직원이 실시한 경우만 인정한다.\n신규수급자는 급여제공 시작일까지 실시하였는지 확인한다.\n검증된 도구(관련학회나 논문에서 발표된 도구)를 이용하여 객관적으로 수준을 파악할 수 있어야 한다." },
+        detail:"낙상 및 욕창 위험도평가는 대면하여 실시함을 원칙으로 하며, 해당급여 직원이 실시한 경우만 인정한다.\n신규수급자는 급여제공 시작일까지 실시하였는지 확인한다.\n검증된 도구(관련학회나 논문에서 발표된 도구)를 이용하여 객관적으로 수준을 파악할 수 있어야 한다.",
+        links:[{label:'데이음으로 낙상·욕창위험도 평가 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=fall'}] },
       { no:'③', who:'기관', text:'모든 수급자의 인지기능 평가를 반기별 1회 이상 실시한다.', example:'인지기능 평가도구 예시: CIST(인지선별검사), K-MMSE, MMSE-K 등', method:'기록', points:2, isNew:false,
         detail:"인지기능평가는 해당급여 직원이 실시한 경우만 인정한다. 다만, 인지기능평가를 전문적으로 수행할 수 있는 공인된 기관(병원, 보건소, 치매안심센터 등)에서 실시하여도 인정하며, 이 경우에도 신규수급자는 급여개시 전에 실시하여야 한다.\n인지선별검사는 중앙치매센터(www.nid.or.kr)에서 교육 이수 후 활용(인터넷 교육 이수 가능)\n평가도구에 포함된 모든 기록(예시: CIST 평가를 위하여 작성되는 그림 등)이 확인되지 않는 경우 '불인정(N)'\n수급자가 치매진단을 받은 경우 '충족(Y)'으로 평가하며 처방전 등 객관적인 자료로 확인한다. 객관적 자료(처방일, 진단일 등)는 해당 회계반기 내에 유효한 경우 인정하며, 신규 수급자의 경우 급여제공계획서 작성 전에 발급되어 적용기간이 유효한 경우 인정함\n치매검사 구분: 1.치매선별검사(CIST 등) 2.치매진단검사(신경인지검사, 전문의 진료 등) 3.치매감별검사(혈액검사, 뇌 영상촬영 등)",
         links:[{label:'중앙치매센터(인지선별검사 교육)', type:'external', href:'https://www.nid.or.kr/'}] }
@@ -1114,7 +1102,8 @@ const INDICATORS_DATA = [
     score: 4,
     criteria: [
       { no:'①', who:'기관', text:'기관에서 실시한 욕구사정, 낙상평가, 욕창평가, 인지기능 평가 및 개별욕구 등을 반영한 수급자별 급여제공계획을 연 1회 이상 수립한다.', example:'필수사항: 급여종류, 수급자명, 작성일자, 작성자명, 장기요양 세부목표, 장기요양 필요내용, 세부제공내용, 횟수, 시간, 종합의견', method:'기록·전산', points:1, isNew:false,
-        detail:"모든 급여제공계획을 해당급여직원이 연 1회 이상 작성하였는지 확인한다.\n기관에서 가장 최근에 실시한 욕구사정, 낙상평가, 욕창평가, 인지기능 평가를 반영하였는지 확인하며, 공단에서 발급한 개인별장기요양이용계획서를 참고하여 작성한다.\n- 개별욕구가 있는 경우, 종합의견 또는 욕구사정(주관적 욕구)에 작성되어있는지 확인함\n신규수급자는 급여제공 시작일까지 실시하였는지 확인함" },
+        detail:"모든 급여제공계획을 해당급여직원이 연 1회 이상 작성하였는지 확인한다.\n기관에서 가장 최근에 실시한 욕구사정, 낙상평가, 욕창평가, 인지기능 평가를 반영하였는지 확인하며, 공단에서 발급한 개인별장기요양이용계획서를 참고하여 작성한다.\n- 개별욕구가 있는 경우, 종합의견 또는 욕구사정(주관적 욕구)에 작성되어있는지 확인함\n신규수급자는 급여제공 시작일까지 실시하였는지 확인함",
+        links:[{label:'데이음으로 급여제공계획서 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=plan'}] },
       { no:'②', who:'기관', text:'모든 급여제공계획에 대해 수급자 또는 보호자에게 설명하고 확인서명을 받아 급여제공 시작일까지 공단에 통보한다.', example:'', method:'기록·전산', points:1, isNew:false,
         detail:"급여제공계획서를 작성(재작성포함)하는 경우 지체없이 공단에 통보한다.\n모든 급여제공계획서는 수급자 또는 보호자에게 확인서명을 받아 '급여제공 시작일까지' 공단에 통보해야 인정함\n대면: 확인서명 / 비대면: 우편, SNS 등으로 급여제공계획서 전문 발송 후 유선 안내 기록을 확인함\n전자서명: 스마트장기요양 앱 등을 통한 모바일(전자) 동의 인정\n기준①이 '불인정(N)'되는 경우, 기준②도 연동하여 '불인정(N)'한다." },
       { no:'③', who:'기관', text:'급여제공계획에 따라 급여를 제공하고 기록한다.', example:'', method:'기록·전산', points:1, isNew:false,
@@ -1192,8 +1181,7 @@ const INDICATORS_DATA = [
     criteria: [
       { no:'①', who:'기관', text:'모든 수급자의 잔존능력유지를 위해 개인별 맞춤형 기능회복훈련 계획을 연 1회 이상 수립한다.', example:'표본 모두 충족 2점 / 75%이상 충족 1.75점', method:'기록', points:2, isNew:true,
         scale:[{label:'표본 모두 충족',points:2},{label:'75% 이상 충족',points:1.75},{label:'미충족',points:0}],
-        detail:"수급자의 개별 기능상태를 고려한 기능회복훈련을 연 1회 이상 계획하였는지 급여제공계획서를 통해 확인한다. 단, 직전년도 12월에 기능회복훈련계획을 포함한 급여제공계획서를 작성하는 경우 예외적으로 인정한다.\n평가 당일 기록이 확인되지 않는 경우 '불인정(N)'. 신규수급자의 경우 급여제공 시작일까지 작성하였는지 확인함.\n급여제공계획에 포함하여 기능회복훈련을 계획하되, 개별 신체 상태를 반영하여 일상·신체·기본 동작 훈련에 해당하는 급여제공계획을 수립한다.\n신체기능훈련, 기본동작훈련, 일상생활동작훈련 등 장기요양 필요영역(기능회복훈련) 중 한 가지 이상 수급자의 기능상태에 맞는 세부제공 내용을 작성한다. 기본동작훈련의 세부제공 내용은 필수 기재되어야 함. 세부제공내용은 수정 가능하므로, 수급자 신체기능상태와 맞지 않는 계획이 확인될 경우 '불인정(N)'\n기능회복훈련의 내용은 장기요양 필요내용을 수행하는데 필요한 훈련을 세부제공 내용에 전산의 수기 작성 기능으로 기재한다.\n※ 2023년 일상생활기능훈련 동영상 매뉴얼 게시경로: 노인장기요양보험 홈페이지(www.longtermcare.or.kr) > 알림·자료실 > 알림방 > 공지사항 > 2023년 일상생활기능훈련 동영상 매뉴얼 게시 안내 글 참조",
-        links:[{label:'노인장기요양보험 공식 동영상 매뉴얼 안내', type:'external', href:'https://www.longtermcare.or.kr/'}] },
+        detail:"수급자의 개별 기능상태를 고려한 기능회복훈련을 연 1회 이상 계획하였는지 급여제공계획서를 통해 확인한다. 단, 직전년도 12월에 기능회복훈련계획을 포함한 급여제공계획서를 작성하는 경우 예외적으로 인정한다.\n평가 당일 기록이 확인되지 않는 경우 '불인정(N)'. 신규수급자의 경우 급여제공 시작일까지 작성하였는지 확인함.\n급여제공계획에 포함하여 기능회복훈련을 계획하되, 개별 신체 상태를 반영하여 일상·신체·기본 동작 훈련에 해당하는 급여제공계획을 수립한다.\n신체기능훈련, 기본동작훈련, 일상생활동작훈련 등 장기요양 필요영역(기능회복훈련) 중 한 가지 이상 수급자의 기능상태에 맞는 세부제공 내용을 작성한다. 기본동작훈련의 세부제공 내용은 필수 기재되어야 함. 세부제공내용은 수정 가능하므로, 수급자 신체기능상태와 맞지 않는 계획이 확인될 경우 '불인정(N)'\n기능회복훈련의 내용은 장기요양 필요내용을 수행하는데 필요한 훈련을 세부제공 내용에 전산의 수기 작성 기능으로 기재한다.\n※ 2023년 일상생활기능훈련 동영상 매뉴얼 게시경로: 노인장기요양보험 홈페이지(www.longtermcare.or.kr) > 알림·자료실 > 알림방 > 공지사항 > 2023년 일상생활기능훈련 동영상 매뉴얼 게시 안내 글 참조" },
       { no:'②', who:'직원', text:'수급자의 건강상태에 맞는 기능회복훈련 내용을 알고 있다.', example:'신체기능훈련: 근력증강운동·연하운동·팔운동 등 / 기본동작훈련: 체위변경·이동·휠체어조작 등 / 일상생활동작훈련: 식사·배설·목욕 등', method:'면담', points:1, isNew:true,
         detail:"직원이 신체기능훈련, 기본동작훈련, 일상생활동작훈련과 같은 기능회복훈련에 대해 알고 있으며 수급자 개별 맞춤형으로 해당 서비스 중 한 개 이상 숙지하고 제공하는지 직원과 면담한다.\n- 신체기능훈련: 근력증강운동, 연하운동, 팔운동, 손가락운동, 조화운동, 지구력훈련 등\n- 기본동작훈련: 체위변경, 일어나기, 앉아있기, 일어서기, 서있기, 균형, 이동, 휠체어조작 및 이동, 보행, 보장구 장착 등 지켜보기 등의 훈련\n- 일상생활동작훈련: 식사, 배설, 옷 갈아입기, 목욕, 몸단장, 요리 등의 훈련" }
     ]
@@ -1223,7 +1211,8 @@ const INDICATORS_DATA = [
     score: 4,
     criteria: [
       { no:'①', who:'기관', text:'사례관리 회의를 반기별 1회 이상 실시한다.', example:'필수사항: 일자, 수급자명, 선정사유, 회의내용(참가 직원별 의견 필수), 사례관리계획, 참석자명(서명), 총 3인 이상(각 직종별 1인 이상)', method:'기록', points:2, isNew:false,
-        detail:"사례회의: 수급자의 다양한 욕구를 충족시키기 위한 방안 등을 논의하고, 그에 따라 급여계획을 변경하여 적절한 서비스를 제공하기 위한 회의\n사례회의 대상자: 문제가 발생하여 다양한 전문가의 의견을 토대로 급여이용, 생활환경, 의료적인 처치 등 도움이 필요한 수급자\n수급자: 등급외자를 제외한 모든 수급자\n참가직원은 시설장 및 「노인복지법 시행규칙」 별표9에 따른 각 직종별 1인 이상 참여하였는지 확인(조리원, 운전사는 필수 참여 직종에서 제외)\n시설장 및 사회복지사는 필수로 참여하되, 인력배치기준에 따라 사회복지사가 필수 인력이 아닌 경우 사회복지사의 미참여를 예외적으로 인정\n참가직원별 의견 필수 포함이므로 발언자의 의견이 없는 경우 '의견없음' 등으로 확인되어야 함\n급여제공자의 경험공유 등 단순한 보고회의는 인정하지 않는다" },
+        detail:"사례회의: 수급자의 다양한 욕구를 충족시키기 위한 방안 등을 논의하고, 그에 따라 급여계획을 변경하여 적절한 서비스를 제공하기 위한 회의\n사례회의 대상자: 문제가 발생하여 다양한 전문가의 의견을 토대로 급여이용, 생활환경, 의료적인 처치 등 도움이 필요한 수급자\n수급자: 등급외자를 제외한 모든 수급자\n참가직원은 시설장 및 「노인복지법 시행규칙」 별표9에 따른 각 직종별 1인 이상 참여하였는지 확인(조리원, 운전사는 필수 참여 직종에서 제외)\n시설장 및 사회복지사는 필수로 참여하되, 인력배치기준에 따라 사회복지사가 필수 인력이 아닌 경우 사회복지사의 미참여를 예외적으로 인정\n참가직원별 의견 필수 포함이므로 발언자의 의견이 없는 경우 '의견없음' 등으로 확인되어야 함\n급여제공자의 경험공유 등 단순한 보고회의는 인정하지 않는다",
+        links:[{label:'데이음으로 사례관리 회의록 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=case'}] },
       { no:'②', who:'기관', text:'사례관리 계획에 따라 사례관리 회의 다음날부터 30일 이내에 급여 등에 반영하고, 평가를 실시한다.', example:'확인사항: 평가 일자, 작성자명, 선정사유 해결여부, 미해결 시 추가 조치 계획', method:'기록', points:2, isNew:false,
         detail:"사례회의를 통해 도출된 사례관리계획(회의결과)을 회의 종료 즉시(회의 다음날부터) 30일 이내 급여 등에 반영하고, 사례회의 선정사유 해결여부를 평가하였는지 확인\n반영여부는 급여제공계획 변경 또는 급여제공내용 등을 통해 확인하며, 사례관리 결과 도출된 내용에 따라 급여제공기록지 등에 작성이 어려울 경우 기관 내부 문서 등 관련 자료를 확인하여 인정여부 결정\n구조변경 등을 통해 1회성으로 종결되는 내용, 다직종의 전문가가 모여 논의하기에 부적절한 단순한 급여 반영 등의 사례관리 회의 목적과 부합하지 않는 경우 사례관리 회의로 인정하지 않음\n(불인정 예시) 병원 입원 지원, 등급변경 신청, 요양시설 전원 의뢰, 타 장기요양기관 의뢰, 단순 물품 구매 등\n'급여 등에 반영' 여부는 급여제공계획 또는 급여제공내용 변경뿐만 아니라 지역사회 자원연계를 신청하여 선정이 되는 경우도 인정\n(지역사회자원 연계 예시) 도시락 배달이 필요한 수급자에 대하여, 지역사회 내 사회복지사와 함께 사례관리 회의를 실시하고 사례관리 계획(도시락 배달 신청 등)을 세워 도시락 배달 사업에 선정된 경우" }
     ]
@@ -1236,7 +1225,8 @@ const INDICATORS_DATA = [
     score: 1,
     criteria: [
       { no:'①', who:'기관', text:'의료기관에서 진료받은 내용을 기록한다.', example:'연계기록지 사본 또는 부본', method:'기록', points:0.5, isNew:false,
-        detail:"수급자가 주야간보호급여 제공 시간 내에 종사자와 동행하여 의료기관에서 진료를 받은 내용을 급여제공기록지, 간호일지, 상담일지 등에 기록했는지 확인한다." },
+        detail:"수급자가 주야간보호급여 제공 시간 내에 종사자와 동행하여 의료기관에서 진료를 받은 내용을 급여제공기록지, 간호일지, 상담일지 등에 기록했는지 확인한다.",
+        links:[{label:'데이음으로 퇴소 연계기록지 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=linkage'}] },
       { no:'②', who:'기관', text:'계약 종료일까지 수급자(보호자)에게 연계기록지를 작성하여 제공한다.', example:'연계기록지: 작성일자·수급자명·등급·심신기능상태·제공한급여·퇴소후서비스이용계획 / 제공대장: 수급자명·제공일자·제공방법·제공자명·수령자명', method:'기록', points:0.5, isNew:false,
         detail:"수급자가 급여제공 종료를 희망할 경우 상담을 실시하여 수급자의 퇴소 사유 및 희망급여 등을 파악하여 연계기록지에 작성 후 제공하였는지 연계기록지 사본 또는 부본과 제공대장을 확인한다.\n퇴소일자보다 연계기록지 작성일자 또는 제공일자가 늦는 경우, 상담기록지 등 관련 서류를 확인하여 예외 인정함\n지표적용기간동안 퇴소한 수급자가 없는 경우에는 기준②번을 '충족(Y)'한 것으로 평가\n병설, 동일대표, 동일법인 기관으로 전원 한 경우와 입원 후 퇴소로 계약해지한 경우에는 연계기록지를 작성\n사망 또는 퇴소하지 않고 병원에 입원한 경우는 연계기록지를 작성하지 않음\n급여이용 종료 상담은 수급자 본인과 실시하여야 하나 수급자가 인지기능 저하 등으로 상담을 할 수 없는 경우 관련 자료를 확인\n수급자 상담이 불가능한 경우 보호자와 상담을 실시하여도 인정함. 보호자가 없는 경우 관련 자료를 확인하여 인정함" }
     ]
@@ -1292,7 +1282,8 @@ const INDICATORS_DATA = [
     score: 7,
     criteria: [
       { no:'①', who:'기관', text:'수급자별 급여제공계획에 따른 급여제공 결과를 반기별 1회 이상 정기적으로 평가한다.', example:'필수사항: 일자, 총평 또는 종합소견, 작성자명', method:'기록·전산', points:2, isNew:false,
-        detail:"장기요양정보시스템 전산을 통한 등록 또는 기관의 자체 서식 등에 필수사항을 포함하여 충실하게 기재하였는지 확인\n참고: 급여제공모니터링 경로: 장기요양기관 로그인 → 급여계약 → 급여제공계획서 → 급여제공모니터링\n신규수급자의 경우 입소 월이 속한 반기는 확인하지 않으며, 그 다음 반기부터 급여제공 결과평가를 실시하였는지 확인\n(예시) '26년 상반기 입소(1~6월) → '26년 하반기(7~12월) 실시여부 확인 / '26년 하반기 입소(7~12월) → '27년 상반기(1~6월) 실시여부 확인" },
+        detail:"장기요양정보시스템 전산을 통한 등록 또는 기관의 자체 서식 등에 필수사항을 포함하여 충실하게 기재하였는지 확인\n참고: 급여제공모니터링 경로: 장기요양기관 로그인 → 급여계약 → 급여제공계획서 → 급여제공모니터링\n신규수급자의 경우 입소 월이 속한 반기는 확인하지 않으며, 그 다음 반기부터 급여제공 결과평가를 실시하였는지 확인\n(예시) '26년 상반기 입소(1~6월) → '26년 하반기(7~12월) 실시여부 확인 / '26년 하반기 입소(7~12월) → '27년 상반기(1~6월) 실시여부 확인",
+        links:[{label:'데이음으로 급여제공결과평가 자동 작성하기 (샘플보기)', type:'external', href:'https://dayeum.co.kr/promo.html?doc=result'}] },
       { no:'②', who:'기관', text:'급여제공 결과평가를 반영한 급여제공계획을 30일 이내에 재작성한다.', example:'', method:'기록·전산', points:1, isNew:false,
         detail:"평가결과에 따라 30일 이내에 재작성한 급여제공계획을 확인\n수급자 상태변화가 없을 경우, 총평 또는 종합소견에 수급자 상태가 동일하다는 판단근거를 작성 후 급여제공계획서를 재작성하지 않아도 예외적으로 인정\n기준①이 '불인정(N)'되는 경우, 기준②도 연동하여 '불인정(N)'함" },
       { no:'③', who:'기관', text:'장기요양급여제공기록지를 월 1회 이상 수급자(보호자)에게 제공한다.', example:'', method:'기록', points:2, isNew:false,
@@ -1311,8 +1302,7 @@ const INDICATORS_DATA = [
     score: 1,
     criteria: [
       { no:'①', who:'직원', text:'보호자(수급자)를 대상으로 연명의료결정 제도에 대해 안내한다.', example:'안내사항: 연명의료결정제도 목적, 사전연명의료의향 신청기관(장소) 등', method:'면담', points:1, isNew:true,
-        detail:"수급자의 생애말기 자기선택권을 존중하기 위해 연명의료결정제도에 대해 보호자 또는 수급자에게 안내하는지 시설장과 면담으로 확인\n참고: 국립연명의료관리기관(https://lst.go.kr)",
-        links:[{label:'국립연명의료관리기관 공식 홈페이지', type:'external', href:'https://www.lst.go.kr/'}] }
+        detail:"수급자의 생애말기 자기선택권을 존중하기 위해 연명의료결정제도에 대해 보호자 또는 수급자에게 안내하는지 시설장과 면담으로 확인\n참고: 국립연명의료관리기관(https://lst.go.kr)" }
     ]
   },
   {
@@ -1394,6 +1384,7 @@ function indToggleDone(e, ii) {
   card.classList.toggle('done');
   indSaveState();
   indUpdateProgress();
+  indApplyVisibility();
 }
 
 function indToggleCrit(e, ii, ci) {
@@ -1431,6 +1422,7 @@ function indResetAll() {
   document.querySelectorAll('.ind-card').forEach(function(c){ c.classList.remove('done'); });
   document.querySelectorAll('.ind-crit').forEach(function(c){ c.classList.remove('done'); });
   indUpdateProgress();
+  indApplyVisibility();
 }
 
 function openIndModal(ii, ci) {
@@ -1483,17 +1475,28 @@ function indApplyState() {
     });
   } catch(e) {}
   indUpdateProgress();
+  indApplyVisibility();
 }
 
-function indFilter(query) {
-  const q = query.trim().toLowerCase();
+let indShowDone = false;
+let indCurrentQuery = '';
+
+function indApplyVisibility() {
+  const q = indCurrentQuery.trim().toLowerCase();
   const statusEl = document.getElementById('ind-search-status');
   const noResultEl = document.getElementById('ind-no-result');
   let matchCount = 0;
+  let doneHiddenCount = 0;
   document.querySelectorAll('.ind-card').forEach(function(card){
     const ii = card.dataset.ind;
     const ind = INDICATORS_DATA[ii];
-    if (!q) { card.style.display = ''; return; }
+    const isDone = card.classList.contains('done');
+    if (isDone) doneHiddenCount++;
+    if (isDone && !indShowDone) {
+      card.style.display = 'none';
+      return;
+    }
+    if (!q) { card.style.display = ''; matchCount++; return; }
     const blob = [
       ind.name, ind.content,
       ...ind.criteria.map(c => [c.text, c.example, c.detail].join(' '))
@@ -1502,12 +1505,29 @@ function indFilter(query) {
     card.style.display = match ? '' : 'none';
     if (match) { matchCount++; card.classList.add('open'); }
   });
-  if (statusEl) statusEl.textContent = q ? `검색결과: ${matchCount}개 지표` : '';
+  const hiddenNote = (!indShowDone && doneHiddenCount > 0) ? ` (완료 ${doneHiddenCount}개 숨김)` : '';
+  if (statusEl) statusEl.textContent = q ? `검색결과: ${matchCount}개 지표${hiddenNote}` : (hiddenNote ? `완료 ${doneHiddenCount}개 지표 숨김` : '');
   if (noResultEl) noResultEl.style.display = (q && matchCount === 0) ? 'block' : 'none';
+}
+
+function indFilter(query) {
+  indCurrentQuery = query;
+  indApplyVisibility();
+}
+
+function indToggleShowDone() {
+  indShowDone = !indShowDone;
+  const btn = document.getElementById('ind-toggle-done');
+  if (btn) {
+    btn.classList.toggle('on', indShowDone);
+    btn.textContent = indShowDone ? '🙉 완료항목 표시 중' : '🙈 완료항목 숨김';
+  }
+  indApplyVisibility();
 }
 
 indRender();
 window.indFilter = indFilter;
+window.indToggleShowDone = indToggleShowDone;
 window.indToggleOpen = indToggleOpen;
 window.indToggleDone = indToggleDone;
 window.indToggleCrit = indToggleCrit;
