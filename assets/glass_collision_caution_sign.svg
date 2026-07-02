@@ -1,0 +1,37 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="900" height="460" fill="#ffffff"/>
+  <rect x="24" y="24" width="852" height="412" rx="10" fill="#ffffff" stroke="#cfcfcf" stroke-width="3"/>
+  <line x1="330" y1="24" x2="330" y2="436" stroke="#cfcfcf" stroke-width="3"/>
+
+  <!-- 좌측 픽토그램 -->
+  <polygon points="177,95 62,345 292,345" fill="#FFC629" stroke="#000000" stroke-width="16" stroke-linejoin="round"/>
+  <g>
+    <!-- 유리문 경계선 -->
+    <line x1="215" y1="150" x2="215" y2="325" stroke="#000000" stroke-width="9"/>
+    <!-- 사람 실루엣: 머리 -->
+    <circle cx="168" cy="215" r="17" fill="#000000"/>
+    <!-- 몸통(앞으로 기울어짐) -->
+    <path d="M168,232 C150,258 145,280 156,318 L188,318 C196,285 200,262 196,238 Z" fill="#000000"/>
+    <!-- 뒤로 뻗은 다리 -->
+    <path d="M156,318 L120,340 L132,348 L172,322 Z" fill="#000000"/>
+    <path d="M188,318 L206,344 L218,338 L200,312 Z" fill="#000000"/>
+    <!-- 충돌 지점 스파크 -->
+    <g stroke="#000000" stroke-width="6" stroke-linecap="round">
+      <line x1="215" y1="205" x2="238" y2="188"/>
+      <line x1="215" y1="205" x2="244" y2="205"/>
+      <line x1="215" y1="205" x2="238" y2="222"/>
+      <line x1="215" y1="205" x2="222" y2="180"/>
+    </g>
+  </g>
+
+  <!-- 우측 상단 경고 밴드 -->
+  <rect x="330" y="24" width="546" height="92" fill="#F7931E"/>
+  <polygon points="373,90 353,124 393,124" fill="#ffffff" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+  <line x1="373" y1="100" x2="373" y2="110" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="373" cy="117" r="2.5" fill="#000000"/>
+  <text x="430" y="86" font-size="52" font-weight="800" fill="#ffffff" letter-spacing="14">경 고</text>
+
+  <!-- 우측 본문 -->
+  <text x="603" y="270" font-size="70" font-weight="800" fill="#000000" letter-spacing="10" text-anchor="middle">충돌 주의</text>
+  <text x="603" y="330" font-size="32" font-weight="500" fill="#000000" text-anchor="middle">이동시 유리문 확인</text>
+</svg>
