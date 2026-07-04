@@ -621,7 +621,7 @@ function showTab(name) {
   <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px;">
     <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#374151;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">✅ 지표별 확인 36개 전체</span>
     <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#374151;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">📚 직원 교육자료 (인쇄용 포함)</span>
-    <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#374151;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🎯 구술 퀴즈 38문항</span>
+    <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#374151;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🎯 구술 퀴즈 37문항</span>
     <span style="background:#EEF6F2;border:1px solid #D1E8E2;color:#374151;font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;">🆕 2026 신설 지표 반영</span>
   </div>
 </div>
@@ -1663,7 +1663,15 @@ function mkSelectTier(ii, ci, ti, btn) {
   mkUpdate();
 }
 
-const MK_CAT_MAX = {'기관운영':10,'인적자원관리':11,'환경 및 안전':6,'수급자존중':18,'서비스제공':33,'서비스제공결과':22};
+// 영역별 만점(및 총점)을 INDICATORS_DATA에서 파생 — 지표 추가/배점 변경 시 하드코딩 값과
+// 어긋나 만점을 받아도 100%에 못 미치는 문제를 방지하기 위해 항상 실제 배점 합계로 계산
+const MK_CAT_MAX = {};
+let MK_TOTAL_MAX = 0;
+INDICATORS_DATA.forEach(function(ind){
+  const cat = ind.category.split(' · ')[0];
+  MK_CAT_MAX[cat] = (MK_CAT_MAX[cat] || 0) + ind.score;
+  MK_TOTAL_MAX += ind.score;
+});
 
 function mkUpdate() {
   let total = 0;
@@ -1682,8 +1690,8 @@ function mkUpdate() {
     if (el) el.textContent = mkNum(indScore) + ' / ' + ind.score + '점';
   });
   total = mkNum(total);
-  const pct = Math.round(total);
-  document.getElementById('mk-score').textContent = total + ' / 100';
+  const pct = MK_TOTAL_MAX > 0 ? Math.round(total / MK_TOTAL_MAX * 100) : 0;
+  document.getElementById('mk-score').textContent = total + ' / ' + mkNum(MK_TOTAL_MAX);
   document.getElementById('mk-pct').textContent = pct + '%';
   document.getElementById('mk-fill').style.width = Math.min(pct, 100) + '%';
 
@@ -1714,7 +1722,7 @@ function mkUpdate() {
   const anyChecked = Object.keys(mkState).length > 0;
   let grade = '-', scoreGrade = null;
   if (anyChecked) {
-    scoreGrade = scoreOnlyGrade(total);
+    scoreGrade = scoreOnlyGrade(pct); // 달성률(%) 기준 — 총 배점이 100이 아니어도 일관되게 동작
     const startIdx = GRADE_ORDER.indexOf(scoreGrade);
     grade = 'E';
     for (let idx = startIdx; idx < GRADE_ORDER.length; idx++) {
@@ -2373,12 +2381,12 @@ window.mkResetAll = mkResetAll;
   <div id="screen-home">
     <div class="home-logo">📚</div>
     <div class="home-title">2026 평가 대비<br><span>구술 퀴즈</span></div>
-    <div class="home-sub">Day:음 · 직원 자가 테스트 · 38문항</div>
+    <div class="home-sub">Day:음 · 직원 자가 테스트 · 37문항</div>
     <div class="mode-grid">
       <div class="mode-card selected" onclick="selectMode(this,'all')">
         <div class="mc-icon">🌐</div>
         <div class="mc-title">전체 문제</div>
-        <div class="mc-sub">38문항 전체</div>
+        <div class="mc-sub">37문항 전체</div>
       </div>
       <div class="mode-card" onclick="selectMode(this,'new')">
         <div class="mc-icon">⭐</div>
@@ -2398,7 +2406,7 @@ window.mkResetAll = mkResetAll;
     </div>
     <button class="start-btn" onclick="startQuiz()">퀴즈 시작하기 →</button>
     <div class="stats-row">
-      <div class="stat-item"><div class="s-num">38</div><div class="s-label">전체 문항</div></div>
+      <div class="stat-item"><div class="s-num">37</div><div class="s-label">전체 문항</div></div>
       <div class="stat-item"><div class="s-num" id="best-score">—</div><div class="s-label">최고 점수</div></div>
       <div class="stat-item"><div class="s-num" id="try-count">0</div><div class="s-label">도전 횟수</div></div>
     </div>
@@ -2409,7 +2417,7 @@ window.mkResetAll = mkResetAll;
       <button class="back-btn" onclick="goHome()">←</button>
       <div class="quiz-header-info">
         <div class="quiz-header-title" id="quiz-mode-label">전체 문제</div>
-        <div class="quiz-header-count" id="q-count">1 / 38</div>
+        <div class="quiz-header-count" id="q-count">1 / 37</div>
       </div>
       <div class="quiz-score-badge">⭐ <span id="score-live">0</span>점</div>
     </div>
@@ -2435,7 +2443,7 @@ window.mkResetAll = mkResetAll;
       <span class="result-emoji" id="result-emoji">🎉</span>
       <div class="result-title" id="result-title">수고하셨습니다!</div>
       <div class="result-score" id="result-score">0</div>
-      <div class="result-total" id="result-total">/ 38 문항 정답</div>
+      <div class="result-total" id="result-total">/ 37 문항 정답</div>
       <div class="result-grade" id="result-grade"></div>
     </div>
     <div class="result-wrong-list" id="wrong-list" style="display:none;width:100%;">
@@ -3317,9 +3325,7 @@ const ALL_QUESTIONS = [
   // ── 낙상 ──
   {cat:'응급상황',tag:'emergency',q:'수급자가 경련(발작)을 일으켰을 때 올바른 대응은?',opts:['몸을 꽉 잡아 고정시킨다','주변 위험물을 제거하고 회복자세 취한 후 119 신고','즉시 입에 물건을 넣어 혀를 보호한다','물을 마시게 한다'],ans:1,desc:'경련 발생 시 <strong>몸을 억지로 고정하거나 입에 물건을 넣으면 안 됩니다.</strong> 주변 위험물을 제거하고, 경련이 멈추면 회복자세를 취한 후 119에 신고합니다.'},
   {cat:'낙상 예방',tag:'emergency',q:'낙상 고위험자 분류 기준으로 옳지 않은 것은?',opts:['이동이 불편하거나 균형 유지가 어려운 경우','Huhn 평기도구로 고위험 판정된 경우','고혈압 진단만 받은 경우','최근 낙상 경험이 있는 경우'],ans:2,desc:'낙상 고위험자는 <strong>Huhn 평기도구</strong>를 기준으로 분류합니다. 이동 불편·균형 불안정, 낙상 경험, 인지기능 저하, 낙상 위험 약물 복용, 기립성 저혈압 등이 기준입니다. <strong>고혈압 진단만으로는</strong> 고위험자로 분류하지 않습니다.'},
-  {cat:'응급상황',tag:'emergency',q:'수급자가 경련(발작)을 일으켰을 때 올바른 대응은?',opts:['몸을 꽉 잡아 고정시킨다','주변 위험물을 제거하고 회복자세 취한 후 119 신고','즉시 입에 물건을 넣어 혀를 보호한다','물을 마시게 한다'],ans:1,desc:'경련 발생 시 <strong>몸을 억지로 고정하거나 입에 물건을 넣으면 안 됩니다.</strong> 주변 위험물을 제거하고, 경련이 멈추면 회복자세를 취한 후 119에 신고합니다.'},
   {cat:'낙상 예방',tag:'emergency',q:'수급자 이동 시 부축 방법으로 옳지 않은 것은?',opts:['겨드랑이 밑을 지지한다','허리를 지지한다','손목을 잡아당긴다','구령을 맞춰 천천히 일으킨다'],ans:2,desc:'<strong>손목을 잡아당기는 것은 금지</strong>입니다. 겨드랑이 밑이나 허리를 지지하고 "하나, 둘, 셋" 구령에 맞춰 천천히 일으켜야 합니다.'},
-  {cat:'응급상황',tag:'emergency',q:'수급자가 경련(발작)을 일으켰을 때 올바른 대응은?',opts:['몸을 꽉 잡아 고정시킨다','주변 위험물을 제거하고 회복자세 취한 후 119 신고','즉시 입에 물건을 넣어 혀를 보호한다','물을 마시게 한다'],ans:1,desc:'경련 발생 시 <strong>몸을 억지로 고정하거나 입에 물건을 넣으면 안 됩니다.</strong> 주변 위험물을 제거하고, 경련이 멈추면 회복자세를 취한 후 119에 신고합니다.'},
   {cat:'낙상 예방',tag:'emergency',q:'워커(보행보조기) 사용 안내 순서로 올바른 것은?',opts:['한 발 앞에 워커 놓기→양손 잡기→체중 이동→한 발씩','양손 잡기→한 발 앞에 워커 놓기→체중 이동→한 발씩','체중 이동→워커 놓기→양손 잡기→한 발씩','양손 잡기→체중 이동→워커 놓기→한 발씩'],ans:0,desc:'워커 사용 안내: <strong>① 한 발 앞에 워커 놓기 → ② 양손으로 손잡이 잡기 → ③ 워커 쪽으로 체중 이동 → ④ 한 발씩 앞으로 이동</strong>. 직접 시범을 보여주며 안내합니다.'},
 
   // ── 화재·재난 ──
@@ -3488,7 +3494,7 @@ function showResult(){
   }
   tryCount++;
   localStorage.setItem('daeum_try',tryCount);
-  if(bestScore==='—'||score>parseInt(bestScore)){localStorage.setItem('daeum_best',score);}
+  if(bestScore==='—'||score>parseInt(bestScore)){localStorage.setItem('daeum_best',score);bestScore=String(score);}
 }
 
 function retryQuiz(){(function(){var _t=document.getElementById('screen-result');if(_t)_t.style.display='none';}());startQuiz();}
