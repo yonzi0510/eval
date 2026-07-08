@@ -1404,6 +1404,7 @@ function indToggleCrit(e, ii, ci) {
   crit.classList.toggle('done');
   indSaveState();
   indUpdateProgress();
+  indApplyVisibility();
 }
 
 function indUpdateProgress() {
@@ -1497,6 +1498,7 @@ function indApplyVisibility() {
   const noResultEl = document.getElementById('ind-no-result');
   let matchCount = 0;
   let doneHiddenCount = 0;
+  let critHiddenCount = 0;
   document.querySelectorAll('.ind-card').forEach(function(card){
     const ii = card.dataset.ind;
     const ind = INDICATORS_DATA[ii];
@@ -1506,17 +1508,32 @@ function indApplyVisibility() {
       card.style.display = 'none';
       return;
     }
-    if (!q) { card.style.display = ''; matchCount++; return; }
-    const blob = [
-      ind.name, ind.content,
-      ...ind.criteria.map(c => [c.text, c.example, c.detail].join(' '))
-    ].join(' ').toLowerCase();
-    const match = blob.includes(q);
-    card.style.display = match ? '' : 'none';
-    if (match) { matchCount++; card.classList.add('open'); }
+    let shown = true;
+    if (!q) {
+      card.style.display = '';
+      matchCount++;
+    } else {
+      const blob = [
+        ind.name, ind.content,
+        ...ind.criteria.map(c => [c.text, c.example, c.detail].join(' '))
+      ].join(' ').toLowerCase();
+      shown = blob.includes(q);
+      card.style.display = shown ? '' : 'none';
+      if (shown) { matchCount++; card.classList.add('open'); }
+    }
+    if (shown) {
+      card.querySelectorAll('.ind-crit').forEach(function(crit){
+        const critDone = crit.classList.contains('done');
+        if (critDone) critHiddenCount++;
+        crit.style.display = (critDone && !indShowDone) ? 'none' : '';
+      });
+    }
   });
-  const hiddenNote = (!indShowDone && doneHiddenCount > 0) ? ` (완료 ${doneHiddenCount}개 숨김)` : '';
-  if (statusEl) statusEl.textContent = q ? `검색결과: ${matchCount}개 지표${hiddenNote}` : (hiddenNote ? `완료 ${doneHiddenCount}개 지표 숨김` : '');
+  const parts = [];
+  if (!indShowDone && doneHiddenCount > 0) parts.push(`지표 ${doneHiddenCount}개`);
+  if (!indShowDone && critHiddenCount > 0) parts.push(`세부항목 ${critHiddenCount}개`);
+  const hiddenNote = parts.length ? ` (완료 ${parts.join(', ')} 숨김)` : '';
+  if (statusEl) statusEl.textContent = q ? `검색결과: ${matchCount}개 지표${hiddenNote}` : (parts.length ? `완료 ${parts.join(', ')} 숨김` : '');
   if (noResultEl) noResultEl.style.display = (q && matchCount === 0) ? 'block' : 'none';
 }
 
