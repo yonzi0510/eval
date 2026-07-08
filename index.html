@@ -1399,9 +1399,14 @@ function indToggleDone(e, ii) {
 
 function indToggleCrit(e, ii, ci) {
   e.stopPropagation();
-  const crit = document.querySelector('.ind-card[data-ind="' + ii + '"] .ind-crit[data-crit="' + ci + '"]');
+  const card = document.querySelector('.ind-card[data-ind="' + ii + '"]');
+  if (!card) return;
+  const crit = card.querySelector('.ind-crit[data-crit="' + ci + '"]');
   if (!crit) return;
   crit.classList.toggle('done');
+  const allCrits = card.querySelectorAll('.ind-crit');
+  const allDone = allCrits.length > 0 && Array.from(allCrits).every(function(c){ return c.classList.contains('done'); });
+  card.classList.toggle('done', allDone);
   indSaveState();
   indUpdateProgress();
   indApplyVisibility();
