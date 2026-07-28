@@ -54,6 +54,38 @@ body{font-family:'Noto Sans KR',sans-serif;background:#F7FAFB;color:#1A2332;font
 .header-link:hover{color:#1A9B6C;border-color:#1A9B6C;background:rgba(26,155,108,.08);}
 .header-link .hl-icon{font-size:13px;}
 
+/* ════ 가입 프로모션 배너 ════ */
+.promo-banner{
+  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:10px;
+  margin-top:105px; /* 헤더(56px)+탭바(desktop 49px, 둘 다 position:fixed) 아래로 내려 겹침 방지 */
+  padding:12px 24px;
+  background:linear-gradient(135deg,#1F3864,#16213e);
+  border-bottom:1px solid rgba(255,193,74,.35);
+  text-decoration:none;
+  cursor:pointer;
+}
+.promo-badge{
+  background:rgba(255,193,74,.16);border:1px solid rgba(255,193,74,.45);
+  color:#FFC14A;font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px;white-space:nowrap;
+}
+.promo-text{
+  color:#F5F7FA;font-size:13px;font-weight:600;line-height:1.5;word-break:keep-all;
+}
+.promo-text strong{color:#FFC14A;font-weight:800;}
+.promo-cta{
+  background:#FFC14A;color:#1F3864;font-size:12px;font-weight:800;padding:5px 14px;border-radius:99px;white-space:nowrap;
+  transition:background .15s;
+}
+.promo-banner:hover .promo-cta{background:#ffd166;}
+@media(max-width:768px){
+  .promo-banner{margin-top:95px;} /* 모바일 탭바 높이(39px)에 맞춰 조정 */
+}
+@media(max-width:480px){
+  .promo-banner{padding:10px 16px;gap:6px;}
+  .promo-text{font-size:12px;}
+}
+
 /* ════ 메인 탭 ════ */
 .tab-bar{
   position:fixed;top:56px;left:0;right:0;z-index:190;
@@ -616,6 +648,13 @@ function showTab(name) {
     <span class="hl-label">오픈채팅</span>
   </a>
 </header>
+
+<!-- 가입 프로모션 배너: 데이음 8/10까지 3만 포인트 (나중에 회원가입 폼 자동오픈 기능이 라이브되면 href에 ?signup=1 추가 예정) -->
+<a href="https://dayeum.co.kr/" target="_blank" class="promo-banner">
+  <span class="promo-badge">⏰ ~8월 10일 한정</span>
+  <span class="promo-text">무료 평가도구 참고하셨다면, 데이음도 8월 10일까지 가입하시는 센터엔 오픈 기념으로 <strong>3만 포인트</strong>를 드려요. 부담 없이 먼저 체험해보세요.</span>
+  <span class="promo-cta">지금 가입하기 →</span>
+</a>
 
 <!-- 페이지 설명 배너 -->
 <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);border-bottom:1px solid #D1E8E2;padding:24px;text-align:center;">
@@ -3757,6 +3796,6 @@ window.retryQuiz = retryQuiz;
 window.goHome = goHome;
 })();
 </script>
-<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.07.10.002</div>
+<div style="text-align:center;padding:8px;font-size:10px;color:#AAC5B8;position:fixed;bottom:0;left:0;right:0;pointer-events:none;">Day:음 · v2026.07.28.001</div>
 </body>
 </html>
